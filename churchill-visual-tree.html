@@ -18,7 +18,7 @@
   .leg-dot{width:11px;height:11px;border-radius:50%;border:1px solid rgba(0,0,0,.2)}
 
   .tree-wrap{overflow-x:auto;overflow-y:auto;padding:20px 15px 30px}
-  .tree{display:flex;flex-direction:column;align-items:center;min-width:1800px}
+  .tree{display:flex;flex-direction:column;align-items:center;min-width:2400px}
 
   .gen{display:flex;justify-content:center;align-items:flex-start;flex-wrap:nowrap;gap:6px}
 
@@ -826,7 +826,7 @@
 
 <div class="gen">
   <div class="fam">
-    <div class="branch-label">→ WINSTON'S LINE</div>
+    <div class="branch-label">→ WINSTON'S LINE (ends here)</div>
     <div class="couple">
       <div class="p m ch" style="width:130px" data-tip="<strong>Sir Winston Spencer Churchill</strong><br>Prime Minister of the United Kingdom. Led Britain through WWII. Nobel Prize in Literature 1953. Born at Blenheim Palace.<br><span class='src'>Evidence: PROVEN · Source: Burke's; DNB; Nobel records</span>">
         <div class="badge bg-p">P</div>
@@ -836,18 +836,22 @@
         <div class="rl" style="background:#8b0000">Prime Minister</div>
       </div>
       <div class="mlink"></div>
-      <div class="p f sp" data-tip="<strong>Clementine Hozier</strong><br>Wife of PM Winston Churchill.<br><span class='src'>Source: Burke's</span>">
+      <div class="p f sp" data-tip="<strong>Clementine Hozier</strong><br>Wife of PM Winston Churchill. Married 1908. No connection to Mike's line — separate branch.<br><span class='src'>Source: Burke's</span>">
         <div class="av">👤</div>
         <div class="nm">Clementine Hozier</div>
         <div class="dt">&nbsp;</div>
         <div class="rl" style="background:#7a5070">Spouse</div>
       </div>
     </div>
+    <div style="text-align:center;font-size:10px;color:#999;margin-top:6px;font-family:Inter,Cinzel,sans-serif;letter-spacing:0.5px">— Winston's branch ends here —</div>
   </div>
 
   <div class="spacer-lg"></div>
+  <div style="width:3px;background:none;border-left:3px dashed #ccc;height:60px;align-self:center"></div>
+  <div class="spacer-lg"></div>
 
   <div class="fam">
+    <div class="branch-label">→ YOUR DIRECT LINE</div>
     <div class="couple">
       <div class="p m american direct" data-tip="<strong>Harold Churchill</strong><br>Mike's great-grandfather. Colorado to Whittier, California.<br><span class='src'>Evidence: MODERATE · Source: Ancestry trees; Family records</span>">
         <div class="badge bg-m">M</div>
@@ -862,13 +866,19 @@
 
 <div class="conn gold"></div>
 
-<!-- GEN XII · Jack -->
+<!-- GEN XII · Jack & Miriam · 5 Children -->
 <hr class="gd" data-label="GENERATION XII · GRANDFATHER · WARSAW, INDIANA">
 
 <div class="gen">
+  <!-- empty spacer to align Jack under Harold, not under Winston -->
+  <div style="width:310px;flex-shrink:0"></div>
+  <div class="spacer-lg"></div>
+  <div style="width:3px;flex-shrink:0"></div>
+  <div class="spacer-lg"></div>
+
   <div class="fam">
     <div class="couple">
-      <div class="p m american direct" data-tip="<strong>Jack Churchill</strong><br>Mike's grandfather. Warsaw, Indiana. Married Miriam Sickle. Died 2008.<br><span class='src'>Evidence: FAMILY KNOWLEDGE · Source: Family records; Churchill Origins Report</span>">
+      <div class="p m american direct" data-tip="<strong>Jack Churchill</strong><br>Mike's grandfather. Pastor in Warsaw, Indiana. Married Miriam Sickle. Five children: Kenneth, Margaret, Charles Sherry, David, and Virginia. Died 2008. Son of Harold Churchill — NO connection to Winston/Clementine. First of three consecutive generations of pastors (Jack → Kenneth → Mike).<br><span class='src'>Evidence: FAMILY KNOWLEDGE · Source: Family records; Churchill Origins Report</span>">
         <div class="badge bg-d">D</div>
         <div class="av">👤</div>
         <div class="nm">Jack Churchill</div>
@@ -876,7 +886,7 @@
         <div class="rl" style="background:#1b5e20">Warsaw, IN</div>
       </div>
       <div class="mlink"></div>
-      <div class="p f sp" data-tip="<strong>Miriam Sickle</strong><br>Wife of Jack Churchill.<br><span class='src'>Source: Family records</span>">
+      <div class="p f sp" data-tip="<strong>Miriam Sickle</strong><br>Wife of Jack Churchill. Mother of Kenneth, Margaret, Charles Sherry, David, and Virginia.<br><span class='src'>Source: Family records</span>">
         <div class="av">👤</div>
         <div class="nm">Miriam Sickle</div>
         <div class="dt">&nbsp;</div>
@@ -888,13 +898,19 @@
 
 <div class="conn gold"></div>
 
-<!-- GEN XIII · Kenneth -->
-<hr class="gd" data-label="GENERATION XIII · FATHER · WARSAW, INDIANA">
+<!-- GEN XIII · Kenneth + siblings · Jack's 5 children -->
+<hr class="gd" data-label="GENERATION XIII · JACK &amp; MIRIAM'S CHILDREN">
 
 <div class="gen">
+  <div style="width:310px;flex-shrink:0"></div>
+  <div class="spacer-lg"></div>
+  <div style="width:3px;flex-shrink:0"></div>
+  <div class="spacer-lg"></div>
+
+  <!-- Kenneth (Mike's father) — direct line -->
   <div class="fam">
     <div class="couple">
-      <div class="p m american direct" data-tip="<strong>Kenneth Churchill</strong><br>Mike's father. Born 1947, Warsaw, Indiana. Son of Jack and Miriam Churchill. Died 2022.<br><span class='src'>Evidence: FAMILY KNOWLEDGE · Source: Family records</span>">
+      <div class="p m american direct" data-tip="<strong>Kenneth Churchill</strong><br>Mike's father. Pastor. Born 1947, Warsaw, Indiana. Eldest son of Jack and Miriam Churchill. Four children: Steven, Melissa, Andrea, Mike. Died 2022. Second of three generations of pastors.<br><span class='src'>Evidence: FAMILY KNOWLEDGE · Source: Family records</span>">
         <div class="badge bg-d">D</div>
         <div class="av">👤</div>
         <div class="nm">Kenneth Churchill</div>
@@ -903,14 +919,132 @@
       </div>
     </div>
   </div>
+  <div class="spacer"></div>
+
+  <!-- Margaret -->
+  <div class="fam">
+    <div class="couple">
+      <div class="p f american" data-tip="<strong>Margaret Churchill</strong><br>Daughter of Jack and Miriam Churchill. Sister of Kenneth.<br><span class='src'>Source: Family records</span>">
+        <div class="av">👤</div>
+        <div class="nm">Margaret Churchill</div>
+        <div class="dt">&nbsp;</div>
+        <div class="rl" style="background:#1b5e20">Sibling</div>
+      </div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+
+  <!-- Charles Sherry -->
+  <div class="fam">
+    <div class="couple">
+      <div class="p m american" data-tip="<strong>Charles Sherry Churchill</strong><br>Son of Jack and Miriam Churchill. Brother of Kenneth.<br><span class='src'>Source: Family records</span>">
+        <div class="av">👤</div>
+        <div class="nm">Charles Sherry Churchill</div>
+        <div class="dt">&nbsp;</div>
+        <div class="rl" style="background:#1b5e20">Sibling</div>
+      </div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+
+  <!-- David -->
+  <div class="fam">
+    <div class="couple">
+      <div class="p m american" data-tip="<strong>David Churchill</strong><br>Son of Jack and Miriam Churchill. Brother of Kenneth.<br><span class='src'>Source: Family records</span>">
+        <div class="av">👤</div>
+        <div class="nm">David Churchill</div>
+        <div class="dt">&nbsp;</div>
+        <div class="rl" style="background:#1b5e20">Sibling</div>
+      </div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+
+  <!-- Virginia -->
+  <div class="fam">
+    <div class="couple">
+      <div class="p f american" data-tip="<strong>Virginia Churchill</strong><br>Daughter of Jack and Miriam Churchill. Sister of Kenneth.<br><span class='src'>Source: Family records</span>">
+        <div class="av">👤</div>
+        <div class="nm">Virginia Churchill</div>
+        <div class="dt">&nbsp;</div>
+        <div class="rl" style="background:#1b5e20">Sibling</div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="conn gold"></div>
 
-<!-- GEN XIV · MIKE -->
-<hr class="gd" data-label="GENERATION XIV · MIKE CHURCHILL · GLENDORA, CALIFORNIA">
+<!-- GEN XIV · Kenneth's 4 children + spouses -->
+<hr class="gd" data-label="GENERATION XIV · KENNETH'S CHILDREN">
 
 <div class="gen">
+  <div style="width:310px;flex-shrink:0"></div>
+  <div class="spacer-lg"></div>
+  <div style="width:3px;flex-shrink:0"></div>
+  <div class="spacer-lg"></div>
+
+  <!-- Steven + Becky -->
+  <div class="fam">
+    <div class="couple">
+      <div class="p m american" data-tip="<strong>Steven Churchill</strong><br>Kenneth's eldest son. Married Becky Champlin. Two sons: Ethan and Evan.<br><span class='src'>Source: Family records</span>">
+        <div class="av">👤</div>
+        <div class="nm">Steven Churchill</div>
+        <div class="dt">&nbsp;</div>
+        <div class="rl" style="background:#1b5e20">Brother</div>
+      </div>
+      <div class="mlink"></div>
+      <div class="p f sp" data-tip="<strong>Becky Champlin Churchill</strong><br>Wife of Steven Churchill. née Champlin. Mother of Ethan and Evan.<br><span class='src'>Source: Family records</span>">
+        <div class="av">👤</div>
+        <div class="nm">Becky Champlin</div>
+        <div class="dt">&nbsp;</div>
+        <div class="rl" style="background:#7a5070">Spouse</div>
+      </div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+
+  <!-- Melissa + Alan -->
+  <div class="fam">
+    <div class="couple">
+      <div class="p f american" data-tip="<strong>Melissa Churchill Muller</strong><br>Kenneth's daughter. Married Alan Muller. Two daughters: Bryce and Kendall.<br><span class='src'>Source: Family records</span>">
+        <div class="av">👤</div>
+        <div class="nm">Melissa Churchill</div>
+        <div class="dt">&nbsp;</div>
+        <div class="rl" style="background:#1b5e20">Sister</div>
+      </div>
+      <div class="mlink"></div>
+      <div class="p m sp" data-tip="<strong>Alan Muller</strong><br>Husband of Melissa Churchill. Father of Bryce and Kendall.<br><span class='src'>Source: Family records</span>">
+        <div class="av">👤</div>
+        <div class="nm">Alan Muller</div>
+        <div class="dt">&nbsp;</div>
+        <div class="rl" style="background:#7a5070">Spouse</div>
+      </div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+
+  <!-- Andrea + James -->
+  <div class="fam">
+    <div class="couple">
+      <div class="p f american" data-tip="<strong>Andrea Churchill Baiseri</strong><br>Kenneth's daughter. Married James Baiseri. Four children: Austin, Greyson, Charlotte, and Hazel.<br><span class='src'>Source: Family records</span>">
+        <div class="av">👤</div>
+        <div class="nm">Andrea Churchill</div>
+        <div class="dt">&nbsp;</div>
+        <div class="rl" style="background:#1b5e20">Sister</div>
+      </div>
+      <div class="mlink"></div>
+      <div class="p m sp" data-tip="<strong>James Baiseri</strong><br>Husband of Andrea Churchill. Father of Austin, Greyson, Charlotte, and Hazel.<br><span class='src'>Source: Family records</span>">
+        <div class="av">👤</div>
+        <div class="nm">James Baiseri</div>
+        <div class="dt">&nbsp;</div>
+        <div class="rl" style="background:#7a5070">Spouse</div>
+      </div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+
+  <!-- Mike + Audra -->
   <div class="fam">
     <div class="couple">
       <div class="p m american mike" style="width:140px" data-tip="<strong>Mike Churchill</strong><br>Born June 11, 1976, Glendora, California. Outreach Pastor at Cornerstone Bible Church. 13th generation from John Churchill, Bailiff of Dorchester. Distant cousin (~12th–13th) of PM Winston Churchill through their shared 1557 ancestor.<br><span class='src'>Y-DNA Genesis Project confirms Dorset origin</span>">
@@ -933,11 +1067,118 @@
 
 <div class="conn gold"></div>
 
-<!-- GEN XV · MIKE'S CHILDREN -->
-<hr class="gd" data-label="GENERATION XV · THE NEXT GENERATION · GLENDORA, CALIFORNIA">
+<!-- GEN XV · ALL GRANDCHILDREN OF KENNETH -->
+<hr class="gd" data-label="GENERATION XV · THE NEXT GENERATION · KENNETH'S GRANDCHILDREN">
 
 <div class="gen">
+  <div style="width:310px;flex-shrink:0"></div>
+  <div class="spacer-lg"></div>
+  <div style="width:3px;flex-shrink:0"></div>
+  <div class="spacer-lg"></div>
+
+  <!-- Steven's kids -->
   <div class="fam">
+    <div class="branch-label">Steven &amp; Becky</div>
+    <div class="couple">
+      <div class="p m american" data-tip="<strong>Ethan Churchill</strong><br>Son of Steven and Becky Champlin Churchill.<br><span class='src'>Source: Family</span>">
+        <div class="av">👤</div>
+        <div class="nm">Ethan Churchill</div>
+        <div class="dt">&nbsp;</div>
+        <div class="rl" style="background:#1b5e20">Cousin</div>
+      </div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <div class="fam">
+    <div class="couple">
+      <div class="p m american" data-tip="<strong>Evan Churchill</strong><br>Son of Steven and Becky Champlin Churchill.<br><span class='src'>Source: Family</span>">
+        <div class="av">👤</div>
+        <div class="nm">Evan Churchill</div>
+        <div class="dt">&nbsp;</div>
+        <div class="rl" style="background:#1b5e20">Cousin</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="spacer-lg"></div>
+
+  <!-- Melissa's kids -->
+  <div class="fam">
+    <div class="branch-label">Melissa &amp; Alan</div>
+    <div class="couple">
+      <div class="p f american" data-tip="<strong>Bryce Muller</strong><br>Daughter of Melissa Churchill and Alan Muller.<br><span class='src'>Source: Family</span>">
+        <div class="av">👤</div>
+        <div class="nm">Bryce Muller</div>
+        <div class="dt">&nbsp;</div>
+        <div class="rl" style="background:#1b5e20">Cousin</div>
+      </div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <div class="fam">
+    <div class="couple">
+      <div class="p f american" data-tip="<strong>Kendall Muller</strong><br>Daughter of Melissa Churchill and Alan Muller.<br><span class='src'>Source: Family</span>">
+        <div class="av">👤</div>
+        <div class="nm">Kendall Muller</div>
+        <div class="dt">&nbsp;</div>
+        <div class="rl" style="background:#1b5e20">Cousin</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="spacer-lg"></div>
+
+  <!-- Andrea's kids -->
+  <div class="fam">
+    <div class="branch-label">Andrea &amp; James</div>
+    <div class="couple">
+      <div class="p m american" data-tip="<strong>Austin Baiseri</strong><br>Son of Andrea Churchill and James Baiseri.<br><span class='src'>Source: Family</span>">
+        <div class="av">👤</div>
+        <div class="nm">Austin Baiseri</div>
+        <div class="dt">&nbsp;</div>
+        <div class="rl" style="background:#1b5e20">Cousin</div>
+      </div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <div class="fam">
+    <div class="couple">
+      <div class="p m american" data-tip="<strong>Greyson Baiseri</strong><br>Son of Andrea Churchill and James Baiseri.<br><span class='src'>Source: Family</span>">
+        <div class="av">👤</div>
+        <div class="nm">Greyson Baiseri</div>
+        <div class="dt">&nbsp;</div>
+        <div class="rl" style="background:#1b5e20">Cousin</div>
+      </div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <div class="fam">
+    <div class="couple">
+      <div class="p f american" data-tip="<strong>Charlotte Baiseri</strong><br>Daughter of Andrea Churchill and James Baiseri.<br><span class='src'>Source: Family</span>">
+        <div class="av">👤</div>
+        <div class="nm">Charlotte Baiseri</div>
+        <div class="dt">&nbsp;</div>
+        <div class="rl" style="background:#1b5e20">Cousin</div>
+      </div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <div class="fam">
+    <div class="couple">
+      <div class="p f american" data-tip="<strong>Hazel Baiseri</strong><br>Daughter of Andrea Churchill and James Baiseri.<br><span class='src'>Source: Family</span>">
+        <div class="av">👤</div>
+        <div class="nm">Hazel Baiseri</div>
+        <div class="dt">&nbsp;</div>
+        <div class="rl" style="background:#1b5e20">Cousin</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="spacer-lg"></div>
+
+  <!-- Mike's kids -->
+  <div class="fam">
+    <div class="branch-label">Mike &amp; Audra</div>
     <div class="couple">
       <div class="p f american" data-tip="<strong>Samantha Churchill</strong><br>Age 16 (b. ~2010). Mike and Audra's eldest daughter.<br><span class='src'>Source: Family</span>">
         <div class="av">👤</div>
@@ -975,7 +1216,7 @@
 </div><!-- end .tree-wrap -->
 
 <div class="foot">
-  <strong>The Churchill Family · c.1450–Present · 15 Generations · 60+ Individuals</strong><br>
+  <strong>The Churchill Family · c.1450–Present · 15 Generations · 80+ Individuals</strong><br>
   Dorset, England → Connecticut → New York → California → Indiana → California<br>
   Mike's relationship to PM Winston Churchill: <strong>~12th–13th cousins</strong> · Shared ancestor: John Churchill, Bailiff of Dorchester (d. 1557)<br>
   Sources: PROB 11/39 (1557) · <strong style="color:#e65100">PROB 11/65/221 (1583) NEW</strong> · PROB 11/100 (1602) · PROB 11/186 (1641) · OPC Dorset · Portesham Parish Registers · 1525 Subsidy Rolls · Bailiff Lists · Burke's Peerage · WikiTree · Ancestry · Y-DNA Genesis Project<br>

@@ -455,17 +455,17 @@ const directLine = [
   modal:{t:'Harold Churchill (1898–1978)',b:'<p class="d-label">Evidence</p><div class="d-box">California vital records. Whittier, Los Angeles County.</div>'}},
 
   {gen:12,name:'Jack Churchill',dates:'d. 2008',loc:'Warsaw, Indiana',spouse:'Miriam Sickle',ev:'STRONG',evCls:'ev-s',gender:'m',icon:'👨‍👧',era:'america',
-  detail:'Mike\'s grandfather. Based in Warsaw, Indiana. Married Miriam Sickle.',
-  modal:{t:'Jack Churchill (d. 2008)',b:'<p class="d-label">Evidence</p><div class="d-box">Mike\'s grandfather. Warsaw, Indiana. Family records.</div>'}},
+  detail:'Mike\'s grandfather. Pastor in Warsaw, Indiana. Married Miriam Sickle. Five children: Kenneth, Margaret, Charles Sherry, David, and Virginia.',
+  modal:{t:'Jack Churchill (d. 2008)',b:'<p class="d-label">Family</p><div class="d-box">Pastor. Married Miriam Sickle. Warsaw, Indiana.<br><br><strong>Children (5):</strong><br>1. Kenneth Churchill (1947–2022) — Mike\'s father, also a pastor<br>2. Margaret Churchill<br>3. Charles Sherry Churchill<br>4. David Churchill<br>5. Virginia Churchill</div><p class="d-label">Ministry Legacy</p><div class="d-box">Three consecutive generations of pastors: Jack → Kenneth → Mike. A family calling spanning 80+ years.</div><p class="d-label">Evidence</p><div class="d-box">Family records. Churchill Origins Report.</div>'}},
 
   {gen:13,name:'Kenneth Churchill',dates:'1947 – 2022',loc:'Warsaw, Indiana → California',spouse:'',ev:'STRONG',evCls:'ev-s',gender:'m',icon:'👨',era:'america',
-  detail:'Mike\'s father. Born in Warsaw, Indiana to Jack Churchill. Moved to California.',
-  modal:{t:'Kenneth Churchill (1947–2022)',b:'<p class="d-label">Evidence</p><div class="d-box">Mike\'s father. Born Warsaw, Indiana. Moved to California. Family records.</div>'}},
+  detail:'Mike\'s father. Pastor. Born in Warsaw, Indiana to Jack and Miriam Churchill. Moved to California. Four children: Steven, Melissa, Andrea, and Mike.',
+  modal:{t:'Kenneth Churchill (1947–2022)',b:'<p class="d-label">Family</p><div class="d-box">Pastor. Born Warsaw, Indiana. Son of Jack and Miriam Churchill (Jack was also a pastor). Moved to California.<br><br><strong>Children (4):</strong><br>1. Steven Churchill — m. Becky Champlin → sons Ethan & Evan<br>2. Melissa Churchill — m. Alan Muller → daughters Bryce & Kendall<br>3. Andrea Churchill — m. James Baiseri → Austin, Greyson, Charlotte, Hazel<br>4. <strong>Mike Churchill</strong> (b. 1976) — Outreach Pastor, m. Audra Jordan → Samantha, Titus, Hope</div><p class="d-label">Ministry Legacy</p><div class="d-box">Second of three consecutive generations of pastors: Jack → Kenneth → Mike.</div><p class="d-label">Evidence</p><div class="d-box">Family records.</div>'}},
 
   {gen:14,name:'Mike Churchill',dates:'b. 1976',loc:'Glendora, California',spouse:'Audra Jordan',ev:'—',evCls:'',gender:'m',icon:'★',era:'america',isMike:true,
-  detail:'14th generation from the Bailiff of Dorchester. Outreach pastor at Cornerstone Bible Church, Glendora, CA. Married Audra Jordan Churchill. Three children: Samantha (16), Titus (14), Hope (9). ~12th–13th cousins with Prime Minister Winston Churchill.',
+  detail:'14th generation from the Bailiff of Dorchester. Outreach pastor at Cornerstone Bible Church, Glendora, CA. Married Audra Jordan Churchill. Three children: Samantha (16), Titus (14), Hope (9). Three siblings: Steven (m. Becky Champlin), Melissa (m. Alan Muller), Andrea (m. James Baiseri). ~12th–13th cousins with Prime Minister Winston Churchill.',
   children:'Samantha · Titus · Hope',
-  modal:{t:'Mike Churchill — 14th Generation',b:'<p class="d-label">The Connection</p><div class="d-box">14 generations from John Churchill, Bailiff of Dorchester (d. 1557). ~12th–13th cousins with Prime Minister Winston Churchill through the same Bailiff ancestor. The family line crosses from Dorset, England to Connecticut, New York, and California over 500 years.</div><p class="d-label">Family</p><div class="d-box">Married Audra Jordan Churchill. Three children: Samantha (16), Titus (14), Hope (9). Outreach pastor at Cornerstone Bible Church, Glendora, California.</div>'}},
+  modal:{t:'Mike Churchill — 14th Generation',b:'<p class="d-label">The Connection</p><div class="d-box">14 generations from John Churchill, Bailiff of Dorchester (d. 1557). ~12th–13th cousins with Prime Minister Winston Churchill through the same Bailiff ancestor. The family line crosses from Dorset, England to Connecticut, New York, and California over 500 years.</div><p class="d-label">Family</p><div class="d-box">Married Audra Jordan Churchill. Three children: Samantha (16), Titus (14), Hope (9). Outreach pastor at Cornerstone Bible Church, Glendora, California.</div><p class="d-label">Siblings & Their Families</p><div class="d-box"><strong>Steven Churchill</strong> — married Becky Champlin. Sons: Ethan, Evan.<br><strong>Melissa Churchill</strong> — married Alan Muller. Daughters: Bryce, Kendall.<br><strong>Andrea Churchill</strong> — married James Baiseri. Children: Austin, Greyson, Charlotte, Hazel.</div><p class="d-label">Generation 15 — 11 Grandchildren of Kenneth</p><div class="d-box">Ethan Churchill, Evan Churchill, Bryce Muller, Kendall Muller, Austin Baiseri, Greyson Baiseri, Charlotte Baiseri, Hazel Baiseri, Samantha Churchill, Titus Churchill, Hope Churchill — <strong>11 cousins carrying the line forward.</strong></div>'}},
 ];
 
 const storyData = [
@@ -720,10 +720,22 @@ function renderFunFacts(){
     parts.forEach(s=>{const t=s.trim();if(t.length>1) states.add(t);});
   });
 
+  // Count total known family members (direct line + extended)
+  const directCount=directLine.filter(p=>p.gen!=='GAP').length;
+  // Extended: Jack's 4 other kids + Kenneth's 3 other kids + 6 spouses + 8 cousins = ~21 extended
+  const extendedCount=21;
+  const totalFamily=directCount+extendedCount;
+
+  // Boy vs girl ratio across Gen XV (Kenneth's grandchildren)
+  // Boys: Ethan, Evan, Austin, Greyson, Titus = 5 | Girls: Bryce, Kendall, Charlotte, Hazel, Samantha, Hope = 6
+  const gen15Boys=5, gen15Girls=6;
+
   const facts=[
-    {icon:'⏳',num:avgAge,label:'Avg. Lifespan',detail:'Average age at death across the 13 direct-line ancestors with known dates'},
+    {icon:'⏳',num:avgAge,label:'Avg. Lifespan',detail:'Average age at death across the direct-line ancestors with known dates'},
     {icon:'👑',num:longest.age,label:'Longest Lived',detail:longest.name+' — the family\'s longest-lived direct ancestor ('+longest.birth+'–'+longest.death+')'},
-    {icon:'👶',num:'9 : 0',label:'Boys vs Girls',detail:'John of Stinsford\'s 9 children listed in the 1623 Visitation were ALL sons — not a single daughter recorded'},
+    {icon:'👨‍👩‍👧‍👦',num:totalFamily,label:'Total People',detail:directCount+' in the direct line + '+extendedCount+' extended family members (siblings, spouses, cousins) across 15 generations'},
+    {icon:'👶',num:gen15Boys+' : '+gen15Girls,label:'Boys vs Girls (Gen 15)',detail:'Kenneth\'s 11 grandchildren: 5 boys (Ethan, Evan, Austin, Greyson, Titus) and 6 girls (Bryce, Kendall, Charlotte, Hazel, Samantha, Hope)'},
+    {icon:'⛪',num:3,label:'In Ministry',detail:'Three consecutive generations of pastors: Jack Churchill, Kenneth Churchill, and Mike Churchill — a family calling spanning grandfather to grandson'},
     {icon:'🔤',num:topName[0],label:'Most Common Name',detail:'Appears '+topName[1]+' times in the direct line — five Johns across 14 generations'},
     {icon:'💍',num:2,label:'Churchill–Churchill',detail:'Two consecutive generations married other Churchills: Ezekiel married Elizabeth Churchill, C.D. married Jane Churchill'},
     {icon:'🌊',num:'3,400',label:'Miles Migrated',detail:'Dorset to Connecticut, then across New York, Indiana, Colorado, and finally to California'},
