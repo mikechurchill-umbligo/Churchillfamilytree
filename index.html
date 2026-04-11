@@ -43,7 +43,7 @@ nav.hidden{transform:translateY(-100%)}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
 .btn{font-family:'Inter',sans-serif;padding:11px 26px;border-radius:28px;text-decoration:none;font-size:12.5px;font-weight:600;letter-spacing:.5px;transition:all .3s;cursor:pointer;border:none}
 .btn-gold{background:linear-gradient(135deg,#5b8ab5,#4a7aa5);color:#fff}.btn-gold:hover{background:linear-gradient(135deg,#6b9ac5,#5b8ab5);transform:translateY(-2px);box-shadow:0 4px 16px rgba(91,138,181,.3)}.btn-primary{background:linear-gradient(135deg,#5b8ab5,#4a7aa5);color:#fff}.btn-primary:hover{background:linear-gradient(135deg,#6b9ac5,#5b8ab5);transform:translateY(-2px);box-shadow:0 4px 16px rgba(91,138,181,.3)}
-.btn-outline{background:transparent;color:var(--accent);border:2px solid var(--accent)}.btn-outline:hover{background:rgba(91,138,181,.15)}
+.btn-outline{background:rgba(255,255,255,.15);color:#fff;border:2px solid rgba(255,255,255,.6);backdrop-filter:blur(4px)}.btn-outline:hover{background:rgba(255,255,255,.3);border-color:#fff;transform:translateY(-2px);box-shadow:0 4px 16px rgba(255,255,255,.15)}
 .scroll-hint{position:absolute;bottom:28px;color:#6b7d8e;font-size:11px;font-family:'Inter',sans-serif;animation:bob 2s ease-in-out infinite}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
 
@@ -254,7 +254,7 @@ footer .flinks a{color:var(--accent);text-decoration:none;font-family:'Inter',sa
   <div class="hero-cta">
     <a href="#lineage" class="btn btn-gold">Trace the Line ↓</a>
     <a href="#story" class="btn btn-outline">Read the Story</a>
-    <a href="churchill-visual-tree.html" class="btn btn-outline" style="border-color:rgba(91,138,181,.5)">View Full Tree →</a>
+    <a href="churchill-visual-tree.html" class="btn btn-outline">View Full Tree →</a>
   </div>
   <div class="scroll-hint">scroll to begin ▾</div>
 </section>
@@ -726,15 +726,20 @@ function renderFunFacts(){
   const extendedCount=21;
   const totalFamily=directCount+extendedCount;
 
-  // Boy vs girl ratio across Gen XV (Kenneth's grandchildren)
-  // Boys: Ethan, Evan, Austin, Greyson, Titus = 5 | Girls: Bryce, Kendall, Charlotte, Hazel, Samantha, Hope = 6
-  const gen15Boys=5, gen15Girls=6;
+  // All-generations boy vs girl ratio — every Churchill-born child we can identify
+  // Males (33): Charles, Thomas, John Bailiff, Rowland, William, John of Corton,
+  //   John of Stinsford, 9 sons (Wm, Gervase, Richard, John, Robert, Maximilian, Jasper, Thomas, Matthew),
+  //   Josiah, Joseph, Samuel, Ezekiel, C.D., Willis, Harold, Jack,
+  //   Kenneth, Charles Sherry, David, Steven, Mike, Ethan, Evan, Titus
+  // Females (10): Elizabeth (Bailiff's daughter), Anne Browne, Vertue Hunton, Grace Watts (William's daughters),
+  //   Margaret Churchill, Virginia Churchill, Melissa, Andrea, Samantha, Hope
+  const allBoys=33, allGirls=10;
 
   const facts=[
     {icon:'⏳',num:avgAge,label:'Avg. Lifespan',detail:'Average age at death across the direct-line ancestors with known dates'},
     {icon:'👑',num:longest.age,label:'Longest Lived',detail:longest.name+' — the family\'s longest-lived direct ancestor ('+longest.birth+'–'+longest.death+')'},
     {icon:'👨‍👩‍👧‍👦',num:totalFamily,label:'Total People',detail:directCount+' in the direct line + '+extendedCount+' extended family members (siblings, spouses, cousins) across 15 generations'},
-    {icon:'👶',num:gen15Boys+' : '+gen15Girls,label:'Boys vs Girls (Gen 15)',detail:'Kenneth\'s 11 grandchildren: 5 boys (Ethan, Evan, Austin, Greyson, Titus) and 6 girls (Bryce, Kendall, Charlotte, Hazel, Samantha, Hope)'},
+    {icon:'👶',num:allBoys+' : '+allGirls,label:'Boys vs Girls Born',detail:'Of all '+( allBoys+allGirls)+' Churchill-born children recorded across 15 generations, '+allBoys+' were boys and only '+allGirls+' girls. Tudor-era records overwhelmingly tracked sons — the real ratio was likely closer to even, but daughters were rarely named in wills and visitations.'},
     {icon:'⛪',num:3,label:'In Ministry',detail:'Three consecutive generations of pastors: Jack Churchill, Kenneth Churchill, and Mike Churchill — a family calling spanning grandfather to grandson'},
     {icon:'🔤',num:topName[0],label:'Most Common Name',detail:'Appears '+topName[1]+' times in the direct line — five Johns across 14 generations'},
     {icon:'💍',num:2,label:'Churchill–Churchill',detail:'Two consecutive generations married other Churchills: Ezekiel married Elizabeth Churchill, C.D. married Jane Churchill'},
