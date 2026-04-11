@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Churchill Family Tree — c.1450 to Present · Complete Visual Tree</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'EB Garamond',Georgia,serif;background:#f5f0e8;color:#2c1810;min-height:100vh}
+
+  .header{background:linear-gradient(135deg,#1a0f0a 0%,#3c2415 50%,#1a0f0a 100%);color:#e8d5b7;text-align:center;padding:28px 20px 18px;border-bottom:3px solid #8b6914}
+  .header h1{font-family:'Cinzel',serif;font-size:24px;font-weight:700;letter-spacing:2px;margin-bottom:5px}
+  .header .sub{font-size:14px;color:#b8a080;font-style:italic}
+
+  .legend{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;padding:10px 20px;background:#ece4d4;border-bottom:1px solid #d4c8b0;font-size:12px}
+  .legend-item{display:flex;align-items:center;gap:4px}
+  .leg-dot{width:11px;height:11px;border-radius:50%;border:1px solid rgba(0,0,0,.2)}
+
+  .tree-wrap{overflow-x:auto;overflow-y:auto;padding:20px 15px 30px}
+  .tree{display:flex;flex-direction:column;align-items:center;min-width:1800px}
+
+  .gen{display:flex;justify-content:center;align-items:flex-start;flex-wrap:nowrap;gap:6px}
+
+  .fam{display:flex;flex-direction:column;align-items:center}
+  .couple{display:flex;align-items:center;gap:0}
+  .mlink{width:20px;height:2px;background:#8b6914;position:relative;flex-shrink:0}
+  .mlink::after{content:'⚭';position:absolute;top:-10px;left:50%;transform:translateX(-50%);font-size:12px;color:#8b6914}
+  .mlink.hyp{background:none;border-top:2px dashed #8b6914}
+
+  .conn{width:2px;height:18px;background:#8b7355;margin:0 auto}
+  .conn.dash{background:none;border-left:2px dashed #bbb}
+  .conn.gold{background:#b8860b;width:3px}
+
+  .p{width:120px;background:#fff;border-radius:9px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,.1);text-align:center;position:relative;cursor:pointer;transition:transform .2s,box-shadow .2s;border:2px solid transparent;flex-shrink:0}
+  .p:hover{transform:translateY(-2px);box-shadow:0 5px 14px rgba(0,0,0,.16)}
+  .p.m{border-color:#4a6fa5}
+  .p.f{border-color:#a5546e}
+  .p.u{border-color:#888}
+  .p.ch{background:linear-gradient(to bottom,#faf6ef,#f0e8d8)}
+  .p.sp{background:linear-gradient(to bottom,#f4f7fa,#e8edf4)}
+  .p.hyp{border-style:dashed;opacity:.85}
+  .p.new{box-shadow:0 0 0 3px #e65100,0 2px 6px rgba(0,0,0,.1)}
+  .p.direct{box-shadow:0 0 0 2px #b8860b,0 2px 6px rgba(0,0,0,.1);background:linear-gradient(to bottom,#fdf8ec,#f5ecd0)}
+  .p.american{background:linear-gradient(to bottom,#ecf2e8,#dce8d4)}
+  .p.mike{box-shadow:0 0 0 3px #b8860b,0 0 12px rgba(184,134,11,.4);border-color:#b8860b}
+
+  .av{width:48px;height:48px;border-radius:50%;margin:8px auto 4px;display:flex;align-items:center;justify-content:center;font-size:20px;border:2.5px solid}
+  .m .av{border-color:#4a6fa5;background:#e8eef6}
+  .f .av{border-color:#a5546e;background:#f6e8ee}
+  .u .av{border-color:#888;background:#eee}
+  .american .av{border-color:#2e7d32;background:#e8f5e9}
+
+  .nm{font-family:'Cinzel',serif;font-size:10.5px;font-weight:600;padding:0 5px;line-height:1.25;min-height:26px;display:flex;align-items:center;justify-content:center}
+  .dt{font-size:10px;color:#7a6a55;padding:1px 5px;font-style:italic;line-height:1.3}
+  .rl{font-size:9px;color:#fff;padding:2px 6px;margin:3px auto 6px;border-radius:7px;display:inline-block;white-space:nowrap}
+
+  .badge{position:absolute;top:3px;right:3px;width:16px;height:16px;border-radius:50%;font-size:9px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+  .bg-p{background:#2e7d32}
+  .bg-s{background:#558b2f}
+  .bg-m{background:#f9a825;color:#333}
+  .bg-h{background:#e65100}
+  .bg-n{background:#e65100}
+  .bg-d{background:#1565c0}
+
+  hr.gd{width:94%;max-width:1700px;border:none;border-top:1px dashed #c4b89a;margin:12px auto;position:relative}
+  hr.gd::after{content:attr(data-label);position:absolute;top:-8px;left:50%;transform:translateX(-50%);background:#f5f0e8;padding:0 10px;font-family:'Cinzel',serif;font-size:10px;color:#8b7355;letter-spacing:1px;white-space:nowrap}
+
+  .foot{text-align:center;padding:12px;font-size:11px;color:#8b7355;border-top:1px solid #d4c8b0;background:#ece4d4;line-height:1.6}
+
+  .tip{display:none;position:fixed;background:#2c1810;color:#e8d5b7;padding:10px 14px;border-radius:7px;font-size:12px;max-width:300px;z-index:100;line-height:1.45;box-shadow:0 4px 16px rgba(0,0,0,.3)}
+  .tip.vis{display:block}
+  .tip strong{color:#f0d898}
+  .tip .src{font-size:10px;color:#b8a080;margin-top:3px;display:block}
+
+  .branch-label{font-family:'Cinzel',serif;font-size:10px;color:#8b7355;text-align:center;margin-bottom:4px;letter-spacing:1px}
+
+  .spacer{width:30px;flex-shrink:0}
+  .spacer-lg{width:50px;flex-shrink:0}
+
+  .era-banner{background:linear-gradient(90deg,transparent,#d4c8b0 20%,#d4c8b0 80%,transparent);text-align:center;padding:6px 20px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;color:#5a4a35;margin:6px 0}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>The Churchill Family</h1>
+  <div class="sub">Dorset, England to Glendora, California · c.1450–Present · All Known Individuals</div>
+</div>
+
+<div class="legend">
+  <div class="legend-item"><div class="leg-dot" style="background:#faf6ef;border-color:#4a6fa5"></div> Churchill (Dorset)</div>
+  <div class="legend-item"><div class="leg-dot" style="background:#ecf2e8;border-color:#2e7d32"></div> Churchill (American)</div>
+  <div class="legend-item"><div class="leg-dot" style="background:#f4f7fa;border-color:#a5546e"></div> Spouse</div>
+  <div class="legend-item"><div class="leg-dot" style="background:#fdf8ec;border-color:#b8860b"></div> Direct Ancestor</div>
+  <div class="legend-item"><div class="leg-dot" style="background:#fff;border:2px dashed #e65100"></div> Hypothesis</div>
+  <div class="legend-item"><div class="leg-dot" style="background:#e65100"></div> New (Margaret's will)</div>
+  <div class="legend-item"><div class="leg-dot bg-p" style="width:13px;height:13px"></div> Proven</div>
+  <div class="legend-item"><div class="leg-dot bg-s" style="width:13px;height:13px"></div> Strong</div>
+  <div class="legend-item"><div class="leg-dot bg-m" style="width:13px;height:13px"></div> Moderate</div>
+  <div class="legend-item"><div class="leg-dot bg-h" style="width:13px;height:13px"></div> Hypothesis</div>
+  <div class="legend-item"><div class="leg-dot bg-d" style="width:13px;height:13px"></div> Y-DNA</div>
+</div>
+
+<div class="tree-wrap">
+<div class="tree">
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- DORSET SECTION: GENERATIONS I–V (c.1450–1641) -->
+<!-- ═══════════════════════════════════════════ -->
+
+<!-- ═══════ GEN I · c.1450 ═══════ -->
+<hr class="gd" data-label="GENERATION I · c.1450 · HYPOTHETICAL ANCESTORS">
+
+<div class="gen">
+  <div class="fam">
+    <div class="couple">
+      <div class="p m ch hyp direct" data-tip="<strong>Charles Churchill</strong><br>b. c.1450, Dorset?<br>Hypothesized father/grandfather of John Churchill of Dorchester. Appears in some compiled genealogies but NO primary source confirms this link.<br><span class='src'>Evidence: HYPOTHESIS — User-submitted trees only</span>">
+        <div class="badge bg-h">?</div>
+        <div class="av">👤</div>
+        <div class="nm">Charles Churchill</div>
+        <div class="dt">b. c.1450</div>
+        <div class="rl" style="background:#999">Unverified</div>
+      </div>
+      <div class="mlink hyp"></div>
+      <div class="p f sp hyp" data-tip="<strong>Margaret Woodville</strong><br>Hypothesized wife of Charles Churchill. Claimed connection to the Woodville/Wydeville family. NO primary evidence whatsoever.<br><span class='src'>Evidence: HYPOTHESIS — User-submitted trees only</span>">
+        <div class="badge bg-h">?</div>
+        <div class="av">👤</div>
+        <div class="nm">Margaret Woodville</div>
+        <div class="dt">b. c.1455?</div>
+        <div class="rl" style="background:#999">Unverified</div>
+      </div>
+    </div>
+    <div class="conn dash"></div>
+  </div>
+
+  <div class="spacer-lg"></div>
+
+  <div class="fam">
+    <div class="couple">
+      <div class="p m ch" data-tip="<strong>Roger Churchill of Catherston</strong><br>Verified in 1525 Subsidy Roll for Frampton. His daughter Margaret married Bartholomew Olde 1574 at Bradford Peverell. His grandson Roger of Muckleford (d.1603). Absent from Matthew/Jasper subsidy rolls — separate branch from Dorchester Churchills.<br><span class='src'>Evidence: STRONG — Subsidy Rolls, OPC, parish registers</span>">
+        <div class="badge bg-s">S</div>
+        <div class="av">⚜️</div>
+        <div class="nm">Roger Churchill</div>
+        <div class="dt">of Catherston<br>fl. 1525</div>
+        <div class="rl" style="background:#558b2f">Subsidy Rolls</div>
+      </div>
+    </div>
+    <div class="conn"></div>
+  </div>
+</div>
+
+<!-- ═══════ GEN II · c.1500–1557 ═══════ -->
+<hr class="gd" data-label="GENERATION II · c.1500–1557 · THE FOUNDING GENERATION">
+
+<div class="gen">
+  <!-- JOHN THE ELDER / BAILIFF + EDITH -->
+  <div class="fam">
+    <div class="branch-label">★ DORCHESTER MAIN LINE · MIKE'S DIRECT ANCESTOR ★</div>
+    <div class="couple">
+      <div class="p m ch direct" data-tip="<strong>John Churchill the Elder, Bailiff of Dorchester</strong><br>b. c.1500–1503, d. 1557, Dorchester.<br>Bailiff of Dorchester: 1524–25 (KEY — proves birth c.1500–03), 1540–41, 1544–45, 1546–48.<br>Will (PROB 11/39/347): names wife Edith, sons William & John (under 21), daughter Elizabeth, brother Rowland.<br>COMMON ANCESTOR of Mike Churchill and PM Winston Churchill.<br><span class='src'>Evidence: PROVEN — Will PROB 11/39 + Bailiff Records + OPC</span>">
+        <div class="badge bg-p">P</div>
+        <div class="av">⚖️</div>
+        <div class="nm">John Churchill</div>
+        <div class="dt">b. c.1500–03<br>d. 1557</div>
+        <div class="rl" style="background:#5c6bc0">Bailiff 1524–48</div>
+      </div>
+      <div class="mlink"></div>
+      <div class="p f sp" data-tip="<strong>Edith Bond</strong><br>Wife of John Churchill the Elder. Named as co-executor (with son William) in John's 1557 will. Identified as 'Bond' in connection document and OPC.<br><span class='src'>Evidence: PROVEN — Will PROB 11/39/347</span>">
+        <div class="badge bg-p">P</div>
+        <div class="av">👤</div>
+        <div class="nm">Edith Bond</div>
+        <div class="dt">wife of John</div>
+        <div class="rl" style="background:#7b5ea7">Executor 1557</div>
+      </div>
+    </div>
+    <div class="conn"></div>
+  </div>
+
+  <div class="spacer"></div>
+
+  <!-- ROWLAND + MARGARET WIDOW -->
+  <div class="fam">
+    <div class="branch-label">BRADFORD PEVERELL BRANCH (NEW)</div>
+    <div class="couple">
+      <div class="p m ch" data-tip="<strong>Rowland Churchill</strong><br>Brother of John Churchill (d.1557). Named in John's will receiving a bequest. NO will, NO other records found — a 'ghost' figure.<br>HYPOTHESIS: May have married Margaret [?] and settled in Bradford Peverell. If so, he is the link between the main Dorchester line and the Bradford Peverell Churchills.<br><span class='src'>Evidence: MODERATE — Named in brother's will only</span>">
+        <div class="badge bg-m">M</div>
+        <div class="av">👻</div>
+        <div class="nm">Rowland Churchill</div>
+        <div class="dt">brother of John<br>fl. 1557, d. bef. 1583?</div>
+        <div class="rl" style="background:#999">Ghost — No records</div>
+      </div>
+      <div class="mlink hyp"></div>
+      <div class="p f sp new" data-tip="<strong>Margaret Churchill, Widow</strong><br>Of Bradford Peverell. Will dated 21 Jan 1582/3, proved 19 Apr 1583 (PROB 11/65/221).<br>Burial: Bradford Peverell churchyard.<br>Names 3 sons-in-law: John Churchill, John Sobye, William Spynett.<br>Biological son: Robert.<br>A daughter 'the younger.'<br>Husband UNKNOWN — Rowland Churchill is prime candidate.<br>NOT the same as Margaret who married Bartholomew Olde (Roger's daughter).<br><span class='src'>Evidence: PROVEN (will) / HYPOTHESIS (Rowland marriage)</span>">
+        <div class="badge bg-n">N</div>
+        <div class="av">📜</div>
+        <div class="nm">Margaret [?]</div>
+        <div class="dt">d. early 1583<br>widow, Bradford Peverell</div>
+        <div class="rl" style="background:#e65100">Will 1583 — NEW</div>
+      </div>
+    </div>
+    <div class="conn dash"></div>
+  </div>
+
+  <div class="spacer"></div>
+
+  <!-- ROGER'S DAUGHTER MARGARET + BARTHOLOMEW OLDE -->
+  <div class="fam">
+    <div class="branch-label">CATHERSTON BRANCH</div>
+    <div class="couple">
+      <div class="p f ch" data-tip="<strong>Margaret Churchill</strong><br>DAUGHTER of Roger Churchill of Catherston. Married Bartholomew Olde 4 Oct 1574 at Bradford Peverell.<br>Her son Roger of Muckleford (d.1603) was Roger of Catherston's grandson.<br>DIFFERENT person from Margaret Churchill the widow (d.1583).<br><span class='src'>Evidence: STRONG — Parish register, OPC</span>">
+        <div class="badge bg-s">S</div>
+        <div class="av">👤</div>
+        <div class="nm">Margaret Churchill</div>
+        <div class="dt">dau. of Roger<br>m. 1574</div>
+        <div class="rl" style="background:#558b2f">Roger's daughter</div>
+      </div>
+      <div class="mlink"></div>
+      <div class="p m sp" data-tip="<strong>Bartholomew Olde</strong><br>Married Margaret Churchill (Roger's daughter) 4 Oct 1574 at Bradford Peverell.<br><span class='src'>Evidence: STRONG — Parish register</span>">
+        <div class="badge bg-s">S</div>
+        <div class="av">👤</div>
+        <div class="nm">Bartholomew Olde</div>
+        <div class="dt">m. 1574<br>Bradford Peverell</div>
+        <div class="rl" style="background:#795548">Bradford Peverell</div>
+      </div>
+    </div>
+    <div class="conn"></div>
+  </div>
+</div>
+
+<!-- ═══════ GEN III · c.1535–1602 ═══════ -->
+<hr class="gd" data-label="GENERATION III · c.1535–1602 · CHILDREN OF THE FOUNDING GENERATION">
+
+<div class="gen">
+  <!-- WILLIAM (direct ancestor) + wife -->
+  <div class="fam">
+    <div class="branch-label">★ John & Edith's children · MIKE'S LINE ★</div>
+    <div class="couple">
+      <div class="p m ch direct" data-tip="<strong>William Churchill Esq</strong><br>Elder son of John (d.1557) & Edith Bond. Co-executor of father's will.<br>Bailiff of Dorchester: 1567–68, 1573–74.<br>Will (PROB 11/100/350) dated 1602: names son John as heir, daughters Anne Browne, Vertue Hunton, Grace Watts.<br>Mike's direct ancestor through son John of Stinsford/Colliton House.<br><span class='src'>Evidence: PROVEN — Will PROB 11/100 + Bailiff Records</span>">
+        <div class="badge bg-p">P</div>
+        <div class="av">⚖️</div>
+        <div class="nm">William Churchill Esq</div>
+        <div class="dt">b. c.1535?<br>d. 1602</div>
+        <div class="rl" style="background:#5c6bc0">Bailiff 1567–74</div>
+      </div>
+      <div class="mlink"></div>
+      <div class="p f sp" data-tip="<strong>Dau. of John Swaine</strong><br>Wife of William Churchill Esq. Identified in OPC Dorset records. Not named in William's 1602 will — likely predeceased him.<br><span class='src'>Evidence: MODERATE — OPC Dorset</span>">
+        <div class="badge bg-m">M</div>
+        <div class="av">👤</div>
+        <div class="nm">— Swaine</div>
+        <div class="dt">dau. of John Swaine</div>
+        <div class="rl" style="background:#7a5070">Spouse</div>
+      </div>
+    </div>
+    <div class="conn"></div>
+  </div>
+
+  <!-- JOHN THE YOUNGER + Mary -->
+  <div class="fam">
+    <div class="branch-label">→ WINSTON'S LINE (younger son)</div>
+    <div class="couple">
+      <div class="p m ch" data-tip="<strong>John Churchill the Younger (of Corton)</strong><br>Younger son of John (d.1557), brother of William. Under 21 in 1557 will → born c.1537–40.<br>Described as 'John Churchell of Dowton [Corton] Gent' in Portesham registers.<br>Named as 'my sonne in Lawe' in Margaret Churchill's 1583 will — married one of Margaret's daughters.<br>His wife Mary buried Portesham 30 Mar 1580.<br>Daughter Anne baptised 15 Jul 1578.<br>His descendants lead to Sir Winston Churchill and the Dukes of Marlborough.<br><span class='src'>Evidence: PROVEN — Father's will + Portesham registers + Margaret's will</span>">
+        <div class="badge bg-p">P</div>
+        <div class="av">🏛️</div>
+        <div class="nm">John Churchill</div>
+        <div class="dt">b. c.1537–40<br>of Corton, Gent</div>
+        <div class="rl" style="background:#558b2f">Portesham Reg.</div>
+      </div>
+      <div class="mlink"></div>
+      <div class="p f sp" data-tip="<strong>Mary [?] Churchill</strong><br>'Mary Churchell, wife of John' — buried 30 March 1580 at Portesham.<br>Possibly a daughter of Margaret Churchill (widow of Bradford Peverell), which would make John Churchill Margaret's 'sonne in Lawe.'<br>Mother of Anne Churchill (bap. 1578).<br><span class='src'>Evidence: PROVEN — Portesham burial register</span>">
+        <div class="badge bg-p">P</div>
+        <div class="av">⛪</div>
+        <div class="nm">Mary [?]</div>
+        <div class="dt">wife of John<br>bur. 1580 Portesham</div>
+        <div class="rl" style="background:#a5546e">Parish Register</div>
+      </div>
+    </div>
+    <div class="conn"></div>
+  </div>
+
+  <!-- ELIZABETH -->
+  <div class="fam">
+    <div class="p f ch" data-tip="<strong>Elizabeth Churchill</strong><br>Daughter of John Churchill (d.1557) & Edith. Named in father's 1557 will.<br>No further records found.<br><span class='src'>Evidence: PROVEN — Will PROB 11/39/347</span>">
+      <div class="badge bg-p">P</div>
+      <div class="av">👤</div>
+      <div class="nm">Elizabeth Churchill</div>
+      <div class="dt">dau. of John sr.</div>
+      <div class="rl" style="background:#7b5ea7">1557 Will</div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+
+  <!-- MARGARET'S CHILDREN -->
+  <div class="fam">
+    <div class="branch-label">Margaret's children (1583 will)</div>
+    <div class="p m u new" data-tip="<strong>Robert [?Churchill]</strong><br>Biological son ('my sonne') of Margaret Churchill, widow of Bradford Peverell.<br>Receives multiple bequests in her 1583 will: household goods, livestock, agricultural items.<br>Surname uncertain — Churchill if from the Churchill marriage.<br><span class='src'>Evidence: PROVEN — Margaret's will PROB 11/65/221</span>">
+      <div class="badge bg-n">N</div>
+      <div class="av">📜</div>
+      <div class="nm">Robert [?Churchill]</div>
+      <div class="dt">son of Margaret</div>
+      <div class="rl" style="background:#e65100">NEW — 1583 will</div>
+    </div>
+  </div>
+
+  <!-- Daughter + John Sobye -->
+  <div class="fam">
+    <div class="couple">
+      <div class="p f sp new" data-tip="<strong>[Daughter of Margaret]</strong><br>Name unknown. Married John Sobye. Named indirectly via 'my sonne in Lawe John Sobye' in Margaret's 1583 will.<br><span class='src'>Evidence: STRONG — Margaret's will</span>">
+        <div class="badge bg-n">N</div>
+        <div class="av">📜</div>
+        <div class="nm">[Daughter]</div>
+        <div class="dt">m. Sobye</div>
+        <div class="rl" style="background:#e65100">NEW</div>
+      </div>
+      <div class="mlink"></div>
+      <div class="p m sp new" data-tip="<strong>John Sobye</strong><br>'My sonne in Lawe' of Margaret Churchill. Receives bequests including household goods and livestock in her 1583 will.<br><span class='src'>Evidence: PROVEN — Margaret's will PROB 11/65/221</span>">
+        <div class="badge bg-n">N</div>
+        <div class="av">📜</div>
+        <div class="nm">John Sobye</div>
+        <div class="dt">son-in-law</div>
+        <div class="rl" style="background:#e65100">NEW — 1583</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Daughter 'the younger' + William Spynett -->
+  <div class="fam">
+    <div class="couple">
+      <div class="p f sp new" data-tip="<strong>[Daughter 'the younger']</strong><br>Called 'my Daughter the younger' in Margaret's 1583 will. Name possibly Jone/Joan (difficult to read). Married William Spynett.<br><span class='src'>Evidence: STRONG — Margaret's will</span>">
+        <div class="badge bg-n">N</div>
+        <div class="av">📜</div>
+        <div class="nm">[Dau. 'the younger']</div>
+        <div class="dt">m. Spynett</div>
+        <div class="rl" style="background:#e65100">NEW</div>
+      </div>
+      <div class="mlink"></div>
+      <div class="p m sp new" data-tip="<strong>William Spynett</strong><br>'My sonne in Lawe' of Margaret Churchill. His children each received one sheep per year in Margaret's 1583 will.<br><span class='src'>Evidence: PROVEN — Margaret's will PROB 11/65/221</span>">
+        <div class="badge bg-n">N</div>
+        <div class="av">📜</div>
+        <div class="nm">William Spynett</div>
+        <div class="dt">son-in-law</div>
+        <div class="rl" style="background:#e65100">NEW — 1583</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+
+  <!-- ROGER OF MUCKLEFORD -->
+  <div class="fam">
+    <div class="branch-label">Olde children</div>
+    <div class="p m sp" data-tip="<strong>Roger of Muckleford</strong><br>d. 1603. Grandson of Roger Churchill of Catherston, son of Margaret Churchill & Bartholomew Olde.<br>Named 'Roger of Muckleford' in OPC records.<br><span class='src'>Evidence: STRONG — OPC Dorset</span>">
+      <div class="badge bg-s">S</div>
+      <div class="av">👤</div>
+      <div class="nm">Roger of Muckleford</div>
+      <div class="dt">d. 1603<br>grandson of Roger</div>
+      <div class="rl" style="background:#795548">OPC Dorset</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ GEN IV · c.1560–1602 ═══════ -->
+<hr class="gd" data-label="GENERATION IV · c.1560–1641 · GRANDCHILDREN">
+
+<div class="gen">
+  <!-- John (William's son) + Eleanor — DIRECT ANCESTOR -->
+  <div class="fam">
+    <div class="branch-label">★ William's children · MIKE'S LINE ★</div>
+    <div class="couple">
+      <div class="p m ch direct" data-tip="<strong>John Churchill Esq of Stinsford & Muston Manor</strong><br>Son and heir of William Churchill Esq (d.1602). Of Colliton House, Dorchester, then Stinsford & Muston Manor, Piddlehinton.<br>Married Eleanor Meller. 13 children recorded in 1623 Visitation of Dorset.<br>Mike's direct ancestor. Josiah Churchill (American emigrant) is of this generation.<br><span class='src'>Evidence: PROVEN — Will PROB 11/100 + 1623 Visitation of Dorset</span>">
+        <div class="badge bg-p">P</div>
+        <div class="av">🏰</div>
+        <div class="nm">John Churchill Esq</div>
+        <div class="dt">of Stinsford & Muston<br>son of William</div>
+        <div class="rl" style="background:#558b2f">Heir — 1602 Will</div>
+      </div>
+      <div class="mlink"></div>
+      <div class="p f sp" data-tip="<strong>Eleanor Meller</strong><br>Wife of John Churchill of Stinsford. Mother of 13 children recorded in 1623 Visitation of Dorset.<br>Will (PROB 11/186) dated 1641 names sons Richard, John, Maximilian, Thomas, William; daughters Edith Parr, Joane Chappell.<br><span class='src'>Evidence: PROVEN — 1623 Visitation + Will PROB 11/186</span>">
+        <div class="badge bg-p">P</div>
+        <div class="av">📜</div>
+        <div class="nm">Eleanor Meller</div>
+        <div class="dt">d. 1641</div>
+        <div class="rl" style="background:#7b5ea7">Will 1641</div>
+      </div>
+    </div>
+    <div class="conn"></div>
+  </div>
+
+  <!-- Anne Browne -->
+  <div class="fam">
+    <div class="p f ch" data-tip="<strong>Anne Browne née Churchill</strong><br>Daughter of William (d.1602). Named as 'Anne Browne' in father's 1602 will.<br><span class='src'>Evidence: PROVEN — Will PROB 11/100/350</span>">
+      <div class="badge bg-p">P</div>
+      <div class="av">👤</div>
+      <div class="nm">Anne Browne</div>
+      <div class="dt">née Churchill</div>
+      <div class="rl" style="background:#795548">1602 Will</div>
+    </div>
+  </div>
+
+  <!-- Vertue Hunton -->
+  <div class="fam">
+    <div class="p f ch" data-tip="<strong>Vertue Hunton née Churchill</strong><br>Daughter of William (d.1602). Named as 'Vertue Hunton' in father's 1602 will. Unusual first name — possibly a virtue name popular with Puritans.<br><span class='src'>Evidence: PROVEN — Will PROB 11/100/350</span>">
+      <div class="badge bg-p">P</div>
+      <div class="av">👤</div>
+      <div class="nm">Vertue Hunton</div>
+      <div class="dt">née Churchill</div>
+      <div class="rl" style="background:#795548">1602 Will</div>
+    </div>
+  </div>
+
+  <!-- Grace Watts -->
+  <div class="fam">
+    <div class="p f ch" data-tip="<strong>Grace Watts née Churchill</strong><br>Daughter of William (d.1602). Named as 'Grace Watts' in father's 1602 will.<br><span class='src'>Evidence: PROVEN — Will PROB 11/100/350</span>">
+      <div class="badge bg-p">P</div>
+      <div class="av">👤</div>
+      <div class="nm">Grace Watts</div>
+      <div class="dt">née Churchill</div>
+      <div class="rl" style="background:#795548">1602 Will</div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+
+  <!-- Anne Churchill (John the Younger's daughter) -->
+  <div class="fam">
+    <div class="branch-label">John the Younger's child</div>
+    <div class="p f ch" data-tip="<strong>Anne Churchill</strong><br>Baptised 15 July 1578 at Portesham, 'dau of John.'<br>Married 'Maximilian Moone Gent' on 4 Oct 1593 at Portesham as 'daughter of John Churchell of Dowton [Corton] Gent.'<br>This marriage links the two branches: Anne (John the Younger's line) married Maximilian (John of Colliton's son).<br><span class='src'>Evidence: PROVEN — Portesham parish registers</span>">
+      <div class="badge bg-p">P</div>
+      <div class="av">⛪</div>
+      <div class="nm">Anne Churchill</div>
+      <div class="dt">bap. 1578 Portesham<br>m. 1593</div>
+      <div class="rl" style="background:#558b2f">Parish Register</div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+
+  <!-- Spynett children -->
+  <div class="fam">
+    <div class="branch-label">Spynett children</div>
+    <div class="p u sp new" data-tip="<strong>Children of William Spynett</strong><br>Unnamed in Margaret's 1583 will. Each received one sheep per year from their grandmother Margaret Churchill.<br><span class='src'>Evidence: PROVEN — Margaret's will PROB 11/65/221</span>">
+      <div class="badge bg-n">N</div>
+      <div class="av">🐑</div>
+      <div class="nm">[Spynett children]</div>
+      <div class="dt">unnamed</div>
+      <div class="rl" style="background:#e65100">NEW — 1583</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ GEN V · c.1590–1641 ═══════ -->
+<hr class="gd" data-label="GENERATION V · c.1590–1641 · JOHN & ELEANOR'S CHILDREN (1623 VISITATION) + THE FORK">
+
+<div class="gen">
+  <div class="fam">
+    <div class="p m ch" data-tip="<strong>Richard Churchill</strong><br>Son of John & Eleanor of Colliton House / Stinsford. Named in Eleanor's 1641 will.<br><span class='src'>Evidence: PROVEN — Will PROB 11/186</span>">
+      <div class="badge bg-p">P</div>
+      <div class="av">👤</div>
+      <div class="nm">Richard</div>
+      <div class="dt">son</div>
+      <div class="rl" style="background:#7b5ea7">1641 Will</div>
+    </div>
+  </div>
+
+  <div class="fam">
+    <div class="p m ch" data-tip="<strong>John Churchill</strong><br>Son of John & Eleanor of Colliton House / Stinsford. Named in Eleanor's 1641 will.<br><span class='src'>Evidence: PROVEN — Will PROB 11/186</span>">
+      <div class="badge bg-p">P</div>
+      <div class="av">👤</div>
+      <div class="nm">John</div>
+      <div class="dt">son</div>
+      <div class="rl" style="background:#7b5ea7">1641 Will</div>
+    </div>
+  </div>
+
+  <!-- Maximilian + Anne (CROSS-BRANCH MARRIAGE) -->
+  <div class="fam">
+    <div class="couple">
+      <div class="p m ch" data-tip="<strong>Maximilian Churchill</strong><br>Son of John & Eleanor of Colliton House. Married Anne Churchill 'daughter of John Churchell of Dowton [Corton] Gent' on 4 Oct 1593 at Portesham.<br>Named in Eleanor's 1641 will. Described as 'Maximilian Moone Gent' in marriage register.<br>CROSS-BRANCH MARRIAGE connecting both John Churchill lines.<br><span class='src'>Evidence: PROVEN — Portesham register + Eleanor's will</span>">
+        <div class="badge bg-p">P</div>
+        <div class="av">⚭</div>
+        <div class="nm">Maximilian</div>
+        <div class="dt">m. 1593<br>Colliton line</div>
+        <div class="rl" style="background:#5c6bc0">Cross-branch ⚭</div>
+      </div>
+      <div class="mlink"></div>
+      <div class="p f ch" data-tip="<strong>Anne Churchill</strong><br>Daughter of John Churchill of Corton. Baptised 1578 at Portesham. Married Maximilian 4 Oct 1593.<br>This marriage united the two branches of the Churchill family.<br><span class='src'>Evidence: PROVEN — Portesham parish register</span>">
+        <div class="badge bg-p">P</div>
+        <div class="av">⛪</div>
+        <div class="nm">Anne Churchill</div>
+        <div class="dt">bap. 1578<br>Corton line</div>
+        <div class="rl" style="background:#558b2f">Portesham</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fam">
+    <div class="p m ch" data-tip="<strong>Thomas Churchill</strong><br>Son of John & Eleanor. Named in Eleanor's 1641 will.<br><span class='src'>Evidence: PROVEN — Will PROB 11/186</span>">
+      <div class="badge bg-p">P</div>
+      <div class="av">👤</div>
+      <div class="nm">Thomas</div>
+      <div class="dt">son</div>
+      <div class="rl" style="background:#7b5ea7">1641 Will</div>
+    </div>
+  </div>
+
+  <div class="fam">
+    <div class="p m ch" data-tip="<strong>William Churchill</strong><br>Son of John & Eleanor. Named in Eleanor's 1641 will.<br><span class='src'>Evidence: PROVEN — Will PROB 11/186</span>">
+      <div class="badge bg-p">P</div>
+      <div class="av">👤</div>
+      <div class="nm">William</div>
+      <div class="dt">son</div>
+      <div class="rl" style="background:#7b5ea7">1641 Will</div>
+    </div>
+  </div>
+
+  <div class="fam">
+    <div class="p f ch" data-tip="<strong>Edith Parr née Churchill</strong><br>Daughter of John & Eleanor. Named in Eleanor's 1641 will. First name 'Edith' may honor her great-grandmother Edith Bond (wife of John sr. d.1557).<br><span class='src'>Evidence: PROVEN — Will PROB 11/186</span>">
+      <div class="badge bg-p">P</div>
+      <div class="av">👤</div>
+      <div class="nm">Edith Parr</div>
+      <div class="dt">née Churchill</div>
+      <div class="rl" style="background:#7b5ea7">1641 Will</div>
+    </div>
+  </div>
+
+  <div class="fam">
+    <div class="p f ch" data-tip="<strong>Joane Chappell née Churchill</strong><br>Daughter of John & Eleanor. Named in Eleanor's 1641 will.<br><span class='src'>Evidence: PROVEN — Will PROB 11/186</span>">
+      <div class="badge bg-p">P</div>
+      <div class="av">👤</div>
+      <div class="nm">Joane Chappell</div>
+      <div class="dt">née Churchill</div>
+      <div class="rl" style="background:#7b5ea7">1641 Will</div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+
+  <!-- JOSIAH — MIKE'S LINE — EMIGRANT -->
+  <div class="fam">
+    <div class="branch-label">★ MIKE'S LINE · EMIGRATES TO AMERICA 🇺🇸 ★</div>
+    <div class="couple">
+      <div class="p m american direct" data-tip="<strong>Josiah Churchill</strong><br>b. c.1613, d. 1686/7. Emigrated to Connecticut c.1635. Married Elizabeth Foote 1638 in Wethersfield. Pequot War veteran (1637).<br>Same generation as John & Eleanor's 13 children. Specific parent unidentified — the KEY gap in Mike's line.<br>Founder of the American Churchill line.<br><span class='src'>Evidence: PROVEN (identity) / GAP (parentage) · Source: WikiTree-98; CT colonial records; Y-DNA Genesis confirms Dorset origin</span>">
+        <div class="badge bg-d">D</div>
+        <div class="av">⚓</div>
+        <div class="nm">Josiah Churchill</div>
+        <div class="dt">c.1613–1686/7<br>CT Emigrant</div>
+        <div class="rl" style="background:#1b5e20">🇺🇸 Wethersfield CT</div>
+      </div>
+      <div class="mlink"></div>
+      <div class="p f sp" data-tip="<strong>Elizabeth Foote</strong><br>Married Josiah 1638 in Wethersfield, CT. Daughter of one of Wethersfield's founding families.<br><span class='src'>Evidence: PROVEN — CT colonial records; WikiTree</span>">
+        <div class="badge bg-p">P</div>
+        <div class="av">👤</div>
+        <div class="nm">Elizabeth Foote</div>
+        <div class="dt">m. 1638</div>
+        <div class="rl" style="background:#7a5070">Spouse</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- OTHER DOCUMENTED INDIVIDUALS -->
+<hr class="gd" data-label="OTHER DOCUMENTED INDIVIDUALS">
+
+<div class="gen">
+  <div class="fam">
+    <div class="p f sp" data-tip="<strong>Dorathie</strong><br>Baptised 29 January 1600/1 at Portesham.<br>'Dau of Mary als Churchill' — the 'als' (alias) suggests Mary was known by the Churchill name.<br>Possibly a grandchild of John Churchill of Corton through a daughter named Mary.<br><span class='src'>Evidence: PROVEN — Portesham baptism register</span>">
+      <div class="badge bg-p">P</div>
+      <div class="av">⛪</div>
+      <div class="nm">Dorathie</div>
+      <div class="dt">bap. 1600/1<br>dau. of Mary als Churchill</div>
+      <div class="rl" style="background:#558b2f">Portesham</div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+
+  <div class="fam">
+    <div class="p m sp new" data-tip="<strong>Robert Morrice</strong><br>Named in Margaret Churchill's 1583 will as a recipient of bequests. Relationship to Margaret unclear — possibly a neighbor or friend in Bradford Peverell.<br><span class='src'>Evidence: PROVEN — Margaret's will PROB 11/65/221</span>">
+      <div class="badge bg-n">N</div>
+      <div class="av">📜</div>
+      <div class="nm">Robert Morrice</div>
+      <div class="dt">bequest recipient</div>
+      <div class="rl" style="background:#e65100">NEW — 1583</div>
+    </div>
+  </div>
+
+  <div class="fam">
+    <div class="p f sp" data-tip="<strong>Jone Cornuell, widow</strong><br>Of Bradford Peverell. Receives one peck of wheat in Margaret Churchill's 1583 will.<br><span class='src'>Evidence: PROVEN — Margaret's will</span>">
+      <div class="av">👤</div>
+      <div class="nm">Jone Cornuell</div>
+      <div class="dt">widow, Bradford Peverell</div>
+      <div class="rl" style="background:#999">1583 Will bequest</div>
+    </div>
+  </div>
+
+  <div class="fam">
+    <div class="p m sp" data-tip="<strong>John Fitts</strong><br>Of Bradford Peverell. Receives one peck of wheat and one peck of barley in Margaret Churchill's 1583 will.<br><span class='src'>Evidence: PROVEN — Margaret's will</span>">
+      <div class="av">👤</div>
+      <div class="nm">John Fitts</div>
+      <div class="dt">Bradford Peverell</div>
+      <div class="rl" style="background:#999">1583 Will bequest</div>
+    </div>
+  </div>
+
+  <div class="fam">
+    <div class="p f sp" data-tip="<strong>Alice Cobbe</strong><br>Of Bradford Peverell. Receives one peck of wheat and one peck of barley in Margaret Churchill's 1583 will.<br><span class='src'>Evidence: PROVEN — Margaret's will</span>">
+      <div class="av">👤</div>
+      <div class="nm">Alice Cobbe</div>
+      <div class="dt">Bradford Peverell</div>
+      <div class="rl" style="background:#999">1583 Will bequest</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- AMERICAN SECTION: GENERATIONS VI–XVI -->
+<!-- ═══════════════════════════════════════════ -->
+
+<div class="era-banner">🇺🇸 THE AMERICAN LINE · Connecticut → New York → California → Indiana → California 🇺🇸</div>
+
+<!-- GEN VI · Joseph + Sir Winston the Cavalier -->
+<hr class="gd" data-label="GENERATION VI · 1620–1699 · THE CAVALIER & THE COLONIST">
+
+<div class="gen">
+  <div class="fam">
+    <div class="branch-label">→ WINSTON'S LINE</div>
+    <div class="couple">
+      <div class="p m ch" data-tip="<strong>Sir Winston Churchill (The Cavalier)</strong><br>Born at Round Chimneys, Glanvilles Wootton. Royalist Captain, shot through arm 1645. Knighted after Restoration. Augmented coat of arms from Charles II 1661. MP. 12 children.<br><span class='src'>Evidence: PROVEN · Source: Burke's; DNB; Arms patent 1661</span>">
+        <div class="badge bg-p">P</div>
+        <div class="av">⚔️</div>
+        <div class="nm">Sir Winston Churchill</div>
+        <div class="dt">1620–1688</div>
+        <div class="rl" style="background:#8b0000">The Cavalier</div>
+      </div>
+      <div class="mlink"></div>
+      <div class="p f sp" data-tip="<strong>Elizabeth Drake</strong><br>Wife of Sir Winston. Mother of 12 children including the future Duke of Marlborough.<br><span class='src'>Source: Burke's Peerage</span>">
+        <div class="av">👤</div>
+        <div class="nm">Elizabeth Drake</div>
+        <div class="dt">&nbsp;</div>
+        <div class="rl" style="background:#7a5070">Spouse</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="spacer-lg"></div>
+
+  <div class="fam">
+    <div class="branch-label">★ MIKE'S LINE</div>
+    <div class="couple">
+      <div class="p m american direct" data-tip="<strong>Joseph Churchill</strong><br>Son of Josiah. Wethersfield, Connecticut.<br><span class='src'>Evidence: STRONG · Source: WikiTree; CT vital records</span>">
+        <div class="badge bg-s">S</div>
+        <div class="av">👤</div>
+        <div class="nm">Joseph Churchill</div>
+        <div class="dt">1649–1699</div>
+        <div class="rl" style="background:#1b5e20">Wethersfield CT</div>
+      </div>
+      <div class="mlink"></div>
+      <div class="p f sp" data-tip="<strong>Mary Catlin</strong><br>Wife of Joseph Churchill.<br><span class='src'>Source: WikiTree; CT records</span>">
+        <div class="av">👤</div>
+        <div class="nm">Mary Catlin</div>
+        <div class="dt">&nbsp;</div>
+        <div class="rl" style="background:#7a5070">Spouse</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="conn gold"></div>
+
+<!-- GEN VII · Samuel + Duke -->
+<hr class="gd" data-label="GENERATION VII · 1650–1769 · THE DUKE & THE FARMER">
+
+<div class="gen">
+  <div class="fam">
+    <div class="branch-label">→ WINSTON'S LINE</div>
+    <div class="couple">
+      <div class="p m ch" data-tip="<strong>John Churchill, 1st Duke of Marlborough</strong><br>One of the greatest military commanders in European history. Victor of Blenheim 1704. Rewarded with Blenheim Palace.<br><span class='src'>Evidence: PROVEN · Source: Burke's; DNB; Blenheim records</span>">
+        <div class="badge bg-p">P</div>
+        <div class="av">👑</div>
+        <div class="nm">John Churchill</div>
+        <div class="dt">1650–1722</div>
+        <div class="rl" style="background:#4a0082">1st Duke of Marlborough</div>
+      </div>
+      <div class="mlink"></div>
+      <div class="p f sp" data-tip="<strong>Sarah Jennings</strong><br>Duchess of Marlborough. Confidante of Queen Anne.<br><span class='src'>Source: Burke's; DNB</span>">
+        <div class="av">👑</div>
+        <div class="nm">Sarah Jennings</div>
+        <div class="dt">&nbsp;</div>
+        <div class="rl" style="background:#7a5070">Duchess</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="spacer-lg"></div>
+
+  <div class="fam">
+    <div class="couple">
+      <div class="p m american direct" data-tip="<strong>Samuel Churchill</strong><br>Wethersfield, Connecticut. Son of Joseph.<br><span class='src'>Evidence: STRONG · Source: WikiTree; CT vital records</span>">
+        <div class="badge bg-s">S</div>
+        <div class="av">👤</div>
+        <div class="nm">Samuel Churchill</div>
+        <div class="dt">1688–1769</div>
+        <div class="rl" style="background:#1b5e20">Wethersfield CT</div>
+      </div>
+      <div class="mlink"></div>
+      <div class="p f sp" data-tip="<strong>Martha Boardman</strong><br>Wife of Samuel Churchill.<br><span class='src'>Source: WikiTree</span>">
+        <div class="av">👤</div>
+        <div class="nm">Martha Boardman</div>
+        <div class="dt">&nbsp;</div>
+        <div class="rl" style="background:#7a5070">Spouse</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="conn gold"></div>
+
+<!-- GEN VIII · Ezekiel + Spencer-Churchill -->
+<hr class="gd" data-label="GENERATION VIII · 1764–1813 · WESTWARD EXPANSION">
+
+<div class="gen">
+  <div class="fam">
+    <div class="branch-label">→ WINSTON'S LINE (→ Spencer-Churchill)</div>
+    <div class="p f ch" data-tip="<strong>Lady Anne Churchill</strong><br>Daughter of the 1st Duke. Married Charles Spencer, 3rd Earl of Sunderland. The Spencer-Churchill line begins here, leading to PM Winston Churchill.<br><span class='src'>Source: Burke's Peerage</span>">
+      <div class="av">👑</div>
+      <div class="nm">Lady Anne Churchill</div>
+      <div class="dt">&nbsp;</div>
+      <div class="rl" style="background:#4a0082">→ Spencer line</div>
+    </div>
+  </div>
+
+  <div class="spacer-lg"></div>
+
+  <div class="fam">
+    <div class="couple">
+      <div class="p m american direct" data-tip="<strong>Ezekiel Churchill</strong><br>Massachusetts to Alexander, New York. Westward migration begins.<br><span class='src'>Evidence: MODERATE · Source: Ancestry trees; WikiTree</span>">
+        <div class="badge bg-m">M</div>
+        <div class="av">🗺️</div>
+        <div class="nm">Ezekiel Churchill</div>
+        <div class="dt">1764–1813</div>
+        <div class="rl" style="background:#1b5e20">MA → NY</div>
+      </div>
+      <div class="mlink"></div>
+      <div class="p f sp" data-tip="<strong>Elizabeth Churchill</strong><br>Wife of Ezekiel. Shared surname suggests possible distant relation.<br><span class='src'>Source: Ancestry trees</span>">
+        <div class="av">👤</div>
+        <div class="nm">Elizabeth Churchill</div>
+        <div class="dt">&nbsp;</div>
+        <div class="rl" style="background:#7a5070">Spouse</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="conn gold"></div>
+
+<!-- GEN IX · C.D. Churchill -->
+<hr class="gd" data-label="GENERATION IX · 1811–1893 · NEW YORK">
+
+<div class="gen">
+  <div class="fam">
+    <div class="couple">
+      <div class="p m american direct" data-tip="<strong>C.D. Churchill</strong><br>Ellington, New York.<br><span class='src'>Evidence: MODERATE · Source: Ancestry trees; Census records</span>">
+        <div class="badge bg-m">M</div>
+        <div class="av">👤</div>
+        <div class="nm">C.D. Churchill</div>
+        <div class="dt">1811–1893</div>
+        <div class="rl" style="background:#1b5e20">Ellington, NY</div>
+      </div>
+      <div class="mlink"></div>
+      <div class="p f sp" data-tip="<strong>Jane E. Churchill</strong><br>Wife of C.D. Churchill.<br><span class='src'>Source: Ancestry trees</span>">
+        <div class="av">👤</div>
+        <div class="nm">Jane E. Churchill</div>
+        <div class="dt">&nbsp;</div>
+        <div class="rl" style="background:#7a5070">Spouse</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="conn gold"></div>
+
+<!-- GEN X · Willis F. + Lord Randolph -->
+<hr class="gd" data-label="GENERATION X · 1849–1926 · CALIFORNIA & THE EXCHEQUER">
+
+<div class="gen">
+  <div class="fam">
+    <div class="branch-label">→ WINSTON'S LINE</div>
+    <div class="couple">
+      <div class="p m ch" data-tip="<strong>Lord Randolph Churchill</strong><br>Chancellor of the Exchequer. Married Jennie Jerome of Brooklyn, New York.<br><span class='src'>Source: Burke's Peerage; DNB</span>">
+        <div class="badge bg-p">P</div>
+        <div class="av">🎩</div>
+        <div class="nm">Lord Randolph Churchill</div>
+        <div class="dt">1849–1895</div>
+        <div class="rl" style="background:#4a0082">Chancellor</div>
+      </div>
+      <div class="mlink"></div>
+      <div class="p f sp" data-tip="<strong>Jennie Jerome</strong><br>American-born, from Brooklyn, New York.<br><span class='src'>Source: Burke's; DNB</span>">
+        <div class="av">🗽</div>
+        <div class="nm">Jennie Jerome</div>
+        <div class="dt">American-born</div>
+        <div class="rl" style="background:#7a5070">Spouse</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="spacer-lg"></div>
+
+  <div class="fam">
+    <div class="couple">
+      <div class="p m american direct" data-tip="<strong>Willis F. Churchill</strong><br>New York to San Joaquin, California. The Churchill line reaches the West Coast.<br><span class='src'>Evidence: MODERATE · Source: Ancestry trees; Census records</span>">
+        <div class="badge bg-m">M</div>
+        <div class="av">🌄</div>
+        <div class="nm">Willis F. Churchill</div>
+        <div class="dt">1864–1926</div>
+        <div class="rl" style="background:#1b5e20">NY → CA</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="conn gold"></div>
+
+<!-- GEN XI · Harold + PM Winston -->
+<hr class="gd" data-label="GENERATION XI · 1874–1978 · THE PRIME MINISTER & THE GREAT-GRANDFATHER">
+
+<div class="gen">
+  <div class="fam">
+    <div class="branch-label">→ WINSTON'S LINE</div>
+    <div class="couple">
+      <div class="p m ch" style="width:130px" data-tip="<strong>Sir Winston Spencer Churchill</strong><br>Prime Minister of the United Kingdom. Led Britain through WWII. Nobel Prize in Literature 1953. Born at Blenheim Palace.<br><span class='src'>Evidence: PROVEN · Source: Burke's; DNB; Nobel records</span>">
+        <div class="badge bg-p">P</div>
+        <div class="av">🦁</div>
+        <div class="nm">Winston S. Churchill</div>
+        <div class="dt">1874–1965</div>
+        <div class="rl" style="background:#8b0000">Prime Minister</div>
+      </div>
+      <div class="mlink"></div>
+      <div class="p f sp" data-tip="<strong>Clementine Hozier</strong><br>Wife of PM Winston Churchill.<br><span class='src'>Source: Burke's</span>">
+        <div class="av">👤</div>
+        <div class="nm">Clementine Hozier</div>
+        <div class="dt">&nbsp;</div>
+        <div class="rl" style="background:#7a5070">Spouse</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="spacer-lg"></div>
+
+  <div class="fam">
+    <div class="couple">
+      <div class="p m american direct" data-tip="<strong>Harold Churchill</strong><br>Mike's great-grandfather. Colorado to Whittier, California.<br><span class='src'>Evidence: MODERATE · Source: Ancestry trees; Family records</span>">
+        <div class="badge bg-m">M</div>
+        <div class="av">👤</div>
+        <div class="nm">Harold Churchill</div>
+        <div class="dt">1898–1978</div>
+        <div class="rl" style="background:#1b5e20">CO → Whittier CA</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="conn gold"></div>
+
+<!-- GEN XII · Jack -->
+<hr class="gd" data-label="GENERATION XII · GRANDFATHER · WARSAW, INDIANA">
+
+<div class="gen">
+  <div class="fam">
+    <div class="couple">
+      <div class="p m american direct" data-tip="<strong>Jack Churchill</strong><br>Mike's grandfather. Warsaw, Indiana. Married Miriam Sickle. Died 2008.<br><span class='src'>Evidence: FAMILY KNOWLEDGE · Source: Family records; Churchill Origins Report</span>">
+        <div class="badge bg-d">D</div>
+        <div class="av">👤</div>
+        <div class="nm">Jack Churchill</div>
+        <div class="dt">d. 2008</div>
+        <div class="rl" style="background:#1b5e20">Warsaw, IN</div>
+      </div>
+      <div class="mlink"></div>
+      <div class="p f sp" data-tip="<strong>Miriam Sickle</strong><br>Wife of Jack Churchill.<br><span class='src'>Source: Family records</span>">
+        <div class="av">👤</div>
+        <div class="nm">Miriam Sickle</div>
+        <div class="dt">&nbsp;</div>
+        <div class="rl" style="background:#7a5070">Spouse</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="conn gold"></div>
+
+<!-- GEN XIII · Kenneth -->
+<hr class="gd" data-label="GENERATION XIII · FATHER · WARSAW, INDIANA">
+
+<div class="gen">
+  <div class="fam">
+    <div class="couple">
+      <div class="p m american direct" data-tip="<strong>Kenneth Churchill</strong><br>Mike's father. Born 1947, Warsaw, Indiana. Son of Jack and Miriam Churchill. Died 2022.<br><span class='src'>Evidence: FAMILY KNOWLEDGE · Source: Family records</span>">
+        <div class="badge bg-d">D</div>
+        <div class="av">👤</div>
+        <div class="nm">Kenneth Churchill</div>
+        <div class="dt">1947–2022</div>
+        <div class="rl" style="background:#1b5e20">Warsaw, IN</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="conn gold"></div>
+
+<!-- GEN XIV · MIKE -->
+<hr class="gd" data-label="GENERATION XIV · MIKE CHURCHILL · GLENDORA, CALIFORNIA">
+
+<div class="gen">
+  <div class="fam">
+    <div class="couple">
+      <div class="p m american mike" style="width:140px" data-tip="<strong>Mike Churchill</strong><br>Born June 11, 1976, Glendora, California. Outreach Pastor at Cornerstone Bible Church. 13th generation from John Churchill, Bailiff of Dorchester. Distant cousin (~12th–13th) of PM Winston Churchill through their shared 1557 ancestor.<br><span class='src'>Y-DNA Genesis Project confirms Dorset origin</span>">
+        <div class="badge bg-d">D</div>
+        <div class="av">⭐</div>
+        <div class="nm">Mike Churchill</div>
+        <div class="dt">b. 1976 · Glendora, CA</div>
+        <div class="rl" style="background:#b8860b">★ YOU ★</div>
+      </div>
+      <div class="mlink"></div>
+      <div class="p f sp" style="width:140px" data-tip="<strong>Audra Jordan Churchill</strong><br>Wife of Mike Churchill. née Jordan.<br><span class='src'>Source: Family</span>">
+        <div class="av">👤</div>
+        <div class="nm">Audra Jordan Churchill</div>
+        <div class="dt">&nbsp;</div>
+        <div class="rl" style="background:#7a5070">Spouse</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="conn gold"></div>
+
+<!-- GEN XV · MIKE'S CHILDREN -->
+<hr class="gd" data-label="GENERATION XV · THE NEXT GENERATION · GLENDORA, CALIFORNIA">
+
+<div class="gen">
+  <div class="fam">
+    <div class="couple">
+      <div class="p f american" data-tip="<strong>Samantha Churchill</strong><br>Age 16 (b. ~2010). Mike and Audra's eldest daughter.<br><span class='src'>Source: Family</span>">
+        <div class="av">👤</div>
+        <div class="nm">Samantha Churchill</div>
+        <div class="dt">Age 16</div>
+        <div class="rl" style="background:#1b5e20">Glendora</div>
+      </div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <div class="fam">
+    <div class="couple">
+      <div class="p m american" data-tip="<strong>Titus Churchill</strong><br>Age 14 (b. ~2012). Mike and Audra's son.<br><span class='src'>Source: Family</span>">
+        <div class="av">👤</div>
+        <div class="nm">Titus Churchill</div>
+        <div class="dt">Age 14</div>
+        <div class="rl" style="background:#1b5e20">Glendora</div>
+      </div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <div class="fam">
+    <div class="couple">
+      <div class="p f american" data-tip="<strong>Hope Churchill</strong><br>Age 9 (b. ~2017). Mike and Audra's youngest daughter.<br><span class='src'>Source: Family</span>">
+        <div class="av">👤</div>
+        <div class="nm">Hope Churchill</div>
+        <div class="dt">Age 9</div>
+        <div class="rl" style="background:#1b5e20">Glendora</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end .tree -->
+</div><!-- end .tree-wrap -->
+
+<div class="foot">
+  <strong>The Churchill Family · c.1450–Present · 15 Generations · 60+ Individuals</strong><br>
+  Dorset, England → Connecticut → New York → California → Indiana → California<br>
+  Mike's relationship to PM Winston Churchill: <strong>~12th–13th cousins</strong> · Shared ancestor: John Churchill, Bailiff of Dorchester (d. 1557)<br>
+  Sources: PROB 11/39 (1557) · <strong style="color:#e65100">PROB 11/65/221 (1583) NEW</strong> · PROB 11/100 (1602) · PROB 11/186 (1641) · OPC Dorset · Portesham Parish Registers · 1525 Subsidy Rolls · Bailiff Lists · Burke's Peerage · WikiTree · Ancestry · Y-DNA Genesis Project<br>
+  <span style="color:#e65100">🔶 Orange = NEW from Margaret's 1583 will</span> · 🟡 Gold border = Mike's direct ancestry line · 🟢 Green = American line<br>
+  <em>Last updated: April 2026 · Hover over any card for sources and evidence</em>
+</div>
+
+<div class="tip" id="tip"></div>
+
+<script>
+const tip=document.getElementById('tip');
+document.querySelectorAll('[data-tip]').forEach(el=>{
+  el.addEventListener('mouseenter',e=>{
+    tip.innerHTML=el.dataset.tip;
+    tip.classList.add('vis');
+  });
+  el.addEventListener('mousemove',e=>{
+    let x=e.clientX+12,y=e.clientY+12;
+    if(x+310>window.innerWidth)x=e.clientX-310;
+    if(y+150>window.innerHeight)y=e.clientY-150;
+    tip.style.left=x+'px';tip.style.top=y+'px';
+  });
+  el.addEventListener('mouseleave',()=>tip.classList.remove('vis'));
+});
+</script>
+</body>
+</html>
