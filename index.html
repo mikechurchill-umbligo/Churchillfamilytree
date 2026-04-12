@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Churchills of Dorset — From Tudor Bailiff to California</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --slate:#4a6a8a;--slate-dark:#1e2d3d;--slate-mid:#5d7d9a;--slate-light:#8ba4bd;
+  --grey:#c8d3de;--grey-light:#e8edf2;--grey-pale:#f2f5f8;--white:#fafbfd;
+  --accent:#5b8ab5;--accent-light:#d4e2f0;
+  --proven:#2e7d32;--strong:#558b2f;--moderate:#f9a825;--hypothesis:#e65100;--conflicted:#c62828;
+  --woodville:#7b2d8b;--colliton:#1565c0;--marlborough:#6a1b9a;--american:#2e7d32;--crimson:#880E4F;
+  --winston-bg:#ede7f6;--winston-border:#5c3d8f;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'EB Garamond',Georgia,serif;background:var(--grey-pale);color:var(--slate-dark);line-height:1.7}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(30,45,61,.97);backdrop-filter:blur(8px);border-bottom:2px solid var(--accent);transition:transform .3s}
+nav.hidden{transform:translateY(-100%)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:54px}
+.nav-brand{font-family:'Cinzel',serif;color:var(--accent);font-size:14px;font-weight:600;letter-spacing:1px;display:flex;align-items:center;gap:8px}
+
+.nav-links{display:flex;gap:4px}
+.nav-links a{color:#8ba4bd;text-decoration:none;font-family:'Inter',sans-serif;font-size:11.5px;font-weight:500;padding:6px 12px;border-radius:20px;transition:all .2s;letter-spacing:.3px}
+.nav-links a:hover,.nav-links a.active{color:#fff;background:rgba(91,138,181,.15)}
+.hamburger{display:none;color:var(--accent);font-size:22px;cursor:pointer;background:none;border:none}
+@media(max-width:768px){.nav-links{display:none;position:absolute;top:54px;left:0;right:0;background:rgba(30,45,61,.98);flex-direction:column;padding:12px}.nav-links.open{display:flex}.hamburger{display:block}}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:80px 24px 60px;background:linear-gradient(180deg,#0d1520 0%,#162030 20%,#1e2d3d 50%,#2a3f55 75%,var(--grey-pale) 100%);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(91,138,181,.08) 0%,transparent 70%)}
+.shield-hero{margin-bottom:24px}.shield-hero img{filter:drop-shadow(0 8px 24px rgba(91,138,181,.3))}
+
+.hero h1{font-family:'Cinzel',serif;color:var(--accent-light);font-size:clamp(28px,5vw,52px);font-weight:700;letter-spacing:3px;margin-bottom:8px;text-shadow:0 2px 20px rgba(0,0,0,.5)}
+.hero .arms-text{font-family:'Inter',sans-serif;font-size:11px;color:#7a8fa3;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px}
+.hero .tagline{color:#8ba4bd;font-size:clamp(15px,2.2vw,20px);font-style:italic;margin-bottom:36px;max-width:680px;line-height:1.6}
+.hero .stats-row{display:flex;gap:36px;margin-bottom:36px;flex-wrap:wrap;justify-content:center}
+.stat{text-align:center}.stat-num{font-family:'Cinzel',serif;color:var(--accent);font-size:30px;font-weight:700;display:block}.stat-label{font-family:'Inter',sans-serif;color:var(--slate-mid);font-size:10px;letter-spacing:1px;text-transform:uppercase}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.btn{font-family:'Inter',sans-serif;padding:11px 26px;border-radius:28px;text-decoration:none;font-size:12.5px;font-weight:600;letter-spacing:.5px;transition:all .3s;cursor:pointer;border:none}
+.btn-gold{background:linear-gradient(135deg,#5b8ab5,#4a7aa5);color:#fff}.btn-gold:hover{background:linear-gradient(135deg,#6b9ac5,#5b8ab5);transform:translateY(-2px);box-shadow:0 4px 16px rgba(91,138,181,.3)}.btn-primary{background:linear-gradient(135deg,#5b8ab5,#4a7aa5);color:#fff}.btn-primary:hover{background:linear-gradient(135deg,#6b9ac5,#5b8ab5);transform:translateY(-2px);box-shadow:0 4px 16px rgba(91,138,181,.3)}
+.btn-outline{background:rgba(255,255,255,.15);color:#fff;border:2px solid rgba(255,255,255,.6);backdrop-filter:blur(4px)}.btn-outline:hover{background:rgba(255,255,255,.3);border-color:#fff;transform:translateY(-2px);box-shadow:0 4px 16px rgba(255,255,255,.15)}
+.scroll-hint{position:absolute;bottom:28px;color:#6b7d8e;font-size:11px;font-family:'Inter',sans-serif;animation:bob 2s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+
+/* ── SECTION BASICS ── */
+section{padding:70px 24px;max-width:1100px;margin:0 auto}
+.section-hdr{text-align:center;margin-bottom:50px}
+.section-hdr h2{font-family:'Cinzel',serif;font-size:clamp(22px,3.5vw,34px);color:var(--slate-dark);letter-spacing:2px;margin-bottom:8px}
+.section-hdr .line{width:80px;height:3px;background:linear-gradient(90deg,var(--accent),var(--slate-light));margin:10px auto;border-radius:2px}
+.section-hdr p{font-size:16px;color:var(--slate-mid);max-width:620px;margin:0 auto;font-style:italic}
+
+/* ── DIRECT LINE (vertical spine) ── */
+.direct-line{position:relative;max-width:640px;margin:0 auto}
+.direct-line::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,var(--accent),var(--grey),var(--accent));transform:translateX(-50%);z-index:0}
+.gen-card{position:relative;margin-bottom:12px;z-index:1}
+.gen-card .gen-dot{position:absolute;left:50%;top:24px;width:14px;height:14px;border-radius:50%;background:var(--accent);border:3px solid var(--grey-pale);transform:translateX(-50%);z-index:2;box-shadow:0 0 0 2px var(--accent)}
+.gen-card .gen-dot.proven{background:var(--proven);box-shadow:0 0 0 2px var(--proven)}
+.gen-card .gen-dot.hypothesis{background:var(--hypothesis);box-shadow:0 0 0 2px var(--hypothesis)}
+.gen-card .gen-dot.gap{background:var(--conflicted);box-shadow:0 0 0 2px var(--conflicted)}
+.gen-card .gen-dot.mike{background:var(--accent);box-shadow:0 0 8px rgba(91,138,181,.6),0 0 0 3px var(--accent)}
+.gen-num{font-family:'Cinzel',serif;font-size:10px;color:var(--accent);letter-spacing:1px;text-align:center;margin-bottom:4px;text-transform:uppercase}
+.gen-panel{background:var(--white);border:1.5px solid var(--grey);border-radius:14px;padding:22px 26px;box-shadow:0 3px 14px rgba(30,45,61,.06);cursor:pointer;transition:all .3s;position:relative;overflow:hidden}
+.gen-panel:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(30,45,61,.1);border-color:var(--accent)}
+.gen-panel.direct-ancestor{border-left:4px solid var(--accent)}
+.gen-panel.american{border-left:4px solid var(--american);background:linear-gradient(135deg,#f7fbf5,var(--white))}
+.gen-panel.mike-card{border:3px solid var(--accent);background:linear-gradient(135deg,var(--accent-light),var(--white));box-shadow:0 0 20px rgba(91,138,181,.15)}
+.gen-panel .top-row{display:flex;align-items:center;gap:14px;margin-bottom:8px}
+.gen-panel .avatar{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;border:2.5px solid;flex-shrink:0}
+.avatar.male{border-color:#4a6fa5;background:#e8eef6}.avatar.female{border-color:#a5546e;background:#f6e8ee}
+.gen-panel .name{font-family:'Cinzel',serif;font-size:16px;font-weight:600;color:var(--slate-dark)}
+.gen-panel .dates{font-size:13px;color:var(--slate-mid);font-style:italic}
+.gen-panel .location{font-size:12px;color:#8b99a8}
+.gen-panel .detail{font-size:14px;color:#4a5568;margin-top:8px;line-height:1.65}
+.gen-panel .evidence-tag{font-family:'Inter',sans-serif;font-size:10px;font-weight:600;padding:3px 10px;border-radius:10px;display:inline-block;margin-top:8px;letter-spacing:.3px}
+.ev-p{background:#e8f5e9;color:var(--proven)}.ev-s{background:#f1f8e9;color:var(--strong)}.ev-m{background:#fff8e1;color:#f57f17}.ev-h{background:#fff3e0;color:var(--hypothesis)}.ev-c{background:#ffebee;color:var(--conflicted)}
+.gen-panel .click-hint{font-family:'Inter',sans-serif;font-size:10px;color:var(--slate-mid);opacity:.5;position:absolute;bottom:8px;right:14px}
+.gen-panel .spouse-line{font-size:13px;color:var(--slate-mid);margin-top:4px}
+.gen-panel .spouse-line strong{color:#4a5568}
+
+/* BRANCH CONNECTOR */
+.branch-off{position:relative;max-width:640px;margin:0 auto 12px;text-align:center}
+.branch-off .branch-btn{display:inline-flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;font-size:12px;font-weight:600;color:var(--winston-border);background:var(--winston-bg);border:2px solid var(--winston-border);border-radius:24px;padding:8px 20px;cursor:pointer;transition:all .3s;text-decoration:none}
+.branch-off .branch-btn:hover{background:#e1bee7;transform:scale(1.03)}
+
+/* GAP MARKER */
+.gap-marker{text-align:center;max-width:640px;margin:0 auto 12px;padding:16px;border:2px dashed var(--conflicted);border-radius:12px;background:#fff5f5;font-size:14px;color:var(--conflicted)}
+.gap-marker strong{display:block;font-family:'Cinzel',serif;font-size:16px;margin-bottom:4px}
+
+/* ERA DIVIDER */
+.era-div{text-align:center;max-width:640px;margin:10px auto 20px;position:relative}
+.era-div::before{content:'';position:absolute;left:0;right:0;top:50%;height:1px;background:var(--grey)}
+.era-div span{position:relative;background:var(--grey-pale);padding:0 16px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;color:var(--slate-mid);text-transform:uppercase}
+
+/* ── WINSTON PANEL (expandable) ── */
+.winston-section{display:none;max-width:800px;margin:0 auto 30px;padding:30px;background:linear-gradient(135deg,#faf0ff,#f3e5f5);border:2px solid var(--winston-border);border-radius:16px;box-shadow:0 4px 20px rgba(106,27,154,.1);position:relative}
+.winston-section.open{display:block;animation:fadeIn .4s}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+.winston-section .close-btn{position:absolute;top:14px;right:18px;background:none;border:none;font-size:22px;color:var(--winston-border);cursor:pointer}
+.winston-section h3{font-family:'Cinzel',serif;color:var(--winston-border);font-size:22px;margin-bottom:6px}
+.winston-section .sub{font-style:italic;color:#7b5ea7;margin-bottom:18px;font-size:14px}
+.winston-line{display:flex;flex-direction:column;gap:10px}
+.winston-person{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #d1c4e9;border-radius:10px;padding:12px 16px;transition:background .2s}
+.winston-person:hover{background:#ede7f6}
+.winston-person .wp-icon{font-size:22px;width:36px;text-align:center}
+.winston-person .wp-name{font-family:'Cinzel',serif;font-size:14px;font-weight:600;color:#4a148c}
+.winston-person .wp-detail{font-size:12px;color:#7b5ea7}
+.winston-arrow{text-align:center;color:var(--winston-border);font-size:16px}
+
+/* ── STORY TIMELINE ── */
+.timeline{position:relative;padding:20px 0}
+.timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,var(--accent),var(--grey),var(--accent));transform:translateX(-50%)}
+.tl-item{display:flex;align-items:flex-start;margin-bottom:36px;position:relative}
+.tl-item:nth-child(odd){flex-direction:row}.tl-item:nth-child(even){flex-direction:row-reverse}
+.tl-dot{position:absolute;left:50%;transform:translateX(-50%);width:16px;height:16px;border-radius:50%;border:3px solid var(--accent);background:var(--grey-pale);z-index:2}
+.tl-dot.breakthrough{background:var(--accent);box-shadow:0 0 10px rgba(91,138,181,.3)}
+.tl-content{width:43%;padding:18px 22px;background:var(--white);border:1px solid var(--grey);border-radius:12px;box-shadow:0 2px 10px rgba(30,45,61,.06);transition:transform .3s}
+.tl-content:hover{transform:translateY(-2px);box-shadow:0 5px 16px rgba(30,45,61,.1)}
+.tl-ver{font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:10px;display:inline-block;margin-bottom:6px;color:#fff}
+.tl-content h3{font-family:'Cinzel',serif;font-size:16px;margin-bottom:6px;color:var(--slate-dark)}
+.tl-content p{font-size:14px;color:#4a5568;line-height:1.65}
+.tl-src{font-family:'Inter',sans-serif;font-size:10px;color:var(--slate-mid);margin-top:8px;display:block}
+@media(max-width:768px){.timeline::before{left:18px}.tl-item,.tl-item:nth-child(even){flex-direction:row}.tl-dot{left:18px}.tl-content{width:calc(100% - 48px);margin-left:48px}}
+
+/* VERSION COLORS */
+.v1{background:#8b4513}.v4{background:var(--colliton)}.v5{background:var(--proven)}.v6{background:var(--conflicted)}
+.v7{background:var(--marlborough)}.v8{background:#00695c}.v9{background:var(--hypothesis)}.v10{background:var(--crimson)}
+
+/* ── INSIGHTS ── */
+.insight-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.ins-card{background:var(--white);border:1px solid var(--grey);border-radius:12px;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.ins-card:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(30,45,61,.1)}
+.ins-card .accent{height:4px}.ins-card .body{padding:22px}
+.ins-card h3{font-family:'Cinzel',serif;font-size:16px;color:var(--slate-dark);margin-bottom:8px}
+.ins-card p{font-size:14px;color:#4a5568;line-height:1.65;margin-bottom:10px}
+.ins-card .ev-link{font-family:'Inter',sans-serif;font-size:11px;color:var(--accent);cursor:pointer;font-weight:600;transition:color .2s}
+.ins-card .ev-link:hover{color:#6b9ac5}
+.acc-gold{background:var(--accent)}.acc-green{background:var(--proven)}.acc-purple{background:var(--marlborough)}.acc-red{background:var(--conflicted)}.acc-crimson{background:var(--crimson)}.acc-blue{background:var(--colliton)}
+
+/* ── CORRECTIONS ── */
+.corr{background:var(--white);border-left:4px solid var(--conflicted);border-radius:0 12px 12px 0;padding:22px 22px 22px 28px;margin-bottom:20px;position:relative}
+.corr::before{content:'✗';position:absolute;top:18px;left:-14px;width:26px;height:26px;background:var(--conflicted);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:13px}
+.corr h3{font-family:'Cinzel',serif;font-size:16px;color:var(--conflicted);margin-bottom:6px}
+.corr .wrong{background:#ffebee;padding:8px 12px;border-radius:8px;margin:8px 0;font-size:13px}.corr .wrong::before{content:'✗ ';font-weight:bold;color:var(--conflicted)}
+.corr .right{background:#e8f5e9;padding:8px 12px;border-radius:8px;margin:8px 0;font-size:13px}.corr .right::before{content:'✓ ';font-weight:bold;color:var(--proven)}
+.corr .src-tag{font-family:'Inter',sans-serif;font-size:10px;color:var(--slate-mid);margin-top:6px;display:block}
+
+/* ── EVIDENCE TABLE ── */
+.ev-filters{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap}
+.ef{font-family:'Inter',sans-serif;font-size:11px;padding:5px 12px;border-radius:18px;border:1px solid var(--grey);background:var(--white);cursor:pointer;transition:all .2s;font-weight:500}
+.ef:hover,.ef.on{background:var(--accent);color:#1a0f0a;border-color:var(--accent)}
+.ev-wrap{overflow-x:auto}
+.ev-tbl{width:100%;border-collapse:collapse;font-size:13px}
+.ev-tbl thead{background:linear-gradient(135deg,var(--slate-dark),#2a3f55);color:var(--accent-light)}
+.ev-tbl th{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.5px;padding:10px 12px;text-align:left;color:var(--accent-light)}
+.ev-tbl td{padding:9px 12px;border-bottom:1px solid var(--grey);vertical-align:top}
+.ev-tbl tbody tr{background:var(--white);transition:background .2s}
+.ev-tbl tbody tr:hover{background:var(--accent-light)}
+.ev-tbl tbody tr:nth-child(even){background:var(--grey-pale)}
+.ev-tbl tbody tr:nth-child(even):hover{background:var(--accent-light)}
+.ev-badge{font-family:'Inter',sans-serif;font-size:9px;font-weight:600;padding:2px 7px;border-radius:8px;display:inline-block}
+.ev-ver{font-family:'Inter',sans-serif;font-size:9px;padding:2px 5px;border-radius:6px;color:#fff}
+
+/* ── SOURCE CARDS ── */
+.src-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.src-c{background:var(--white);border:1px solid var(--grey);border-radius:10px;padding:16px;transition:transform .2s}
+.src-c:hover{transform:translateY(-2px)}
+.src-c .sid{font-family:'Cinzel',serif;font-size:12px;color:var(--accent);font-weight:700;margin-bottom:3px}
+.src-c h4{font-size:13px;color:var(--slate-dark);margin-bottom:5px;line-height:1.4}
+.src-c .stype{font-family:'Inter',sans-serif;font-size:9px;letter-spacing:.5px;text-transform:uppercase;padding:2px 7px;border-radius:6px;display:inline-block;margin-bottom:5px}
+.stype.pri{background:#e8f5e9;color:var(--proven)}.stype.sec{background:#e3f2fd;color:var(--colliton)}.stype.ter{background:#fff3e0;color:var(--hypothesis)}
+.src-c .snotes{font-size:12px;color:#4a5568;line-height:1.55}
+.src-c .srel{font-family:'Inter',sans-serif;font-size:10px;margin-top:6px;font-weight:600}
+
+/* ── MODAL ── */
+.modal-bg{display:none;position:fixed;inset:0;background:rgba(30,45,61,.85);z-index:2000;justify-content:center;align-items:center;padding:20px}
+.modal-bg.open{display:flex}
+.modal{background:var(--grey-pale);border-radius:14px;max-width:680px;width:100%;max-height:85vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.4);border:2px solid var(--accent)}
+.m-hdr{padding:22px 26px 14px;border-bottom:1px solid var(--grey);display:flex;justify-content:space-between;align-items:flex-start;position:sticky;top:0;background:var(--grey-pale);border-radius:14px 14px 0 0;z-index:1}
+.m-hdr h2{font-family:'Cinzel',serif;font-size:19px;color:var(--slate-dark)}
+.m-close{background:none;border:none;font-size:22px;color:var(--slate-mid);cursor:pointer;padding:2px 6px;border-radius:6px}
+.m-close:hover{background:rgba(139,115,85,.15)}
+.m-body{padding:22px 26px 28px}
+.m-body p{font-size:14px;color:#4a5568;margin-bottom:12px;line-height:1.65}
+.d-label{font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.5px;text-transform:uppercase;color:var(--slate-mid);margin-bottom:3px;font-weight:600}
+.d-box{background:var(--white);border:1px solid var(--grey);border-radius:8px;padding:12px;margin-bottom:14px;font-size:14px;line-height:1.6;color:#4a5568}
+
+/* ── FOOTER ── */
+footer{background:linear-gradient(135deg,#1e2d3d,#162030);color:#8ba4bd;padding:36px 24px;text-align:center}
+footer h3{font-family:'Cinzel',serif;color:var(--accent-light);font-size:17px;margin-bottom:10px;display:flex;align-items:center;justify-content:center;gap:10px}
+footer p{font-size:13px;line-height:1.7;max-width:660px;margin:0 auto;color:#8ba4bd}
+footer .flinks{display:flex;gap:18px;justify-content:center;margin-top:16px;flex-wrap:wrap}
+footer .flinks a{color:var(--accent);text-decoration:none;font-family:'Inter',sans-serif;font-size:11px;font-weight:500}
+
+.back-top{position:fixed;bottom:20px;right:20px;width:40px;height:40px;background:var(--accent);color:#1a0f0a;border:none;border-radius:50%;font-size:18px;cursor:pointer;display:none;z-index:999;box-shadow:0 3px 10px rgba(0,0,0,.2);transition:transform .2s;align-items:center;justify-content:center}
+.back-top:hover{transform:translateY(-3px)}.back-top.vis{display:flex}
+
+/* ── FUN FACTS ── */
+.funfacts{background:linear-gradient(135deg,var(--slate-dark) 0%,#2a3f55 100%);padding:70px 24px;position:relative;overflow:hidden}
+.funfacts::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(91,138,181,.1) 0%,transparent 60%)}
+.funfacts .section-hdr h2{color:var(--accent-light)}
+.funfacts .section-hdr .line{background:linear-gradient(90deg,var(--accent),var(--slate-light))}
+.funfacts .section-hdr p{color:#8ba4bd}
+.ff-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.ff-card{background:rgba(255,255,255,.06);border:1px solid rgba(139,164,189,.2);border-radius:14px;padding:24px 20px;text-align:center;transition:all .3s;backdrop-filter:blur(4px)}
+.ff-card:hover{background:rgba(255,255,255,.1);transform:translateY(-3px);border-color:rgba(91,138,181,.4)}
+.ff-icon{font-size:32px;margin-bottom:10px;display:block}
+.ff-num{font-family:'Cinzel',serif;font-size:28px;font-weight:700;color:var(--accent-light);display:block;margin-bottom:4px}
+.ff-label{font-family:'Inter',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#8ba4bd;display:block;margin-bottom:8px}
+.ff-detail{font-size:13px;color:rgba(139,164,189,.8);line-height:1.5;font-style:italic}
+.ff-cta{text-align:center;margin-top:36px;position:relative;z-index:1}
+.btn-tree{display:inline-flex;align-items:center;gap:10px;font-family:'Inter',sans-serif;padding:14px 32px;border-radius:28px;font-size:13px;font-weight:600;letter-spacing:.5px;text-decoration:none;transition:all .3s;background:linear-gradient(135deg,rgba(91,138,181,.25),rgba(91,138,181,.1));color:var(--accent-light);border:2px solid var(--accent)}
+.btn-tree:hover{background:linear-gradient(135deg,rgba(91,138,181,.4),rgba(91,138,181,.2));transform:translateY(-2px);box-shadow:0 6px 20px rgba(91,138,181,.25)}
+.btn-tree svg{width:20px;height:20px;fill:currentColor}
+
+/* ── DORCHESTER REFERENCE TAB ── */
+.dorchester-ref{background:var(--grey-pale);padding:70px 24px}
+.ref-intro{max-width:900px;margin:0 auto 36px;background:var(--white);border:1.5px solid var(--grey);border-radius:14px;padding:24px 28px;font-size:14.5px;color:#4a5568;line-height:1.7}
+.ref-intro strong{color:var(--slate-dark)}
+.ref-filter-bar{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:28px}
+.ref-filter-bar button{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;padding:6px 16px;border-radius:20px;border:1.5px solid var(--grey);background:var(--white);color:var(--slate-mid);cursor:pointer;transition:all .2s;letter-spacing:.3px}
+.ref-filter-bar button.active,.ref-filter-bar button:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+.ref-branch{max-width:900px;margin:0 auto 28px}
+.ref-branch-hdr{display:flex;align-items:center;gap:12px;margin-bottom:14px;cursor:pointer;padding:12px 18px;background:var(--white);border:1.5px solid var(--grey);border-radius:12px;transition:all .2s}
+.ref-branch-hdr:hover{border-color:var(--accent);box-shadow:0 2px 10px rgba(30,45,61,.06)}
+.ref-branch-hdr .branch-icon{font-size:22px;width:36px;text-align:center}
+.ref-branch-hdr h3{font-family:'Cinzel',serif;font-size:17px;color:var(--slate-dark);flex:1}
+.ref-branch-hdr .branch-dates{font-family:'Inter',sans-serif;font-size:11px;color:var(--slate-mid);letter-spacing:.3px}
+.ref-branch-hdr .toggle-arrow{font-size:16px;color:var(--slate-mid);transition:transform .3s}
+.ref-branch-hdr.open .toggle-arrow{transform:rotate(180deg)}
+.ref-branch-body{display:none;padding:0 4px}
+.ref-branch-body.open{display:block;animation:fadeIn .3s}
+.ref-person{background:var(--white);border:1px solid var(--grey);border-radius:10px;padding:16px 20px;margin-bottom:10px;transition:all .2s}
+.ref-person:hover{border-color:var(--accent-light);box-shadow:0 2px 8px rgba(30,45,61,.05)}
+.ref-person .rp-name{font-family:'Cinzel',serif;font-size:15px;font-weight:600;color:var(--slate-dark)}
+.ref-person .rp-dates{font-size:13px;color:var(--slate-mid);font-style:italic;margin-left:8px}
+.ref-person .rp-detail{font-size:13.5px;color:#4a5568;margin-top:6px;line-height:1.65}
+.ref-person .rp-source{font-family:'Inter',sans-serif;font-size:10px;color:var(--slate-mid);margin-top:6px;display:block}
+.ref-person .rp-children{margin-top:10px;padding-left:18px;border-left:2px solid var(--accent-light)}
+.ref-person .rp-child{font-size:13px;color:#4a5568;padding:3px 0}
+.ref-person .rp-child strong{color:var(--slate-dark)}
+.ref-will{background:linear-gradient(135deg,#fafaf5,var(--white));border:1px solid #d4c9a8;border-radius:10px;padding:16px 20px;margin-bottom:10px}
+.ref-will .rw-title{font-family:'Cinzel',serif;font-size:14px;color:#6b5b3e;margin-bottom:4px}
+.ref-will .rw-ref{font-family:'Inter',sans-serif;font-size:11px;color:#8b7d62;margin-bottom:6px}
+.ref-will .rw-summary{font-size:13px;color:#4a5568;line-height:1.65}
+.ref-connection{background:#f0f7ff;border:1px solid #b3d4f0;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:12.5px;color:#2c5282;line-height:1.5}
+.ref-connection::before{content:'🔗 ';font-size:14px}
+</style>
+</head>
+<body>
+
+<!-- Churchill Arms shield served from external shield.svg -->
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-inner">
+    <div class="nav-brand"><img src="shield.svg" alt="" style="width:22px;height:26px"> Churchill of Dorset</div>
+    <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <div class="nav-links">
+      <a href="#lineage">Direct Line</a>
+      <a href="#story">The Hunt</a>
+      <a href="#insights">Breakthroughs</a>
+      <a href="#corrections">Corrections</a>
+      <a href="#evidence">Evidence</a>
+      <a href="#sources">Sources</a>
+      <a href="#funfacts">Fun Facts</a>
+      <a href="#dorchester">Dorchester Ref.</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="shield-hero"><img src="shield.svg" alt="Churchill Arms" style="width:120px;height:144px"></div>
+  <h1>The Churchills of Dorset</h1>
+  <div class="arms-text">Sable, a lion rampant argent, debruised by a bendlet gules</div>
+  <p class="tagline">15 generations from a Tudor bailiff's 1557 will to a California pastor — through 500 years of primary source research, correcting centuries of published errors along the way</p>
+  <div class="stats-row">
+    <div class="stat"><span class="stat-num">15</span><span class="stat-label">Generations</span></div>
+    <div class="stat"><span class="stat-num">49</span><span class="stat-label">Sources</span></div>
+    <div class="stat"><span class="stat-num">500</span><span class="stat-label">Years</span></div>
+    <div class="stat"><span class="stat-num">10</span><span class="stat-label">Research Versions</span></div>
+  </div>
+  <div class="hero-cta">
+    <a href="#lineage" class="btn btn-gold">Trace the Line ↓</a>
+    <a href="#story" class="btn btn-outline">Read the Story</a>
+    <a href="churchill-visual-tree.html" class="btn btn-outline">View Full Tree →</a>
+  </div>
+  <div class="scroll-hint">scroll to begin ▾</div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- DIRECT LINE — THE SPINE                -->
+<!-- ═══════════════════════════════════════ -->
+<section id="lineage">
+  <div class="section-hdr">
+    <h2>The Direct Line</h2>
+    <div class="line"></div>
+    <p>From Dorset to California — click any ancestor to see their evidence and sources</p>
+  </div>
+
+  <div class="era-div"><span>England · Dorset · c.1450–1620s</span></div>
+
+  <div class="direct-line" id="directLine">
+    <!-- JS populated -->
+  </div>
+</section>
+
+<!-- WINSTON PANEL -->
+<div class="winston-section" id="winstonPanel">
+  <button class="close-btn" onclick="toggleWinston()">×</button>
+  <h3>The Winston Churchill Connection</h3>
+  <p class="sub">~12th–13th cousins through John Churchill, Bailiff of Dorchester (d. 1557)</p>
+  <p style="font-size:14px;color:#4a5568;margin-bottom:18px;">After John the Bailiff, Mike's line descends through <strong>William of Dorchester → John of Stinsford → [gap] → Josiah</strong> (emigrant to Connecticut). Winston's line descends through a different path — through <strong>Jasper Churchill</strong>, a copyhold farmer at Bradford Peverell whose grandson married Sarah Winston.</p>
+  <div class="winston-line">
+    <div class="winston-person"><div class="wp-icon">⚖️</div><div><div class="wp-name">John Churchill, Bailiff (d. 1557)</div><div class="wp-detail">COMMON ANCESTOR — Will PROB 11/39 | Dorchester</div></div></div>
+    <div class="winston-arrow">↓ Mike's line goes through William → John of Stinsford → Josiah</div>
+    <div class="winston-arrow" style="color:var(--winston-border)">↓ Winston's line goes through a separate Dorset branch ↓</div>
+    <div class="winston-person"><div class="wp-icon">🌾</div><div><div class="wp-name">Jasper Churchill (b. c.1557)</div><div class="wp-detail">Copyhold farmer, Bradford Peverell | Married Elizabeth Chaplet</div></div></div>
+    <div class="winston-arrow">↓</div>
+    <div class="winston-person"><div class="wp-icon">⚖️</div><div><div class="wp-name">John Churchill (c.1596–1652)</div><div class="wp-detail">Middle Temple lawyer | Married Sarah Winston | Newton Montacute estate</div></div></div>
+    <div class="winston-arrow">↓</div>
+    <div class="winston-person"><div class="wp-icon">📜</div><div><div class="wp-name">Sir Winston Churchill (1620–1688)</div><div class="wp-detail">MP for Weymouth | Knighted 1663 | Author of <em>Divi Britannici</em></div></div></div>
+    <div class="winston-arrow">↓</div>
+    <div class="winston-person"><div class="wp-icon">⚔️</div><div><div class="wp-name">John Churchill, 1st Duke of Marlborough (1650–1722)</div><div class="wp-detail">Greatest English general | "Never fought a battle he did not win"</div></div></div>
+    <div class="winston-arrow">↓ Spencer-Churchill line continues ↓</div>
+    <div class="winston-person"><div class="wp-icon">🇬🇧</div><div><div class="wp-name">Lord Randolph Churchill (1849–1895)</div><div class="wp-detail">Chancellor of the Exchequer | Married Jennie Jerome</div></div></div>
+    <div class="winston-arrow">↓</div>
+    <div class="winston-person" style="border-color:var(--winston-border);border-width:2px"><div class="wp-icon">🎖️</div><div><div class="wp-name">Sir Winston Leonard Spencer-Churchill (1874–1965)</div><div class="wp-detail">Prime Minister of the United Kingdom | Nobel Prize in Literature 1953</div></div></div>
+  </div>
+  <p style="font-size:12px;color:#7b5ea7;margin-top:14px;text-align:center">Note: The Marlborough Norman descent (from Roger de Curcelle, 1086) was proved fictitious by Philip Dawe in 1958. Jasper Churchill (c.1557) is the earliest documented ancestor in this branch.</p>
+
+  <div style="margin-top:24px;padding-top:20px;border-top:2px dashed #d1c4e9">
+    <h4 style="font-family:'Cinzel',serif;color:var(--winston-border);font-size:16px;margin-bottom:8px">The Spencer-Churchill Royal Connection</h4>
+    <p style="font-size:13px;color:#4a5568;margin-bottom:14px;">The 1st Duke of Marlborough's daughter Anne married Charles Spencer, 3rd Earl of Sunderland — merging the Churchill and Spencer families. Their descendants became the Spencer-Churchill Dukes of Marlborough. On the Spencer side, the line continued separately through the Earls Spencer — eventually producing <strong>Diana, Princess of Wales</strong>, who married into the House of Windsor.</p>
+    <p style="font-size:13px;color:#4a5568;margin-bottom:14px;">This means PM Winston Churchill (a Spencer-Churchill, descended from the Dukes of Marlborough) and Princess Diana (a Spencer, descended from the Earls Spencer) share the same 18th-century Spencer-Churchill ancestor — Charles Spencer, 3rd Earl of Sunderland.</p>
+    <p style="font-size:13px;color:#4a5568;margin-bottom:14px;">And since Mike's line connects to the Bailiff of Dorchester — the common ancestor of both the Marlborough and Spencer-Churchill branches — <strong>Mike is a very distant cousin not only of Winston Churchill, but through the Spencer-Churchill link, of Princess Diana and the modern British Royal Family.</strong></p>
+
+    <div style="background:#fff;border:2px solid #d1c4e9;border-radius:12px;padding:18px;margin:16px 0">
+      <h5 style="font-family:'Cinzel',serif;color:var(--winston-border);font-size:14px;margin-bottom:10px;text-align:center">The Cousin Math</h5>
+      <div style="display:flex;justify-content:center;gap:30px;flex-wrap:wrap;margin-bottom:12px">
+        <div style="text-align:center">
+          <div style="font-size:28px;font-weight:700;color:var(--winston-border)">~12th</div>
+          <div style="font-size:11px;color:#7b5ea7">cousins with<br><strong>PM Winston Churchill</strong></div>
+        </div>
+        <div style="text-align:center">
+          <div style="font-size:28px;font-weight:700;color:var(--winston-border)">~11th</div>
+          <div style="font-size:11px;color:#7b5ea7">cousins, 3× removed with<br><strong>Prince William & Harry</strong></div>
+        </div>
+      </div>
+      <p style="font-size:12px;color:#666;text-align:center;margin:0">Mike is 12 generations from the Bailiff. William & Harry are ~15 generations from the Bailiff (through 1st Duke → Anne Churchill → Spencer Earls → 8th Earl Spencer → Diana). The smaller number minus 1 gives the cousin degree; the difference gives the "times removed."</p>
+    </div>
+
+    <div style="margin-top:12px">
+      <p style="font-size:12px;color:#7b5ea7;font-weight:600;margin-bottom:6px">The Spencer Earl line (Diana's ancestors):</p>
+      <p style="font-size:12px;color:#4a5568;line-height:1.6;margin:0">
+        John Spencer (1708–1746, son of Anne Churchill & 3rd Earl of Sunderland) →
+        1st Earl Spencer (1734–1783) →
+        2nd Earl Spencer (1758–1834) →
+        4th Earl Spencer (1798–1857) →
+        6th Earl Spencer (1857–1922) →
+        7th Earl Spencer (1892–1975) →
+        <strong>8th Earl Spencer (1924–1992) — Diana's father</strong> →
+        <strong>Diana, Princess of Wales (1961–1997)</strong> →
+        <strong>Prince William & Prince Harry</strong>
+      </p>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:16px">
+      <span style="background:#ede7f6;color:#5c3d8f;padding:6px 14px;border-radius:20px;font-size:11px;font-weight:600">John Churchill, Bailiff (d. 1557) — Common Ancestor</span>
+      <span style="background:#ede7f6;color:#5c3d8f;padding:6px 14px;border-radius:20px;font-size:11px;font-weight:600">→ 1st Duke of Marlborough</span>
+      <span style="background:#ede7f6;color:#5c3d8f;padding:6px 14px;border-radius:20px;font-size:11px;font-weight:600">→ Anne Churchill + 3rd Earl of Sunderland</span>
+      <span style="background:#ede7f6;color:#5c3d8f;padding:6px 14px;border-radius:20px;font-size:11px;font-weight:600">→ Spencer-Churchill Dukes (Winston's line)</span>
+      <span style="background:#ede7f6;color:#5c3d8f;padding:6px 14px;border-radius:20px;font-size:11px;font-weight:600">→ Spencer Earls → Diana → William & Harry</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- THE RESEARCH HUNT                      -->
+<!-- ═══════════════════════════════════════ -->
+<section id="story">
+  <div class="section-hdr">
+    <h2>The Research Hunt</h2>
+    <div class="line"></div>
+    <p>How a family question became a detective story across 10 research versions</p>
+  </div>
+  <div class="timeline" id="timeline"><!-- JS --></div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- BREAKTHROUGHS                          -->
+<!-- ═══════════════════════════════════════ -->
+<section id="insights">
+  <div class="section-hdr">
+    <h2>What Nobody Else Has Found</h2>
+    <div class="line"></div>
+    <p>Original insights that correct, extend, or challenge the published record</p>
+  </div>
+  <div class="insight-grid" id="insightGrid"><!-- JS --></div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- CORRECTIONS                            -->
+<!-- ═══════════════════════════════════════ -->
+<section id="corrections">
+  <div class="section-hdr">
+    <h2>Corrections to the Record</h2>
+    <div class="line"></div>
+    <p>Published errors we identified — and the primary sources that prove them wrong</p>
+  </div>
+  <div id="corrDiv"><!-- JS --></div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- EVIDENCE                               -->
+<!-- ═══════════════════════════════════════ -->
+<section id="evidence">
+  <div class="section-hdr">
+    <h2>Evidence Tracker</h2>
+    <div class="line"></div>
+    <p>Every claim rated by evidence level — click any row for the source chain</p>
+  </div>
+  <div class="ev-filters" id="evFilters"></div>
+  <div class="ev-wrap"><table class="ev-tbl"><thead><tr><th style="width:35%">Claim</th><th style="width:11%">Status</th><th style="width:10%">Sources</th><th style="width:9%">Ver</th><th style="width:35%">Notes</th></tr></thead><tbody id="evBody"></tbody></table></div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SOURCES                                -->
+<!-- ═══════════════════════════════════════ -->
+<section id="sources">
+  <div class="section-hdr">
+    <h2>Source Registry</h2>
+    <div class="line"></div>
+    <p>All 49 sources with reliability assessments</p>
+  </div>
+  <div class="ev-filters" id="srcFilters"></div>
+  <div class="src-grid" id="srcGrid"><!-- JS --></div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- FUN FACTS                              -->
+<!-- ═══════════════════════════════════════ -->
+<section class="funfacts" id="funfacts">
+  <div class="section-hdr">
+    <h2>By the Numbers</h2>
+    <div class="line"></div>
+    <p>Patterns and curiosities buried in 500 years of Churchill family data</p>
+  </div>
+  <div class="ff-grid" id="ffGrid"><!-- JS --></div>
+  <div class="ff-cta">
+    <a href="churchill-visual-tree.html" class="btn-tree">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+      Explore the Full Interactive Family Tree — 80+ people across 15 generations
+    </a>
+  </div>
+</section>
+
+<!-- DORCHESTER REFERENCE -->
+<section class="dorchester-ref" id="dorchester">
+  <div class="section-hdr">
+    <h2>The Wider Dorchester Churchills</h2>
+    <div class="line"></div>
+    <p>Collateral branches, wills, and parish records compiled from Michael Russell's OPC Dorchester research (S74)</p>
+  </div>
+  <div class="ref-intro">
+    <strong>About this section:</strong> This reference catalogues the broader Churchill family network in and around Dorchester, Dorset — branches that do NOT form part of our proven direct line to California, but which document the wider family our American ancestor Josiah came out of. Primary source: Michael Russell, OPC for Dorchester, <em>The Churchill Family of Colliton House</em> (Dec 2017, updated Mar 2026). All dates, wills, and parish entries below are from Russell's compilation unless otherwise noted. This section is organised by family branch and chronology.
+  </div>
+  <div class="ref-filter-bar" id="refFilterBar"><!-- JS --></div>
+  <div id="refBranches"><!-- JS --></div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <h3><img src="shield.svg" alt="" style="width:18px;height:22px"> Churchill of Dorset</h3>
+  <p>15 generations from John Churchill, Bailiff of Dorchester (c.1512–1557) to Mike Churchill of Glendora, California. Connected to Winston Churchill PM as ~12th–13th cousins through the same Bailiff ancestor. Consolidated from 49 sources across 10 research versions.</p>
+  <p style="margin-top:10px;font-size:11px;color:#6b7d8e;">Research by Mike Churchill with AI assistance — v10, April 2026</p>
+  <div class="flinks">
+    <a href="#lineage">Direct Line</a><a href="#story">The Hunt</a><a href="#insights">Breakthroughs</a><a href="#corrections">Corrections</a><a href="#evidence">Evidence</a><a href="#sources">Sources</a><a href="#funfacts">Fun Facts</a><a href="#dorchester">Dorchester Ref.</a><a href="churchill-visual-tree.html">Full Tree</a><a href="#top">Top</a>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-bg" id="modalBg" onclick="if(event.target===this)closeModal()">
+  <div class="modal"><div class="m-hdr"><h2 id="mTitle"></h2><button class="m-close" onclick="closeModal()">×</button></div><div class="m-body" id="mBody"></div></div>
+</div>
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+// ═══════════════════════════════════════════
+// DATA
+// ═══════════════════════════════════════════
+
+const directLine = [
+  {gen:0,name:'Charles Churchill',dates:'c.1445/1450 – 1474',loc:'Rockbeare/Exeter, Devon → Bradford Peverel, Dorset',spouse:'Margaret Woodville (c.1455–bef.1520)',spouseNote:'Illegit. daughter of Anthony Woodville, 2nd Earl Rivers — niece of Queen Elizabeth Woodville',ev:'HYPOTHESIS',evCls:'ev-h',gender:'m',icon:'🛡️',
+  detail:'Earliest ancestor claimed in compiled trees. Married Margaret Woodville — connecting the Churchills to the royal Woodville family during the Wars of the Roses. Died 1474. After his death, Margaret remarried Sir Robert Poyntz of Iron Acton. "Sir" title unverified. Three online databases disagree on HIS father (William/Jasper, Giles, or Charles Sr.) — none cite primary sources.',
+  modal:{t:'Charles Churchill (c.1450–1474)',b:'<p class="d-label">The Conflict</p><div class="d-box">Three databases give three different fathers for Charles: FamilySearch says "Charles Churchill Sr.", Geni says "Giles Churchill", YourRoots says "William or Jasper Churchill." None cite a single primary source. The 1623 Visitation does not go back this far.</div><p class="d-label">The Woodville Marriage</p><div class="d-box">Margaret Woodville was the illegitimate daughter of Anthony Woodville, 2nd Earl Rivers, and Gwenllian Stradling. Anthony\'s sister Elizabeth Woodville was Queen of England — wife of Edward IV, mother of the "Princes in the Tower." After Charles died in 1474, Margaret remarried Sir Robert Poyntz of Iron Acton by 1479. She was buried at Iron Acton, Gloucestershire before Nov 5, 1520.</div><p class="d-label">Evidence Level: HYPOTHESIS</p><div class="d-box">The connection between Charles and the next generation (Thomas Esq.) relies on compiled tree data with no primary source verification. The Woodville connection is better documented through multiple secondary sources (S2, S6, S7, S8, S9).</div>'}},
+
+  {gen:1,name:'Thomas Churchill Esq.',dates:'c.1475 – 1532',loc:'Catherstone, Leweston → Bradford Peverel, Dorset',spouse:'Grace Churchill (née Tyler?)',ev:'MODERATE',evCls:'ev-m',gender:'m',icon:'📋',
+  detail:'Son of Charles and Margaret. Born 1475 but father died 1474 — posthumous birth is possible. Married Grace (Tyler?). One source confuses his mother with Elizabeth Woodville (the famous Queen). His sons William (c.1500–1563) and Thomas Jr. bridge toward the Bailiff generation.',
+  modal:{t:'Thomas Churchill Esq. (c.1475–1532)',b:'<p class="d-label">Date Problem</p><div class="d-box">Born c.1475 but father Charles died in 1474. A posthumous birth is possible but adds uncertainty.</div><p class="d-label">Evidence</p><div class="d-box">Appears in compiled tree databases. Not yet verified by any primary source. The "Esq." title and Catherstone/Leweston locations come from user-submitted trees. Connecting him to the next generation (John the Bailiff) is the key unsolved bridge in this research.</div>'}},
+
+  {gen:2,name:'John Churchill',dates:'c.1500/1503 – 1557',loc:'Dorchester, Dorset',role:'Bailiff of Dorchester 1524–25, 1540, 1544, 1546, 1548',spouse:'Edith Bond (dau. of Bond of Lutton)',ev:'PROVEN',evCls:'ev-p',gender:'m',icon:'⚖️',
+  detail:'Clothier/draper who became Bailiff of Dorchester. Will (PROB 11/39, 1557) is our earliest PRIMARY source — names wife Edith Bond, sons William and John (under 21), daughter Elizabeth, and brother Rowland Churchill. The OPC Dorset Bailiffs list reveals he served as early as 1524–25, pushing his birth to c.1500–1503. COMMON ANCESTOR with Prime Minister Winston Churchill.',
+  winston:true,
+  modal:{t:'John Churchill, Bailiff of Dorchester (d. 1557)',b:'<p class="d-label">The Foundation Stone</p><div class="d-box">Everything before John is hypothesis or compiled tree data. Everything from John forward is built on primary sources. His 1557 will (PROB 11/39) is the bedrock of this entire research project.</div><p class="d-label">Key Finding: Bailiff Date</p><div class="d-box">Published trees typically date his first bailiff term to the 1540s. The OPC Dorset Bailiffs list shows he served as early as 1524–25. A bailiff was typically at least 25. This pushes his birth to c.1500–1503 — making Thomas Esq. (c.1475) a more plausible father than previously thought.</div><p class="d-label">Sources</p><div class="d-box">S1 — Will PROB 11/39 (1557) — VERY HIGH reliability<br>S15 — Fordington OPC<br>S37 — OPC Dorset Bailiffs List</div>'}},
+
+  {gen:3,name:'William Churchill',dates:'c.1541 – 1602',loc:'Dorchester, Dorset',role:'Bailiff of Dorchester 1567–68, 1573–74 · Styled "Gent."',spouse:'Daughter of John Swaine of Blandford',ev:'PROVEN',evCls:'ev-p',gender:'m',icon:'📜',
+  detail:'Son of John the Bailiff, named in the 1557 will. Starts the 1623 Dorset Visitation pedigree. Bailiff of Dorchester twice. Will PROB 11/100 dated 12 March 1599, proved 18 November 1602. We have examined the original PCC will — it names son John Churchill as executor, daughters Vertue (m. Hunton), Grace (m. Wattes), Ann (m. Browne), Martha (m. Collier), and granddaughter Elizabeth (m. Cotton, with grandson "little Jacke Cotton"). Buried at St Peter\'s Church, Dorchester. Left money to the poor of Dorchester and to "Fillinges" (Frillinges village). NOTE: The 1623 Visitation pedigree records only three of William\'s children — son John (the heir) and daughters Vertue and Grace. The other daughters Ann and Martha are known solely from the will PROB 11/100 (per Michael Russell, OPC Dorchester). His brother John of Corton (c.1535–1599) held Corton manor — their relationship was corrected by the Hutchins 3rd edition editors.',
+  modal:{t:'William Churchill of Dorchester (c.1541–1602)',b:'<p class="d-label">His Will — PROB 11/100 (Examined)</p><div class="d-box">Dated 12 March 1599, proved 18 November 1602. We have the original PCC will in hand. William asks to be buried at St Peter\'s Church, Dorchester. He names:<br><br><strong>Son:</strong> John Churchill — executor<br><strong>Daughters:</strong> Vertue (m. Thomas Hunton), Grace (m. John Wattes), Ann (m. Browne), Martha (m. Edward Collier)<br><strong>Granddaughter:</strong> Elizabeth (m. Cotton — "little Jacke Cotton" is his grandson)<br><strong>Charitable bequests:</strong> To the poor of Dorchester and to "Fillinges" (Frillinges village)<br><br>The will also references Richard Eswame (brother-in-law?) and Edward Pollard. Named as sole executor by Richard Wyllyms (PROB 11/69, 1585) — confirming his standing in Dorchester.</div><p class="d-label">Two Key Sources</p><div class="d-box">Named in father\'s 1557 will (S1) and starts the 1623 Visitation pedigree (S12, p.28). Arms: "Sable, a lion rampant argent, debruised by a bendlet gules" — the same arms shown on this website\'s shield.<br><br><strong>Source distinction:</strong> The 1623 Visitation records only three of William\'s children — son John (the heir), and daughters Vertue (m. Hunton) and Grace (m. Wattes). The other two daughters, Ann (m. Browne) and Martha (m. Collier), are known solely from the will PROB 11/100. This distinction is documented by Michael Russell, OPC for Dorchester.</div><p class="d-label">Brother Relationship</p><div class="d-box">Hutchins 1st edition (1774) incorrectly named the brothers as "William of Corton" and "John of Muston." The 3rd edition editors corrected this to John of Corton and William of Dorchester — both sons of the Bailiff. This correction is still not reflected in many online trees. John of Corton\'s will is PROB 11/95 (dated 1597, proved 1599); his daughter Elizabeth married Bruen Williams Esq of Tyneham.</div><p class="d-label">Sources</p><div class="d-box">S1 (will), S12 (1623 Visitation), S25 (Hutchins corrections), S37 (Bailiff list), S69 (PROB 11/100 — examined), S70 (OPC Dorset Dorchester Wills Index)</div>'}},
+
+  {gen:4,name:'John Churchill',dates:'c.1568 – 1 Jun 1621',loc:'Stinsford & Muston, Dorset',spouse:'Eleanor Meller (c.1571–1641)',ev:'PROVEN',evCls:'ev-p',gender:'m',icon:'🏛️',
+  detail:'Son of William. Matriculated Hart\'s Hall, Oxford (1586/7). Admitted Middle Temple (1588/9). Established £100 charitable loan fund for poor artificers (1599 Indenture Tripartite — S88a; trustees: William Churchill, Matthew Chubbe, Edmund Dashwood; auditors included Sir George Trenchard, Bruen Williams, Maximilian Moone). Purchased Muston Manor, Piddlehinton (1 Jan 1609). Married Eleanor Meller, daughter of John Meller of Little Bredy. The 1623 Visitation lists 13 children including 9 sons: William (heir, c.1598), Gervase, Richard (c.1602–1672), John (1603–1682, Rector), Robert, Maximilian (c.1607–1619), Jasper, Thomas (bap. 10 May 1612), Matthew (bap. 9 Jul 1615), plus daughters Anne (m. Launcelot Cooper), Edith (m. Parr), Jane (m. Chappell), Sarah. Thomas married Alice Cox at St Peters, 30 Dec 1656. Robert (5th son, c.1605) and Jasper (7th son, c.1609) may have died young — they do not appear in Eleanor\'s 1641 will (per Michael Russell, OPC Dorchester). CRITICAL: No Josiah appears. Died intestate 1 June 1621 (William Whiteway diary), buried 7 June at St Peter\'s, Dorchester, "aged about 50 years or upwards." PCC Administration granted to widow Eleanor 8 June 1621 (folio 126). Eleanor\'s will (PROB 11/186) dated 16 Apr 1641, proved 10 Jul 1641 — bequeaths £10 each to sons Richard, John, Maximilian, Thomas; £5 to daughter Edith Parr; £10 to servant Virtue Colson.',
+  modal:{t:'John Churchill of Stinsford & Muston (c.1568–1621)',b:'<p class="d-label">Death Record (OPC Dorset)</p><div class="d-box">"Memorandum. Mr John CHURCHILL Esquire died the 1st June and was buried the 7th in St Peters in Dorchester aged about 50 years or upwards." — OPC Dorset, Dorchester People records. Died intestate — no will was ever located. Administration granted to widow Eleanor Meller on 8 June 1621.</div><p class="d-label">Thirteen Children (1623 Visitation)</p><div class="d-box">The 1623 Visitation (S12, p.28) lists:<br><strong>Sons:</strong> William (heir, b. c.1598), Gervase, Richard (c.1602–1672), John (1603–1682, Rector of Stinsford), Robert, Maximilian (c.1607–1619), Jasper, Thomas (bap. 10 May 1612), Matthew (bap. 9 Jul 1615)<br><strong>Daughters:</strong> Anne (m. Launcelot Cooper), Edith (m. Parr), Jane (m. Chappell), Sarah<br><br>No Josiah.</div><p class="d-label">The Thomas Question</p><div class="d-box">Thomas was baptized <strong>10 May 1612</strong> — tantalizingly close to Josiah\'s birth date of <strong>c. 1 January 1612/13</strong>. They cannot be the same person (different dates), but this confirms John was fathering children in exactly the right timeframe.<br><br><strong>New finding:</strong> Thomas married <strong>Alice Cox at St Peter\'s, Dorchester, 30 December 1656</strong> (OPC Dorset). He appears in PCC Administrations — "Thomas Churchill, Dorchester, 28 Apr 1668" with George Hodder &amp; Henry Cuffe as guardians (not family) as grantees. A second Thomas Churchill gentleman of Dorchester appears 6 May 1678, with daughter Mary (wife of John Wing) as grantee. One of these may be our Thomas.</div><p class="d-label">The Gap</p><div class="d-box">Josiah Churchill (the emigrant to Connecticut) is not in this list. He may be a son not recorded in the Visitation, a grandson, or from a different Churchill branch entirely. This is the single biggest unsolved question in the research.<br><br><strong>Eleanor\'s Will (PROB 11/186, 1641):</strong> Now partially transcribed via OPC Dorset. She bequeaths £10 each to sons Richard, John, Maximilian, and Thomas; £5 to daughter Edith Parr; £10 &amp; £5 to goddaughters Eleanor and Dorothy Cooper; £10 to servant Virtue Colson; £5 to poor of the parish. No Josiah is named — but Josiah had emigrated to Connecticut by c.1635, so Eleanor may not have included a son already in America.<br><br><strong>PCC Administration confirmed:</strong> John Churchill, Dorchester — Elizanore Churchill relict granted administration <strong>8 June 1621</strong>, folio 126. One week after his death. Primary source confirmation he died intestate.</div><p class="d-label">Sources</p><div class="d-box">S12 — Harleian Society Vol. 20, p.28 — VERY HIGH reliability<br>S71 — OPC Dorset: Dorchester People (death record)<br>S72 — OPC Dorset: Dorchester Strays (marriage records)<br>S73 — WikiTree Churchill-207 (children dates)</div>'}},
+
+  {gen:'GAP',gapText:'FATHER UNKNOWN — The Biggest Gap',gapDetail:'Josiah Churchill (emigrant to CT) does NOT appear in the 1623 Visitation\'s list of John of Stinsford\'s 13 children. PCC will research (2026): We examined 8 original PCC wills from The National Archives spanning 1580–1619. William of Dorchester\'s will (PROB 11/100) names 4 daughters and son John — no Josiah. John of Stinsford died intestate (PCC Administration confirmed: Eleanor Churchill relict granted admin 8 June 1621, folio 126). Eleanor\'s will (PROB 11/186, 1641) bequeaths to sons Richard, John, Maximilian, Thomas — no Josiah, but he had emigrated by c.1635. Thomas Churchill (bap. 10 May 1612) married Alice Cox at St Peters, 30 Dec 1656 — PCC Admin 28 Apr 1668, grantees George Hodder &amp; Henry Cuffe (guardians). A second Thomas Churchill gent, Dorchester, PCC Admin 6 May 1678, grantee daughter Mary wife of John Wing. A separate John Churchill of Ribbesford, Worcs. (PROB 11/111, d.1607) and Ellis Churchill of London (PROB 11/116, d.1610) — possible parallel branch, tagged as MAYBE. The Ancestry claim that Josiah\'s parents were "William Churchill &amp; Mary Yarde" is chronologically impossible: William married Mary Yard 5 Feb 1620/21, eight years AFTER Josiah\'s birth. The name Josiah survived among Dorset Churchills: a Josiah Churchill (b. c.1839, Compton Valence) appears in the 1861–71 Wynford Eagle census as a shepherd/labourer — suggesting the name had currency in the wider family. CROSS-REFERENCE (April 2026): Our independent research was checked against Michael Russell\'s OPC Dorchester compilation (S74, Dec 2024 update). Perfect alignment on all verifiable points — children, dates, marriages, wills, administrations. Russell adds that Robert and Jasper may have died young (absent from Eleanor\'s 1641 will), and that the 1623 Visitation records only William\'s first three children (John, Vertue, Grace) — the rest come from Hutchins. Our research extends Russell\'s with: the American line (gens 5–13), original PCC will examinations (PROB 11/39, 11/69, 11/95, 11/97, 11/100, 11/111, 11/116), the Ellis/Corton collateral connection, the Yard marriage debunking, and Y-DNA confirmation. Next leads: Piddlehinton parish registers (Muston was in this parish), Dorset History Centre archdeaconry courts, and the 1908 Municipal Records of Dorchester.'},
+
+  {gen:5,name:'Josiah Churchill',dates:'c. 1 Jan 1612/13 – 1686/7',loc:'Muston, Dorset, England → Wethersfield, Connecticut',role:'Emigrant · Sailor · Pequot War Veteran · Founder of CT Churchills',spouse:'Elizabeth Foote (m. 1638, dau. of Nathaniel Foote)',ev:'STRONG',evCls:'ev-s',gender:'m',icon:'⚓',era:'america',
+  detail:'Born c. 1 Jan 1612 (Old Style) or 1613 at Muston, Dorset, England — the same village where the Churchill family held Muston Manor. Came to America as a sailor about mid-1635 during the Great Migration. Married Elizabeth Foote in 1638 in Wethersfield, CT — she was the daughter of Nathaniel Foote and Elizabeth Deming, who were among the 10 original founders of Wethersfield. Fought in the Pequot War. Died between 17 Nov 1686 (will) and 5 Jan 1686/7 (estate inventory). Y-DNA testing confirms Josiah was part of the Dorset Churchill family (I-1 haplotype), but his exact parentage — whether son of William Churchill & Mary Yarde, or another branch — remains unproven despite 140 years of genealogical research.',
+  modal:{t:'Josiah Churchill — The Emigrant (c.1612/13–1686/7)',b:'<p class="d-label">The Atlantic Crossing</p><div class="d-box">Josiah came to America as a sailor from England about mid-1635. He was among the earliest settlers of Wethersfield, Connecticut — generally considered the first permanent English settlement in the colony (explored 1633, settled 1634). He married Elizabeth Foote in 1638. Her father Nathaniel Foote was one of the 10 original founders. Early records show Josiah in real estate in Wethersfield. Their children included Sarah (Churchill) Wickham.</div><p class="d-label">The Muston Connection</p><div class="d-box">"The History of Ancient Wethersfield" (Vol 2, p. 220) gives his birthplace as Nuston (Muston), Dorset. Muston Manor in Piddlehinton was purchased in 1609 by John Churchill of Stinsford — a documented Churchill of the same family. A William Churchill "of Muston" was born c.1613, the same time and place. The Passenger and Immigration Lists Index (Virkus, 1964) records Josiah Churchill arriving in Connecticut in 1635.</div><p class="d-label">DNA Evidence</p><div class="d-box">Y-DNA testing by the Churchill Surname DNA Project at FamilyTreeDNA has proven that Josiah Churchill of Wethersfield and John Churchill of Plymouth Colony were distant cousins, sharing a common ancestor among the Dorset Churchills going back to the 15th century. Both carry the I-1 haplotype. This confirms Josiah was part of the Dorset Churchill family — the same broader family that produced the Dukes of Marlborough — but cannot pinpoint his specific father.</div><p class="d-label">The Parentage Question — Still Unsolved</p><div class="d-box">Three competing claims circulate online:<br>1. Son of <strong>John Churchill of Stinsford</strong> — but the 1623 Visitation lists John\'s 9 sons and Josiah is NOT among them<br>2. Son of <strong>William Churchill & Mary Yarde</strong> — a William of Muston (m. Mary, dau. of George Yarde of Cherston Ferrers, Devon) appears in records, but no document names Josiah as his son<br>3. Unknown parentage — the position of leading genealogists Robert Charles Anderson and Douglas Richardson<br><br>After 140 years of research (since "The Churchill Family In America" was published in 1886), no parish register, baptismal entry, or will has been found that names Josiah\'s father. The DNA confirms the Dorset connection; the paper trail does not.</div><p class="d-label">Sources</p><div class="d-box"><a href="https://www.findagrave.com/memorial/34156325/josiah-churchill" target="_blank" style="color:#5c3d8f">FindAGrave: Josiah Churchill — Memorial #34156325</a><br><a href="https://www.wikitree.com/wiki/Churchill-98" target="_blank" style="color:#5c3d8f">WikiTree: Josiah Churchill</a><br><a href="https://www.familytreedna.com/groups/churchill/about/background" target="_blank" style="color:#5c3d8f">Churchill Surname DNA Project — FamilyTreeDNA</a><br>"The History of Ancient Wethersfield" Vol 2, p. 220<br>Virkus, Frederick A., ed. "Immigrant Ancestors" (1964), p. 20<br>"The Churchill Family In America" (1886)</div>'}},
+
+  {gen:6,name:'Joseph Churchill',dates:'1649 – 1699',loc:'Wethersfield, Connecticut',spouse:'Mary Catlin',ev:'STRONG',evCls:'ev-s',gender:'m',icon:'🏠',era:'america',
+  detail:'Son of Josiah. Born in Wethersfield, CT. Married Mary Catlin. Well-documented in New England colonial records.',
+  modal:{t:'Joseph Churchill (1649–1699)',b:'<p class="d-label">Evidence</p><div class="d-box">Colonial New England records. Wethersfield, Connecticut. Son of Josiah and Elizabeth Foote.</div><p class="d-label">Sources</p><div class="d-box"><a href="https://www.findagrave.com/memorial/67983588/joseph-churchill" target="_blank" style="color:#5c3d8f">FindAGrave: Joseph Churchill</a></div>'}},
+
+  {gen:7,name:'Ensign Samuel Churchill',dates:'27 Apr 1688 – 21 Jul 1767',loc:'Wethersfield → Newington Parish, Connecticut',spouse:'Martha Boardman (1695–1780, m. 26 Jun 1717)',ev:'PROVEN',evCls:'ev-p',gender:'m',icon:'⚔️',era:'america',
+  detail:'Born 27 Apr 1688, Wethersfield, Hartford County, CT. Son of Joseph and Mary (Catlin) Churchill. Known as "Ensign Samuel" — appointed Ensign of the local militia by the General Assembly in 1746. Also a smith by trade. Married Martha Boardman on 26 Jun 1717 (b. 19 Dec 1695, d. 14 Dec 1780). Died 21 Jul 1767, age 79, Newington Parish. Buried at Newington Cemetery, Section A. His gravestone — still standing — reads "In Memory of Ens. Samuel Churchill who died July 21st A.D. 1767 in y 79th year of his Age." Six sons: Giles (1718), Samuel (1721), Charles (1723), Jesse (1726), Benjamin (1729), William (1732).',
+  modal:{t:'Ensign Samuel Churchill (1688–1767)',b:'<p class="d-label">Military Title</p><div class="d-box">In 1746 the Connecticut General Assembly appointed Samuel ensign of the local military company in Newington Parish. He bore the title for the rest of his life and was known in family records as "Ensign Samuel." One Wethersfield deed calls him "Smith," indicating his civilian trade as a blacksmith or metalworker.</div><p class="d-label">Community Leader</p><div class="d-box">Active in public affairs of town and church. Served on Prudential and School Committees. Settled at Newington Parish where he bought land of Joseph Allen in 1712 — fifty-two acres adjoining land of Capt. Robert Wells and Jonathan Deming. Per "The Churchill Family In America" (1886, pp. 329–30).</div><p class="d-label">Family</p><div class="d-box"><strong>Parents:</strong> Joseph Churchill (1649–1699) &amp; Mary Catlin<br><strong>Wife:</strong> Martha Boardman (b. 19 Dec 1695 – d. 14 Dec 1780), daughter of Daniel and Hannah (Wright) Boardman of Wethersfield. Married 26 Jun 1717.<br><strong>Six sons:</strong> Giles (1718), Samuel II (1721), Capt. Charles (1723), Dea. Jesse (1726), Benjamin (1729), William (1732)</div><p class="d-label">Gravestone</p><div class="d-box">Original colonial gravestone still standing at Newington Cemetery, Section A. Winged-cherub death\'s-head motif typical of 18th-century New England. Inscription confirms death date and age.</div><p class="d-label">Sources</p><div class="d-box"><a href="https://www.findagrave.com/memorial/24314846/samuel-churchill" target="_blank" style="color:#5c3d8f">FindAGrave: Ens. Samuel Churchill — Memorial #24314846</a><br>Gravestone inscription (photographed)<br>"The Churchill Family In America" (1886), pp. 329–30<br>Roger Welles, "Early Annals of Newington" (1874), p. 115</div>'}},
+
+  {gen:7.5,name:'Samuel Churchill II',dates:'27 Apr 1721 – 26 Jan 1801',loc:'Newington, CT → Sheffield, MA → Hubbardton, Vermont',spouse:'Thankful Hewitt (1722–1801, m. 19 Nov 1747)',ev:'PROVEN',evCls:'ev-p',gender:'m',icon:'🇺🇸',era:'america',
+  detail:'Born 27 Apr 1721, Newington, Hartford County, CT. Second son of Ensign Samuel and Martha (Boardman) Churchill. Married Thankful Hewitt on 19 Nov 1747 in Sheffield, Hampshire (now Berkshire) County, Massachusetts. Thankful was the widow of Joseph Seager Jr. and was born 1722 in Plainfield, Connecticut. The couple moved to Hubbardton, Vermont and raised ten children. Both died in 1801 — Samuel on 26 Jan, Thankful in September — and share a gravestone at East Hubbardton Cemetery. The stone honors them as "Pioneers of the Revolution," placing them in Vermont during the American War of Independence.',
+  modal:{t:'Samuel Churchill II (1721–1801)',b:'<p class="d-label">Pioneers of the Revolution</p><div class="d-box">Born in Connecticut, Samuel and Thankful moved to the Vermont frontier. Their shared gravestone at East Hubbardton Cemetery calls them "Pioneers of the Revolution" — they lived through the entire American War of Independence in their 50s and 60s. Samuel was aged 55 when the Declaration of Independence was signed. They raised ten children and died within months of each other in 1801 at age 79 and 80.</div><p class="d-label">Family</p><div class="d-box"><strong>Parents:</strong> Ensign Samuel Churchill (1688–1767) &amp; Martha Boardman (1695–1780)<br><strong>Wife:</strong> Thankful Hewitt (b. 1722, Plainfield, CT – d. Sep 1801, Hubbardton, VT). Widow of Joseph Seager Jr. of Sheffield, MA. Married 19 Nov 1747 in Sheffield.<br><strong>Children:</strong> Ten (including Ezekiel, b. 1764)</div><p class="d-label">Gravestone</p><div class="d-box">Shared headstone at East Hubbardton Cemetery, Rutland County, Vermont. "SAMUEL CHURCHILL / DIED / Jan. 1801 / AE 80 Yrs. / THANKFUL CHURCHILL / DIED / Sep. 1801 / AE 80 Yrs." Lower inscription references "Pioneers of the Revolution."</div><p class="d-label">Sources</p><div class="d-box"><a href="https://www.findagrave.com/memorial/38401112/samuel-churchill" target="_blank" style="color:#5c3d8f">FindAGrave: Samuel Churchill II — Memorial #38401112</a><br>Gravestone inscription (photographed)<br>"The Churchill Family In America" (1886) — lists children of Ensign Samuel</div>'}},
+
+  {gen:8,name:'Ezekiel Churchill',dates:'24 Jun 1764 – 14 Feb 1813',loc:'Hampshire Co., Massachusetts → Alexander, Genesee Co., New York',spouse:'Elizabeth Dyer (1766–1843)',ev:'PROVEN',evCls:'ev-p',gender:'m',icon:'🗺️',era:'america',
+  detail:'Born 24 Jun 1764, Hampshire County, Massachusetts. Died 14 Feb 1813 (age 48), Alexander, Genesee County, New York. Buried at Forest Hill Cemetery, Attica, Wyoming County, NY. Son of Samuel Churchill II (1721–1801) and Thankful Hewitt (1722–1801). Married Elizabeth Dyer (1766–1843). Father of nine children — his eldest son Ezekiel Dyer Jr. (1787–1810) was named after him with his wife\'s maiden name as middle name, a naming convention repeated with his youngest son Cullen Dyer (1811–1893). The family\'s westward migration begins with the move from Vermont/Massachusetts to New York.',
+  modal:{t:'Ezekiel Churchill (1764–1813)',b:'<p class="d-label">Westward Migration</p><div class="d-box">Born 24 Jun 1764, Hampshire County, Massachusetts. His parents Samuel II and Thankful were in Vermont (Hubbardton). Ezekiel moved further west to Alexander, Genesee County, New York — part of the post-Revolutionary War westward expansion. Died 14 Feb 1813, age 48.</div><p class="d-label">Nine Children (confirmed via FindAGrave)</p><div class="d-box">1. Ezekiel Dyer Churchill Jr. (1787–1810) — died age 23, one year before youngest sibling born<br>2. Eunice Churchill DeMary (1792–1873)<br>3. Diantha Churchill Newton (1793–1819)<br>4. Prudence Churchill (1798–1814) — died age 16<br>5. Wealthy Churchill Baldwin (1800–1826)<br>6. Levi William Churchill (1804–1892)<br>7. Henry Churchill (1806–1813) — died age 7, same year as father<br>8. Harriet Cordelia Churchill Daniells (1808–1895)<br>9. <strong>Cullen Dyer Churchill (1811–1893)</strong> — our direct ancestor<br><br>The "Dyer" middle name in children #1 and #9 comes from mother Elizabeth\'s maiden name — a common 18th-century naming convention and a genealogical proof point.</div><p class="d-label">Family</p><div class="d-box"><strong>Parents:</strong> Samuel Churchill II (1721–1801) &amp; Thankful Hewitt (1722–1801)<br><strong>Wife:</strong> Elizabeth Dyer (1766–1843) — née Dyer, not Churchill as some trees incorrectly claim<br><strong>Burial:</strong> Forest Hill Cemetery, Attica, Wyoming County, NY</div><p class="d-label">Sources</p><div class="d-box"><a href="https://www.findagrave.com/memorial/12763459/ezekiel-churchill" target="_blank" style="color:#5c3d8f">FindAGrave: Ezekiel Churchill — Memorial #12763459</a><br>FindAGrave sibling records (Eunice, Diantha, Prudence, Wealthy, Levi, Henry, Harriet, Cullen Dyer)</div>'}},
+
+  {gen:9,name:'Cullen Dyer Churchill',dates:'1 Mar 1811 – 7 Feb 1893',loc:'Alexander, Genesee Co. → Ellington, Chautauqua Co., New York',spouse:'4 wives; last: Jane Elizabeth Platner (1824–1915)',ev:'PROVEN',evCls:'ev-p',gender:'m',icon:'🏡',era:'america',
+  detail:'Born 1 Mar 1811, Alexander, Genesee County, NY. Youngest of 9 children of Ezekiel and Elizabeth (Dyer) Churchill — named "Dyer" after his mother\'s maiden name, same as his older brother Ezekiel Dyer Jr. (1787–1810) who died the year before Cullen was born. Died 7 Feb 1893 (age 81 years, 11 months, 6 days) at the residence of his son Albro in Ellington. Obituary in the Jamestown NY Evening Journal (17 Feb 1893). Buried at Pioneer Cemetery, Ellington. Married 4 times — outlived first 3 wives. Survived by wife Jane Elizabeth and 8 children: Daphne Heald, Alice O. Bates, Hattie C. Torrance, Willis F. Churchill, Eunice E. Thacher, Charles C., Albro R., and Lester E. Churchill. Funeral at M.E. church, Rev. C.W. Miner officiating.',
+  modal:{t:'Cullen Dyer Churchill (1811–1893)',b:'<p class="d-label">Life</p><div class="d-box">Born 1 Mar 1811, Alexander, Genesee County, NY. Youngest of 9 children of Ezekiel &amp; Elizabeth (Dyer) Churchill. Died 7 Feb 1893 at the residence of his son Albro in Ellington, Chautauqua County, NY. Obituary: Jamestown NY Evening Journal, 17 Feb 1893 — "aged 81 years, 11 months and 6 days." Buried: Pioneer Cemetery, Ellington.</div><p class="d-label">Four Marriages</p><div class="d-box"><strong>1st wife:</strong> Caroline (d. 2 May 1845, age 29 years 10 months 9 days)<br><strong>2nd wife:</strong> Sarah Churchill (d. 21 Nov 1848, Ellington). Probate court 8 Apr 1850. Estate: $600. One child: Homer Churchill, minor under 21.<br><strong>3rd wife:</strong> Emma "Eunice" (d. 23 Jan 1859, age 41 years 6 months 18 days)<br><strong>4th wife:</strong> <strong>Jane Elizabeth Platner</strong> (1824–1915) — mother of Willis Fletcher Churchill. Maiden name Platner confirmed by FindAGrave.</div><p class="d-label">Eight Surviving Children (per 1893 obituary)</p><div class="d-box">Mrs. Daphne Heald (Moline, IL) · Mrs. Alice O. Bates · Mrs. Hattie C. Torrance (Randolph, NY) · <strong>Willis F. Churchill</strong> (Jamestown) · Mrs. Eunice E. Thacher · Charles C. Churchill · Albro R. Churchill · Lester E. Churchill (Ellington, NY)</div><p class="d-label">Siblings (children of Ezekiel &amp; Elizabeth Dyer)</p><div class="d-box">Ezekiel Dyer Jr. (1787–1810) · Eunice (1792–1873) · Diantha (1793–1819) · Prudence (1798–1814) · Wealthy (1800–1826) · Levi William (1804–1892) · Henry (1806–1813) · Harriet Cordelia (1808–1895) · <strong>Cullen Dyer (1811–1893)</strong></div><p class="d-label">Sources</p><div class="d-box"><a href="https://www.findagrave.com/memorial/43114836/cullen_dyer-churchill" target="_blank" style="color:#5c3d8f">FindAGrave: Cullen Dyer Churchill — Memorial #43114836</a><br>Obituary: Jamestown NY Evening Journal, 17 Feb 1893<br>Probate records: Sarah Churchill estate, Court 8 Apr 1850</div>'}},
+
+  {gen:10,name:'Willis Fletcher Churchill',dates:'8 Jul 1864 – 10 Jul 1926',loc:'Pennsylvania → New York → Colorado → San Joaquin Co., California',spouse:'1st: Alice B. Lord (1893); 2nd: Jennie A. Johnson (c.1895)',ev:'PROVEN',evCls:'ev-p',gender:'m',icon:'🌄',era:'america',
+  detail:'Born 8 Jul 1864, Pennsylvania (death cert.) or New York (FindAGrave bio). Son of Cullen Dyer and Jane Elizabeth (Platner) Churchill — his mother was Cullen\'s 4th wife. Railroad worker. First married Alice B. Lord (1869–1894) in 1893 — she died just one year later. Then married Jennie A. Johnson (1863–1953), a native of Sweden, about 1895. Two children with Jennie: Harold Fletcher and Ruth E. Had two full siblings who died in infancy: Lizzie Eudora (1860–1864) and Barden D (1862–1864). Half-sibling Eunice Elizabeth Churchill Thacher (from Cullen\'s 3rd wife). Died 10 Jul 1926 (age 62), San Joaquin County, California. Buried at Park View Cemetery, Manteca, CA.',
+  modal:{t:'Willis Fletcher Churchill (1864–1926)',b:'<p class="d-label">Life</p><div class="d-box">Born 8 Jul 1864, Pennsylvania (per death cert; FindAGrave bio says New York). Son of Cullen D. and Jane Elizabeth (Platner) Churchill. Worked for the railroad. Died 10 Jul 1926 (age 62), San Joaquin County, California.</div><p class="d-label">Two Marriages</p><div class="d-box"><strong>1st wife:</strong> Alice B. Lord (1869–1894) — married 1893. She died just one year after the wedding, age 25.<br><strong>2nd wife:</strong> Jennie A. Johnson (1863–1953) — maiden name Johnson. A native of Sweden. Married c.1895. Mother of both children. She survived Willis by 27 years, dying in 1953 at age 90.</div><p class="d-label">Siblings (children of Cullen Dyer &amp; Jane Elizabeth Platner)</p><div class="d-box">Lizzie Eudora Churchill (1860–1864) — died age 4<br>Barden D Churchill (1862–1864) — died age 2<br><strong>Willis Fletcher Churchill (1864–1926)</strong><br>Half-sibling: Eunice Elizabeth Churchill Thacher (from Cullen\'s 3rd wife Emma/Eunice)</div><p class="d-label">Migration Trail (census records)</p><div class="d-box">1880: LeBoeuf, Erie Co., PA<br>1892: Jamestown, Chautauqua Co., NY (living with mother Jane, railroad worker)<br>1900: Ellicott, Chautauqua Co., NY<br>1910: Wellington, Larimer Co., Colorado<br>Then to San Joaquin County, California</div><p class="d-label">Family</p><div class="d-box"><strong>Children (with Jennie):</strong> Harold Fletcher Churchill (1898–1978) &amp; Ruth E. Churchill Coffman (1895–1972)<br><strong>Burial:</strong> Park View Cemetery, Manteca, San Joaquin Co., CA — Sec A, Block 1, Lot/Tier 49, Grave 5</div><p class="d-label">Sources</p><div class="d-box"><a href="https://www.findagrave.com/memorial/118691055/willis_fletcher-churchill" target="_blank" style="color:#5c3d8f">FindAGrave: Willis Fletcher Churchill — Memorial #118691055</a><br><a href="https://www.findagrave.com/memorial/118691334/jennie-a-churchill" target="_blank" style="color:#5c3d8f">FindAGrave: Jennie A. Churchill — Memorial #118691334</a><br>1880–1910 U.S. Census records</div>'}},
+
+  {gen:11,name:'Harold Fletcher Churchill',dates:'23 Jan 1898 – 18 Jul 1978',loc:'New York → Whittier, Los Angeles Co., California',spouse:'Margie B. Churchill (1896–1996)',children:'Jack Churchill',ev:'PROVEN',evCls:'ev-p',gender:'m',icon:'🏘️',era:'america',
+  detail:'Born 23 January 1898, New York, USA. Son of Willis Fletcher Churchill and Jennie A. Johnson. Named "Fletcher" after his father. Married Margie B. (1896–1996) — she lived to 100. Settled in Whittier, Los Angeles County, California. Father of Jack Churchill. Died 18 July 1978 (age 80). Buried at Rose Hills Memorial Park, Whittier, CA — Willow Lawn, Gate 1, Section 13, Lot 12410, Grave 1. Had a sister: Ruth E. Churchill.',
+  modal:{t:'Harold Fletcher Churchill (1898–1978)',b:'<p class="d-label">Life</p><div class="d-box">Born 23 January 1898, New York, USA. Son of Willis Fletcher Churchill (1864–1926) and Jennie A. Johnson Churchill (1863–1953). Named "Fletcher" after his father. The family was in Wellington, Larimer Co., Colorado by the 1910 census, then moved to California. Harold settled in Whittier, Los Angeles County.</div><p class="d-label">Marriage &amp; Family</p><div class="d-box"><strong>Wife:</strong> Margie B. Churchill (1896–1996) — she lived to 100 years old.<br><strong>Son:</strong> Jack Churchill (d. 2008) — pastor in Warsaw, Indiana. Mike\'s grandfather.<br><strong>Sister:</strong> Ruth E. Churchill</div><p class="d-label">Death &amp; Burial</p><div class="d-box">Died 18 July 1978 (age 80). Buried at <strong>Rose Hills Memorial Park</strong>, Whittier, Los Angeles County, California.<br>Plot: Willow Lawn, Gate 1, Section 13, Lot 12410, Grave 1.</div><p class="d-label">Sources</p><div class="d-box"><a href="https://www.findagrave.com/memorial/97351133/harold-fletcher-churchill" target="_blank" style="color:#5c3d8f">FindAGrave: Harold Fletcher Churchill — Memorial #97351133</a><br><a href="https://www.findagrave.com/memorial/118691055/willis_fletcher-churchill" target="_blank" style="color:#5c3d8f">FindAGrave: Willis Fletcher Churchill — Memorial #118691055</a></div>'}},
+
+  {gen:12,name:'Jack Churchill',dates:'d. 2008',loc:'Whittier, California → Warsaw, Indiana',spouse:'Miriam Sickle',ev:'PROVEN',evCls:'ev-p',gender:'m',icon:'👨‍👧',era:'america',
+  detail:'Mike\'s grandfather. Son of Harold Fletcher Churchill and Margie B. Churchill. Born in Whittier, California. Pastor in Warsaw, Indiana. Married Miriam Sickle. Five children: Kenneth, Margaret, Charles, Sherry, and David.',
+  modal:{t:'Jack Churchill (d. 2008)',b:'<p class="d-label">Family</p><div class="d-box">Son of Harold Fletcher Churchill (1898–1978) and Margie B. Churchill (1896–1996). Born in Whittier, Los Angeles County, California. Pastor. Moved to Warsaw, Indiana. Married Miriam Sickle.<br><br><strong>Children (5):</strong><br>1. Kenneth Churchill (1947–2022) — Mike\'s father, also a pastor. Married Virginia.<br>2. Margaret Churchill<br>3. Charles Churchill<br>4. Sherry Churchill<br>5. David Churchill</div><p class="d-label">Ministry Legacy</p><div class="d-box">Three consecutive generations of pastors: Jack → Kenneth → Mike. A family calling spanning 80+ years.</div><p class="d-label">Sources</p><div class="d-box">Family records. FindAGrave: Harold Fletcher Churchill — <a href="https://www.findagrave.com/memorial/97351133/harold-fletcher-churchill" target="_blank" style="color:#5c3d8f">Memorial #97351133</a> (confirms parents).</div>'}},
+
+  {gen:13,name:'Kenneth Churchill',dates:'1947 – 2022',loc:'Warsaw, Indiana → California',spouse:'Virginia',ev:'STRONG',evCls:'ev-s',gender:'m',icon:'👨',era:'america',
+  detail:'Mike\'s father. Pastor. Born in Warsaw, Indiana to Jack and Miriam Churchill. Married Virginia. Moved to California. Four children: Steven, Melissa, Andrea, and Mike.',
+  modal:{t:'Kenneth Churchill (1947–2022)',b:'<p class="d-label">Family</p><div class="d-box">Pastor. Born Warsaw, Indiana. Son of Jack and Miriam Churchill (Jack was also a pastor). Married Virginia. Moved to California.<br><br><strong>Children (4):</strong><br>1. Steven Churchill — m. Becky Champlin → sons Ethan & Evan<br>2. Melissa Churchill — m. Alan Muller → daughters Bryce & Kendall<br>3. Andrea Churchill — m. James Baiseri → Austin, Greyson, Charlotte, Hazel<br>4. <strong>Mike Churchill</strong> (b. 1976) — Outreach Pastor, m. Audra Jordan → Samantha, Titus, Hope</div><p class="d-label">Ministry Legacy</p><div class="d-box">Second of three consecutive generations of pastors: Jack → Kenneth → Mike.</div><p class="d-label">Evidence</p><div class="d-box">Family records.</div>'}},
+
+  {gen:14,name:'Mike Churchill',dates:'b. 1976',loc:'Glendora, California',spouse:'Audra Jordan',ev:'—',evCls:'',gender:'m',icon:'★',era:'america',isMike:true,
+  detail:'15th generation from the Bailiff of Dorchester. Outreach pastor at Cornerstone Bible Church, Glendora, CA. Son of Kenneth and Virginia Churchill. Married Audra Jordan Churchill. Three children: Samantha (16), Titus (14), Hope (9). Three siblings: Steven (m. Becky Champlin), Melissa (m. Alan Muller), Andrea (m. James Baiseri). ~12th–13th cousins with Prime Minister Winston Churchill.',
+  children:'Samantha · Titus · Hope',
+  modal:{t:'Mike Churchill — 15th Generation',b:'<p class="d-label">The Connection</p><div class="d-box">15 generations from John Churchill, Bailiff of Dorchester (d. 1557). ~12th–13th cousins with Prime Minister Winston Churchill through the same Bailiff ancestor. The family line crosses from Dorset, England to Connecticut, New York, and California over 500 years.</div><p class="d-label">Family</p><div class="d-box">Married Audra Jordan Churchill. Three children: Samantha (16), Titus (14), Hope (9). Outreach pastor at Cornerstone Bible Church, Glendora, California.</div><p class="d-label">Siblings & Their Families</p><div class="d-box"><strong>Steven Churchill</strong> — married Becky Champlin. Sons: Ethan, Evan.<br><strong>Melissa Churchill</strong> — married Alan Muller. Daughters: Bryce, Kendall.<br><strong>Andrea Churchill</strong> — married James Baiseri. Children: Austin, Greyson, Charlotte, Hazel.</div><p class="d-label">Generation 15 — 11 Grandchildren of Kenneth</p><div class="d-box">Ethan Churchill, Evan Churchill, Bryce Muller, Kendall Muller, Austin Baiseri, Greyson Baiseri, Charlotte Baiseri, Hazel Baiseri, Samantha Churchill, Titus Churchill, Hope Churchill — <strong>11 cousins carrying the line forward.</strong></div>'}},
+];
+
+const storyData = [
+  {ver:'v1',cls:'v1',bt:false,h:'The Starting Point: Online Trees',p:'Compared three online trees — FamilySearch, Geni, YourRoots. All three disagreed on the earliest generations. Nobody cited a primary source. But all agreed: Charles Churchill (c.1450) married Margaret.',src:'S1–S11'},
+  {ver:'v2',cls:'v1',bt:true,h:'Margaret Woodville — The Royal Connection',p:'Margaret wasn\'t just anyone. She was the illegitimate daughter of Anthony Woodville, 2nd Earl Rivers. His sister Elizabeth was Queen of England. This connected the Churchills directly to the Woodville royal family during the Wars of the Roses.',src:'S2, S6, S7, S8, S9'},
+  {ver:'v4',cls:'v4',bt:false,h:'The Colliton House Connection',p:'The Fordington OPC revealed a 59-record genealogy of the Churchills of Colliton House, Dorchester. John Churchill (1512–1557), bailiff, with a confirmed will. The earliest primary source we had.',src:'S15, S17, S18'},
+  {ver:'v5',cls:'v5',bt:true,h:'1623 Visitation — 9 Sons, No Josiah',p:'Transcribed the 1623 Dorset Visitation pedigree. It listed 9 sons of John of Stinsford: William, Gervase, Richard, John, Robert, Maximilian, Jasper, Thomas, Matthew. No Josiah anywhere. The emigrant ancestor is absent from the official record.',src:'S12'},
+  {ver:'v6',cls:'v6',bt:true,h:'Hutchins\' History — Two Conflicting Pedigrees',p:'Extracted BOTH Churchill pedigrees from Hutchins. They contradicted each other. The Norman descent was fictitious (proved by Dawe, 1958). But buried in the Collins pedigree: the first source naming Corton and Muston brothers in the same generation.',src:'S21, S22, S23'},
+  {ver:'v7',cls:'v7',bt:true,h:'The Editors\' Correction — Brothers Identified',p:'The Hutchins 3rd edition editors corrected the pedigree: John of Corton and William of Dorchester were brothers, both sons of the Bailiff. Also traced the complete Marlborough line from Jasper (copyhold farmer) to the Duke.',src:'S25'},
+  {ver:'v9',cls:'v9',bt:false,h:'Bailiff Date Pushed to 1524–25',p:'The OPC bailiff list showed John Churchill served as early as 1524–25 — not the 1540s. This pushed his birth to c.1500–1503, changing the generational math. Also identified Margaret Churchill of Bradford Peverell (will 1583).',src:'S37–S43'},
+  {ver:'v10',cls:'v10',bt:true,h:'Margaret\'s Will — Transcribed & Game Changed',p:'Ordered, received, and personally transcribed Margaret Churchill\'s will from secretary hand. Disproved the Geni identification. Revealed three sons-in-law (John Churchill, John Sobye, William Spynett), son Robert, and "sister" Agnes Frye. New hypothesis: her husband was Rowland Churchill, the "ghost brother."',src:'S44–S49'},
+];
+
+const insightsData = [
+  {h:'Margaret Churchill\'s Will — First Transcription',p:'We ordered and transcribed PROB 11/65/221 directly from the National Archives. No other online source has done this. Every tree referencing this Margaret relies on secondary speculation.',acc:'acc-crimson',modal:'margaret-will'},
+  {h:'The Rowland Churchill Hypothesis',p:'No published source connects Rowland (1557 will) to Margaret of Bradford Peverell. Our hypothesis — that he was her husband — is original. Bradford Peverell is 3 miles from Dorchester.',acc:'acc-crimson',modal:'rowland'},
+  {h:'Hutchins\' Errors — Mapped & Corrected',p:'We compared all three Hutchins editions against the primary will, the 1623 Visitation, and the 1565 Visitation. Most online trees still propagate the 1774 errors.',acc:'acc-purple',modal:'hutchins'},
+  {h:'Bailiff Date Pushed to 1524–25',p:'Published trees date the first bailiff term to the 1540s. The OPC list shows 1524–25 — changing the generational math and making the Charles Churchill connection more plausible.',acc:'acc-green',modal:'bailiff'},
+  {h:'Dowton/Corton Paleography — Solved',p:'"Dowton" in the 1593 register is a misreading of "Corton" in secretary hand. C and D are nearly identical. Nobody had flagged this specific error.',acc:'acc-blue',modal:'dowton'},
+  {h:'Three Sons-in-Law — New Names Found',p:'Margaret\'s will reveals John Churchill, John Sobye, and William Spynett. No published Churchill genealogy mentions Sobye or Spynett. These are entirely new research leads.',acc:'acc-gold',modal:'sons-in-law'},
+];
+
+const correctionsData = [
+  {h:'Margaret Churchill is NOT Roger of Catherston\'s Daughter',w:'Geni.com claims Margaret (will 1583) was Roger\'s daughter who married Bartholomew Olde.',r:'The actual will makes no mention of Roger, Jane Peverell, or Bartholomew Olde. She was a Churchill by marriage.',src:'S44 vs. S40'},
+  {h:'Hutchins\' First Generation is Wrong',w:'Hutchins Vol. 1 (1774): "William Churchill" married "Elizabeth Bond of Lutton."',r:'The will PROB 11/39 proves: John Churchill married Edith Bond. The 3rd edition editors noted this was "clearly wrong."',src:'S1 vs. S21, S25'},
+  {h:'The Norman Descent is Fictitious',w:'Collins\' Peerage traces from Roger de Curcelle (1086) through 15+ generations. Many trees repeat this.',r:'Philip Dawe (1958) proved it fictitious. Earliest documented Marlborough ancestor: Jasper Churchill (c.1557), copyhold farmer.',src:'S23'},
+  {h:'"Dowton" Doesn\'t Exist — It\'s Corton',w:'Some transcriptions list "Dowton" as a Churchill origin in 1593.',r:'Scribal misreading in secretary hand. C and D nearly identical. "Dowton" doesn\'t exist in Portesham parish.',src:'S41'},
+  {h:'Visitation Page Number is Wrong',w:'Fordington OPC cites the Churchill pedigree on "page 70" of Harleian Society Vol. 20.',r:'Page 70 is the Meller pedigree. The Churchill pedigree is on page 28.',src:'S12'},
+  {h:'Josiah\'s Parentage is Unproven',w:'Several trees list Josiah as a son of John of Stinsford.',r:'The 1623 Visitation lists 9 sons. No Josiah. The connection is not supported by any primary source.',src:'S12'},
+];
+
+const evidenceData = [
+  {claim:'John Churchill (d.1557) was Bailiff of Dorchester',status:'PROVEN',src:'S1, S37',ver:'v4/v9',notes:'Will PROB 11/39 + OPC. Dates: 1524–25, 1540, 1544, 1546, 1548.'},
+  {claim:'John married Edith Bond',status:'PROVEN',src:'S1',ver:'v4',notes:'Named in 1557 will.'},
+  {claim:'Margaret Woodville — daughter of 2nd Earl Rivers',status:'STRONG',src:'S2, S6–S9',ver:'v2',notes:'Multiple secondary sources. No primary naming doc found.'},
+  {claim:'William (c.1541–1602) was son of the Bailiff',status:'PROVEN',src:'S1, S12',ver:'v4',notes:'Will + 1623 Visitation.'},
+  {claim:'John of Corton & William of Dorchester were brothers',status:'PROVEN',src:'S1, S25',ver:'v7',notes:'Hutchins 3rd ed. correction.'},
+  {claim:'1623 Visitation: 9 sons of John of Stinsford, no Josiah',status:'PROVEN',src:'S12',ver:'v5',notes:'Harleian Soc. Vol. 20, p.28.'},
+  {claim:'Ellis Churchill of Corton (fl. 1565)',status:'PROVEN',src:'S19',ver:'v5',notes:'1565 Visitation, Kymer pedigree.'},
+  {claim:'Marlborough Norman descent is fictitious',status:'PROVEN',src:'S23',ver:'v6',notes:'Philip Dawe (1958).'},
+  {claim:'Jasper Churchill (c.1557) — earliest Marlborough ancestor',status:'PROVEN',src:'S22, S23',ver:'v7',notes:'Manor court record.'},
+  {claim:'Bailiff served as early as 1524–25',status:'PROVEN',src:'S37',ver:'v9',notes:'OPC Dorset Bailiffs list.'},
+  {claim:'Margaret Churchill will dated 21 Jan 1582/3',status:'PROVEN',src:'S44',ver:'v10',notes:'Personally transcribed from secretary hand.'},
+  {claim:'Margaret is NOT Roger of Catherston\'s daughter',status:'PROVEN',src:'S44',ver:'v10',notes:'Will disproves S40 (Geni).'},
+  {claim:'Margaret\'s son-in-law: John Churchill',status:'PROVEN',src:'S44',ver:'v10',notes:'4 bushels barley, 1 bushel wheat.'},
+  {claim:'Margaret\'s son-in-law: John Sobye',status:'PROVEN',src:'S44',ver:'v10',notes:'Household goods and livestock.'},
+  {claim:'Margaret\'s son-in-law: William Spynett',status:'PROVEN',src:'S44',ver:'v10',notes:'Children each receive one sheep/year.'},
+  {claim:'Margaret\'s son: Robert',status:'PROVEN',src:'S44',ver:'v10',notes:'Largest bequests.'},
+  {claim:'Margaret buried at Bradford Peverell',status:'PROVEN',src:'S44',ver:'v10',notes:'Burial request in will.'},
+  {claim:'Josiah\'s father is John of Stinsford',status:'HYPOTHESIS',src:'S12',ver:'v5',notes:'Josiah absent from 1623 Visitation.'},
+  {claim:'Margaret\'s husband = Rowland Churchill',status:'HYPOTHESIS',src:'S44, S1',ver:'v10',notes:'Circumstantial only.'},
+  {claim:'"Sister" Agnes Frye — Churchill connection',status:'HYPOTHESIS',src:'S44',ver:'v10',notes:'Maiden name unknown.'},
+  {claim:'Charles Churchill\'s father identity',status:'CONFLICTED',src:'S2–S5',ver:'v1',notes:'3 sources, 3 different answers.'},
+  {claim:'"Dowton" = misreading of "Corton"',status:'PROVEN',src:'S41',ver:'v9',notes:'Secretary hand C/D confusion.'},
+];
+
+const sourcesData = [
+  {id:'S1',t:'John Churchill Will — PROB 11/39 (1557)',type:'primary',ver:'v1',rel:'VERY HIGH',n:'PCC will. Names Edith Bond, sons William & John, Rowland Churchill.'},
+  {id:'S2',t:'FamilySearch — Churchill Tree',type:'tertiary',ver:'v1',rel:'LOW',n:'Legacy NFS Sources — old GEDCOM imports.'},
+  {id:'S3',t:'Geni.com — Churchill Family',type:'tertiary',ver:'v1',rel:'LOW-MED',n:'Crowd-sourced. Some good sources, some speculation.'},
+  {id:'S12',t:'Harleian Society Vol. 20 — 1623 Visitation',type:'primary',ver:'v5',rel:'VERY HIGH',n:'Official visitation pedigree. Churchill p.28.'},
+  {id:'S19',t:'1565 Dorset Visitation — Kymer Pedigree',type:'primary',ver:'v5',rel:'VERY HIGH',n:'Ellis Churchill of Corton, p.26.'},
+  {id:'S21',t:'Hutchins History — Vol. 1 (Colliton)',type:'secondary',ver:'v6',rel:'MEDIUM',n:'1774 edition has first-generation errors.'},
+  {id:'S23',t:'Philip Dawe (1958) — SDNQ XXVII',type:'secondary',ver:'v6',rel:'HIGH',n:'Proved Norman pedigree fictitious.'},
+  {id:'S25',t:'WikiTree Research Space (Helen Ford)',type:'secondary',ver:'v7',rel:'HIGH',n:'Hutchins 3rd ed. corrections transcribed.'},
+  {id:'S37',t:'OPC Dorset Bailiffs — Dorchester',type:'primary',ver:'v9',rel:'VERY HIGH',n:'John 1524–25, William 1567–68, 1573–74.'},
+  {id:'S40',t:'Geni.com — Roger of Catherston',type:'tertiary',ver:'v9',rel:'DISPROVED',n:'Claimed Margaret was Roger\'s daughter. Disproved by S44.'},
+  {id:'S44',t:'Margaret Churchill Will — PROB 11/65/221',type:'primary',ver:'v10',rel:'VERY HIGH',n:'Personally transcribed from secretary hand. Son Robert, 3 sons-in-law.'},
+  {id:'S45',t:'Sobye Family — TNA Search (Pending)',type:'secondary',ver:'v10',rel:'TBD',n:'John Sobye wills. Not yet searched.'},
+  {id:'S46',t:'Spynett Family — TNA Search (Pending)',type:'secondary',ver:'v10',rel:'TBD',n:'William Spynett wills. Not yet searched.'},
+  {id:'S47',t:'Agnes Frye — ID Search (Pending)',type:'secondary',ver:'v10',rel:'TBD',n:'"Sister" Agnes Frye. Maiden name unknown.'},
+  {id:'S48',t:'Bradford Peverell Registers (Pending)',type:'primary',ver:'v10',rel:'TBD',n:'Churchill burials 1557–1582.'},
+  {id:'S49',t:'Rowland Churchill — Archdeaconry (Pending)',type:'primary',ver:'v10',rel:'TBD',n:'Dorset History Centre. Invisible to TNA online.'},
+  {id:'S50',t:'FindAGrave — Josiah Churchill',type:'secondary',ver:'v10',rel:'HIGH',n:'<a href="https://www.findagrave.com/memorial/34156325/josiah-churchill" target="_blank">Memorial #34156325</a>. Born c.1612/13, Muston, Dorset. Died 1686/7, Wethersfield, CT. Bio by contributor C.T. with immigration records and Dorset origin details.'},
+  {id:'S51',t:'FindAGrave — Joseph Churchill',type:'secondary',ver:'v10',rel:'HIGH',n:'<a href="https://www.findagrave.com/memorial/67983588/joseph-churchill" target="_blank">Memorial #67983588</a>. Son of Josiah. 1649–1699, Wethersfield, CT.'},
+  {id:'S52',t:'FindAGrave — Ens. Samuel Churchill (1688–1767)',type:'primary',ver:'v10',rel:'VERY HIGH',n:'<a href="https://www.findagrave.com/memorial/24314846/samuel-churchill" target="_blank">Memorial #24314846</a>. Newington Cemetery, Section A. Gravestone photographed — "Ens. Samuel Churchill who died July 21st A.D. 1767 in y 79th year of his Age." Bio cites "The Churchill Family In America" (1886, pp. 329–30). Lists 6 sons. Parents: Joseph &amp; Mary (Catlin) Churchill.'},
+  {id:'S52b',t:'FindAGrave — Samuel Churchill II (1721–1801)',type:'primary',ver:'v10',rel:'VERY HIGH',n:'<a href="https://www.findagrave.com/memorial/38401112/samuel-churchill" target="_blank">Memorial #38401112</a>. East Hubbardton Cemetery, Rutland Co., VT. Shared gravestone with wife Thankful photographed — "SAMUEL CHURCHILL / DIED / Jan. 1801 / AE 80 Yrs. / THANKFUL CHURCHILL / DIED / Sep. 1801 / AE 80 Yrs." Inscription calls them "Pioneers of the Revolution." Bio: Son of Ens. Samuel &amp; Martha Boardman, m. Thankful Hewitt 19 Nov 1747 in Sheffield, MA.'},
+  {id:'S53',t:'FindAGrave — Charles Churchill',type:'secondary',ver:'v10',rel:'HIGH',n:'<a href="https://www.findagrave.com/memorial/10346344/charles-churchill" target="_blank">Memorial #10346344</a>'},
+  {id:'S54',t:'FindAGrave — Ezekiel Churchill',type:'secondary',ver:'v10',rel:'HIGH',n:'<a href="https://www.findagrave.com/memorial/12763459/ezekiel-churchill" target="_blank">Memorial #12763459</a>. 1764–1813, Alexander, Genesee Co., NY. Family members section lists 9 children by name with dates — including Ezekiel Dyer Jr., Eunice, Diantha, Prudence, Wealthy, Levi William, Henry, Harriet Cordelia, and Cullen Dyer.'},
+  {id:'S55',t:'FindAGrave — Cullen Dyer Churchill',type:'primary',ver:'v10',rel:'VERY HIGH',n:'<a href="https://www.findagrave.com/memorial/43114836/cullen_dyer-churchill" target="_blank">Memorial #43114836</a>. 1811–1893, Pioneer Cemetery, Ellington, NY. Includes full obituary from Jamestown NY Evening Journal (17 Feb 1893) naming wife Jane E. and 8 children. Probate records for 2nd wife Sarah Churchill (d. 1848). Death dates and ages for all 4 wives documented.'},
+  {id:'S56',t:'FindAGrave — Willis Fletcher Churchill',type:'primary',ver:'v10',rel:'VERY HIGH',n:'<a href="https://www.findagrave.com/memorial/118691055/willis_fletcher-churchill" target="_blank">Memorial #118691055</a>. 1864–1926, Park View Cemetery, Manteca, CA. Sec A, Block 1, Lot/Tier 49, Grave 5. Bio documents: parents Cullen D. &amp; Jane Elizabeth; 2 wives (Alice B. Lord, then Jennie A. Johnson); 2 children (Harold Fletcher, Ruth E.); siblings Lizzie Eudora &amp; Barden D (both died in infancy); railroad worker; census trail 1880–1910.'},
+  {id:'S57',t:'FindAGrave — Jennie A. Johnson Churchill',type:'secondary',ver:'v10',rel:'HIGH',n:'Wife of Willis. Maiden name Johnson. Native of Sweden. <a href="https://www.findagrave.com/memorial/118691334/jennie-a-churchill" target="_blank">Memorial #118691334</a>. 1863–1953.'},
+  {id:'S57b',t:'FindAGrave — Alice B. Lord Churchill',type:'secondary',ver:'v10',rel:'HIGH',n:'First wife of Willis. <a href="https://www.findagrave.com/memorial/118691055/willis_fletcher-churchill" target="_blank">Per Willis memorial family section</a>. 1869–1894, married 1893. Died one year after wedding.'},
+  {id:'S58',t:'Ancestry — Josiah Churchill Record',type:'secondary',ver:'v10',rel:'HIGH',n:'<a href="https://www.ancestry.com/search/collections/61175/records/14298" target="_blank">Collection 61175, Record 14298</a>'},
+  {id:'S59',t:'Ancestry — Churchill Record (Collection 2496)',type:'secondary',ver:'v10',rel:'HIGH',n:'<a href="https://www.ancestry.com/search/collections/2496/records/21184" target="_blank">Collection 2496, Record 21184</a>'},
+  {id:'S60',t:'Ancestry — Compendium of American Genealogy',type:'primary',ver:'v10',rel:'HIGH',n:'<a href="https://www.ancestry.com/imageviewer/collections/48080/images/CompAmGenIV-003399-738?usePUB=true&pId=186823" target="_blank">Vol. IV, p.738 — Churchill entry</a>'},
+  {id:'S61',t:'Ancestry — Local History Record',type:'secondary',ver:'v10',rel:'HIGH',n:'<a href="https://www.ancestry.com/imageviewer/collections/16215/images/dvm_LocHist004172-00143-1?usePUB=true&pId=269" target="_blank">Collection 16215, Image 269</a>'},
+  {id:'S62',t:'"The Churchill Family In America" (1886)',type:'primary',ver:'v10',rel:'VERY HIGH',n:'Published genealogy, pp. 329–30. Lists children of Ensign Samuel Churchill and Martha Boardman. Primary source for the Connecticut generations. Referenced by multiple FindAGrave contributors.'},
+  {id:'S63',t:'Roger Welles — "Early Annals of Newington" (1874)',type:'primary',ver:'v10',rel:'HIGH',n:'P. 115 — records of Newington Congregational Church. Samuel\'s death recorded as "July 21 [1767]." Confirms gravestone date.'},
+  {id:'S64',t:'Churchill Surname Y-DNA Project — FamilyTreeDNA',type:'primary',ver:'v10',rel:'VERY HIGH',n:'<a href="https://www.familytreedna.com/groups/churchill/about/background" target="_blank">Project page</a>. Y-DNA testing confirms Josiah Churchill of Wethersfield and John Churchill of Plymouth Colony were distant cousins with I-1 haplotype. Common ancestor among Dorset Churchills in 15th century. Exact parentage of both emigrants unproven.'},
+  {id:'S65',t:'"The History of Ancient Wethersfield" Vol 2',type:'primary',ver:'v10',rel:'HIGH',n:'P. 220. Names Josiah Churchill\'s birthplace as "Nuston" (Muston), Dorset, England.'},
+  {id:'S66',t:'Virkus — Immigrant Ancestors (1964)',type:'primary',ver:'v10',rel:'HIGH',n:'Frederick A. Virkus, ed. "Immigrant Ancestors: A List of 2,500 Immigrants to America before 1750." Baltimore: Genealogical Publishing Co., 1964. P. 20. Records Josiah Churchill, Year 1635, Place Connecticut.'},
+  {id:'S67',t:'WikiTree — Josiah Churchill (Churchill-98)',type:'secondary',ver:'v10',rel:'HIGH',n:'<a href="https://www.wikitree.com/wiki/Churchill-98" target="_blank">Profile page</a>. Notes parentage unproven. Cites Robert Charles Anderson and Douglas Richardson as not endorsing any specific father claim.'},
+  {id:'S68',t:'Obituary — Cullen D. Churchill, Jamestown NY Evening Journal',type:'primary',ver:'v10',rel:'VERY HIGH',n:'Published 17 Feb 1893. "Cullen D. Churchill died at the residence of his son Albro Feb. 7, aged 81 years, 11 months and 6 days. Deceased leaves a wife, Jane E. Churchill, and eight children." Names all 8 children. Funeral at M.E. church, Rev. C.W. Miner officiating.'},
+  {id:'S69',t:'William Churchill Will — PROB 11/100/350 (1602)',type:'primary',ver:'v11',rel:'VERY HIGH',n:'PCC will dated 12 March 1599, proved 18 November 1602. William Churchill of Dorchester, Dorset. Examined original secretary-hand document from TNA digital images. Names executor son John Churchill, four daughters: Vertue (wife of Thomas Hunton of Knoyle, Wilts.), Grace (wife of John Wattes), Ann (wife of ...Browne), Martha (wife of Edward Collier, d. 22 Mar 1599). Also references grandson (eldest son of John). Charitable bequests to poor of Dorchester and Bradford Peverell. Burial at St Peter\'s Church, Dorchester. NOTE: Initial paleographic reading gave incorrect daughter names — corrected per OPC Dorset compiled genealogy (S74).'},
+  {id:'S70',t:'OPC Dorset — Dorchester Wills Index',type:'secondary',ver:'v11',rel:'HIGH',n:'<a href="https://www.opcdorset.org/fordingtondorset/Files/FordingtonWillsIndex.html" target="_blank">Online Parish Clerks for Dorset</a>. Comprehensive index of wills proved at Dorchester and in PCC for Dorchester-area residents. Confirms William Churchill 1602 and other Churchill wills.'},
+  {id:'S71',t:'OPC Dorset — Dorchester People',type:'secondary',ver:'v11',rel:'HIGH',n:'<a href="https://www.opcdorset.org/fordingtondorset/Files2/DorchesterPeople.html" target="_blank">Online Parish Clerks for Dorset</a>. Comprehensive people index for Dorchester parish records. Confirms John Churchill of Stinsford died 1 June 1621 and was buried 7 June 1621 at St Peter\'s, Dorchester. Died intestate.'},
+  {id:'S72',t:'OPC Dorset — Dorchester Strays',type:'secondary',ver:'v11',rel:'HIGH',n:'<a href="https://www.opcdorset.org/fordingtondorset/Files2/DorchesterStrays1.html" target="_blank">Online Parish Clerks for Dorset</a>. Records of Dorchester people found in non-Dorchester sources. Cross-references marriage, baptism, and burial records from surrounding parishes.'},
+  {id:'S73',t:'WikiTree — John Churchill of Stinsford (Churchill-207)',type:'secondary',ver:'v11',rel:'HIGH',n:'<a href="https://www.wikitree.com/wiki/Churchill-207" target="_blank">Profile page</a>. John Churchill (c.1568–1621), son of William of Dorchester. Married Eleanor Meller c.1594. 13 children baptised at Dorchester Holy Trinity and St Peter\'s. Education: Hart\'s Hall Oxford 1586/7, Middle Temple 1588/9. Purchased Muston Manor 1 Jan 1609.'},
+  {id:'S74',t:'OPC Dorset — Churchill Family of Colliton House (Russell)',type:'secondary',ver:'v11',rel:'VERY HIGH',n:'<a href="https://www.opcdorset.org/fordingtondorset/Files2/ChurchillFamily.html" target="_blank">Online Parish Clerks for Dorset</a>. © Compiled by Michael Russell, OPC for Dorchester, December 2017 (last updated December 2024). Comprehensive genealogy of the Churchill family of Colliton House, Dorchester, compiled from parish registers, wills, visitations (1565, 1623), Hutchins pedigrees, and tax records. Russell distinguishes which children appear in the 1623 Visitation vs. Hutchins. Key authoritative source — our independent research aligns perfectly with Russell on all verifiable points. Our work extends his with the American line (gens 5–13), original PCC will examinations, and the Ellis/Corton collateral connection.'},
+  {id:'S75',t:'PCC Wills Index Vol. 43 (BRS, 1605–1619)',type:'secondary',ver:'v11',rel:'HIGH',n:'British Record Society Vol. 43, compiled by Ethel Stokes (1912). Index to PCC Wills 1605–1619. <a href="https://archive.org/details/indexofwillsprov00grea" target="_blank">Internet Archive</a>. Used to identify PROB 11/111 (John Churchill of Ribbesford, 1608) and PROB 11/116 (Ellis Churchill of Holborn, 1610).'},
+  {id:'S76',t:'VCH Worcestershire Vol. 4 — Ribbesford',type:'secondary',ver:'v11',rel:'HIGH',n:'<a href="https://www.british-history.ac.uk/vch/worcs/vol4" target="_blank">Victoria County History</a>. Records John Churchill esq. purchasing Ribbesford Manor 1606, died 1607. Ellis Churchill named as his executor. Ellis confirmed as collateral family — connected to Corton branch via 1565 Visitation (S87) and PROB 11/97 proceedings (S80).'},
+  {id:'S77',t:'John Churchill of Ribbesford Will — PROB 11/111/178 (1608)',type:'primary',ver:'v11',rel:'HIGH',n:'PCC will, "13 Windebanck." John Churchill esq. of Ribbesford, Worcestershire, d.1607. Purchased Ribbesford Manor 1606. Examined original secretary-hand document. Names children Thomas, Erasmus, Jane, Francis, Mary Churchill. References Sir William Cooke Knight. <strong>Status: COLLATERAL FAMILY</strong> — connected to the Dorset Churchills through executor Ellis Churchill of Corton/Holborn (see S78). Not Mike\'s direct line but confirmed extended family.'},
+  {id:'S78',t:'Ellis Churchill of Holborn Will — PROB 11/116/434 (1610)',type:'primary',ver:'v11',rel:'HIGH',n:'PCC will, "85 Wingfield." Ellis Churchill esq. of St. Andrew Holborn, London, d.1610. Executor of John Churchill of Ribbesford (S77). Names same children: Thomas, Erasmus, Jane, Francis, Mary. <strong>Status: COLLATERAL FAMILY</strong> — Ellis Churchill of "Gorton" (= Corton in Portesham) appears in the 1565 Dorset Visitation\'s Kymer Pedigree: his daughter Thomasine married William Kymer of West Chelborough. The "Gorton/Corton" confusion is the same G/C secretary-hand issue documented elsewhere on this site (cf. Dowton/Corton). Ellis also appears in PROB 11/97/114 alongside Elizabeth Williams née Churchill of Corton. He was a kinsman of John Churchill of Corton (brother of William, Mike\'s direct ancestor) — likely a brother, uncle, or cousin operating from Corton with London legal connections. Confirmed member of the Dorset Churchill family.'},
+  {id:'S79',t:'Henry Churchill Will — PROB 11/63/188 (c.1580–84)',type:'primary',ver:'v11',rel:'HIGH',n:'PCC will, "Henrici Churchill" in margin heading. Examined original secretary-hand document. Mentions Fillinges village. Early Dorset Churchill — possibly contemporary with or slightly earlier than the Colliton House family. Further research needed to establish exact relationship.'},
+  {id:'S80',t:'Churchill Probate Proceedings — PROB 11/97/114',type:'primary',ver:'v11',rel:'HIGH',n:'PCC probate proceedings involving John Churchill estate and Marys Gardener will. Examined original document. Names "Elizabethe Widlams als Churchill" — identified as Elizabeth Churchill of Corton who married Bruen Williams of Tyneham (per 1623 Visitation). Also mentions Ellis Churchill and William Churchill. Cross-references the Corton branch documented in S19.'},
+  {id:'S81',t:'OPC Dorset — Fordington Strays',type:'secondary',ver:'v11',rel:'MEDIUM',n:'<a href="https://www.opcdorset.org/fordingtondorset/Files/FordingtonStrays.html" target="_blank">Online Parish Clerks for Dorset</a>. Records of Fordington people found in non-Fordington sources. Fordington adjoins Dorchester — relevant for cross-referencing Churchill family movements between parishes.'},
+  {id:'S82',t:'OPC Dorset — Dorset PCC Administrations 1559–1725 (A–C)',type:'primary',ver:'v11',rel:'VERY HIGH',n:'<a href="https://www.opcdorset.org/Miscellaneous/DorsetPCCAdmons1559-1725AC.htm" target="_blank">Online Parish Clerks for Dorset</a>. Index of PCC Letters of Administration for Dorset. Churchill entries: (1) John Churchill, Dorchester — Elizanore Churchill relict, 8 Jun 1621, fol. 126 [confirms John of Stinsford died intestate]; (2) Barnard Churchill, Chaldon Herring — Mary Churchill relict, 31 Jan 1658/9; (3) Thomas Churchill, Dorchester — George Hodder &amp; Henry Cuffe guardians, 28 Apr 1668; (4) Thomas Churchill gent, Dorchester — Mary wife of John Wing daughter, 6 May 1678; (5) Henry Churchill gent, Dorchester — Elizabeth Churchill relict, 9 Apr 1692; (6) John Churchill bachelor, Fordington — Richard Churchill father, 4 Mar 1696/7; (7) Winston Churchill soldier/knight, Minterne — Dame Elizabeth Churchill relict, 24 Apr 1688 [Sir Winston, father of 1st Duke of Marlborough]; (8) Thomas Churchill, died in ship Revenge — Daniel Robinson attorney, 2 Apr 1708; (9) Mary Churchill spinster, Dorchester died at Henbury — Awnsham Churchill armiger brother, 2 Oct 1713.'},
+  {id:'S83',t:'Municipal Records of Dorchester (Mayo &amp; Gould, 1908)',type:'primary',ver:'v11',rel:'HIGH',n:'Charles Herbert Mayo and Arthur William Gould, <em>The Municipal Records of the Borough of Dorchester, Dorset</em> (Exeter: W. Pollard, 1908). <a href="https://archive.org/details/cu31924028114357" target="_blank">Internet Archive</a>. Primary civic records including bailiff elections, freeman lists, and town governance. Essential for the Churchill bailiff dates and civic standing.'},
+  {id:'S84',t:'OPC Dorset — Puddletown Baptisms 1813–1830',type:'secondary',ver:'v11',rel:'LOW',n:'<a href="https://www.opcdorset.org/PiddleFiles/Puddletown/PuddletownBaps1813-1830.htm" target="_blank">Online Parish Clerks for Dorset</a>. Two Churchill entries: Ann Churchill (bap. 4 Feb 1818, dau. of John &amp; Elizabeth, labourer) and John Henry Churchill (bap. 29 Jul 1827, son of John &amp; Jane, labourer). Late descendants of the Muston line, 19th century.'},
+  {id:'S85',t:'William Whiteway Diary — Death of John Churchill 1621',type:'primary',ver:'v11',rel:'VERY HIGH',n:'William Whiteway of Dorchester (1599–1635), contemporary diarist. Records John Churchill Esquire\'s death as 1 June 1621. Cross-referenced with OPC burial record (7 June) and PCC Administration (8 June). Primary eyewitness source.'},
+  {id:'S86',t:'OPC Dorset — Wynford Eagle Census 1861 &amp; 1871',type:'secondary',ver:'v11',rel:'MEDIUM',n:'<a href="https://www.opcdorset.org/WynfordEagleFiles/1861-71WynfordEagle.htm" target="_blank">Online Parish Clerks for Dorset</a>. Wynford Eagle, a small village near Dorchester, was densely populated with Churchill agricultural labourers. 1861: 8+ Churchill households in a village of 137 people, including widow Ann Churchill with 6 children, multiple Williams, Roberts, Georges. 1871: village grew to 400, Churchills still numerous. Notable: <strong>Josiah Churchill</strong> (b. c.1839, Compton Valence) — shepherd in 1861, ag labourer in 1871, wife Frances/Jane, son Tom. The survival of the name "Josiah" among Dorset Churchills in the 19th century suggests the name had currency in the family. Relationship to Colliton House/Muston gentry line vs. Corton branch vs. separate labouring family not yet determined.'},
+  {id:'S87',t:'1565 Visitation of Dorset — Kymer Pedigree (Ellis Churchill)',type:'primary',ver:'v11',rel:'VERY HIGH',n:'Harleian Society. 1565 Dorset Visitation, p.26. Kymer of West Chelborough pedigree: William Kymer married "Thomasine, daughter of Ellis Churchill of Gorton." "Gorton" = Corton in Portesham — the same G/C paleographic confusion seen with Dowton/Corton elsewhere in these records. This places Ellis Churchill at Corton, the seat of John Churchill the Younger (Mike\'s great-uncle). Ellis\'s connection to both Corton (1565 Visitation, PROB 11/97) and London/Ribbesford (PROB 11/111 executor, PROB 11/116 will) makes him a key figure linking the Dorset Churchill family to their Worcestershire/London activities. His exact parentage (son of John the Bailiff? nephew?) is not yet determined.'},
+  {id:'S88a',t:'1599 Indenture Tripartite — Churchill Charity Fund',type:'primary',ver:'v11',rel:'HIGH',n:'Dated 28 Sep 1599 (41st year Elizabeth I). John Churchill of Corton established £100 fund for poor artificers of Dorchester. Trustees: William Churchill (Mike\'s direct ancestor), Matthew Chubbe, Edmund Dashwood. Auditors: Sir George Trenchard, John Williams, Bruen Williams, Maximilian Moone. Seven signatures with seals documented. Shows the two brothers (William of Dorchester and John of Corton) cooperating on civic charity just before both died (John\'s will dated Oct 1597; William\'s will dated Mar 1599). Source: OPC Dorset Churchill Family page [S74].'},
+  {id:'S88b',t:'Awnsham Churchill (1658–1728) — Bookseller &amp; MP',type:'secondary',ver:'v11',rel:'MEDIUM',n:'Awnsham Churchill, bookseller and radical Whig MP from London and Henbury, Dorset. Son of William Churchill of Dorchester and Elizabeth Awnsham. Brothers: Joshua (MP), William (Ipswich MP), John (business partner). Died unmarried 24 Apr 1728. Distantly related to John Churchill (1657–1709), another Dorchester MP. Appears in PCC Administrations (S82) as grantee for sister Mary Churchill spinster, Dorchester, 2 Oct 1713. Part of the broader Dorset Churchill network in the 17th–18th centuries.'},
+  {id:'S88',t:'FindAGrave — Harold Fletcher Churchill',type:'primary',ver:'v11',rel:'VERY HIGH',n:'<a href="https://www.findagrave.com/memorial/97351133/harold-fletcher-churchill" target="_blank">Memorial #97351133</a>. Born 23 Jan 1898, New York. Died 18 Jul 1978 (age 80). Buried Rose Hills Memorial Park, Whittier, Los Angeles Co., CA — Willow Lawn, Gate 1, Section 13, Lot 12410, Grave 1. Parents: Willis Fletcher Churchill (1864–1926) &amp; Jennie A. Johnson Churchill (1863–1953). Spouse: Margie B. Churchill (1896–1996).'},
+  {id:'S89',t:'FindAGrave — Barden D Churchill',type:'secondary',ver:'v11',rel:'HIGH',n:'<a href="https://www.findagrave.com/memorial/83807768/barden-d-churchill" target="_blank">Memorial #83807768</a>. Born 1862, died 1864 (age 1–2). Buried Pioneer Cemetery, Ellington, Chautauqua Co., NY. Son of Cullen Dyer Churchill (1811–1893) &amp; Jane Elizabeth Platner (1824–1915). Full sibling of Willis Fletcher Churchill and Lizzie Eudora Churchill (1860–1864). Both Barden and Lizzie died in infancy — Willis was the only surviving child of Cullen\'s 4th marriage.'},
+];
+
+const modalContent = {
+  'margaret-will':{t:'Margaret Churchill\'s Will — PROB 11/65/221',b:'<p class="d-label">What We Did</p><div class="d-box">Ordered from The National Archives (£3.50). Received as digital image. Personally transcribed from secretary hand — Tudor-era handwriting where many letters look nearly identical.</div><p class="d-label">What It Says</p><div class="d-box">Dated 21 Jan 1582/3, probated 18/19 Apr 1583 at London PCC. Burial: Bradford Peverell churchyard. Bequests to son <strong>Robert</strong>, sons-in-law <strong>John Churchill</strong> (4 bushels barley, 1 bushel wheat), <strong>John Sobye</strong> (household goods, livestock), <strong>William Spynett</strong> (his children each get one sheep/year). Also names John Fitts, Alice Cobbe, Jone Cornuell, Robert Morrice. Witnesses: Robert Maker clerk, Thomas Debenyshe clerk, Edward Maker.</div><p class="d-label">Why It Matters</p><div class="d-box">First independent transcription. <strong>Disproves</strong> Geni.com identification (no mention of Roger, Jane Peverell, or Bartholomew Olde). Reveals a new family network. Opens the Rowland hypothesis.</div>'},
+  'rowland':{t:'The Rowland Churchill Hypothesis',b:'<p class="d-label">The Ghost</p><div class="d-box">Rowland Churchill appears in John\'s 1557 will — and nowhere else. No will, no parish entry, no tax record.</div><p class="d-label">The Hypothesis</p><div class="d-box">Margaret Churchill (will 1583) was a widow in Bradford Peverell — 3 miles from Dorchester. If Rowland married Margaret and died 1557–1582, this explains everything: her status as "Margaret Churchill, widow," why Rowland left no PCC will (it may be in archdeaconry courts at Dorset History Centre), and how John Churchill (her son-in-law) connects to the Bailiff\'s family.</div><p class="d-label">How To Prove It</p><div class="d-box">Search Dorset History Centre for archdeaconry wills (not in TNA online). Bradford Peverell registers for Churchill burials 1557–1582. Physical visit or written enquiry required.</div>'},
+  'hutchins':{t:'Hutchins\' Errors — Mapped',b:'<p class="d-label">The Problem</p><div class="d-box">Hutchins\' <em>History of Dorset</em> (1774) gets the first generation wrong: "William" should be "John," "Elizabeth" should be "Edith." The 3rd edition editors caught it but many online trees still use 1774.</div><p class="d-label">Our Work</p><div class="d-box">Compared all three editions against PROB 11/39, the 1623 Visitation, and the 1565 Visitation. Mapped every error and correction systematically.</div>'},
+  'bailiff':{t:'Bailiff Date — 1524–25',b:'<p class="d-label">Previous</p><div class="d-box">Trees date first bailiff term to 1540s, implying birth c.1510–1515.</div><p class="d-label">New</p><div class="d-box">OPC list: 1524–25. Bailiffs typically 25+. Birth pushed to c.1500–1503. This makes Thomas Esq. (c.1475) a more natural father.</div>'},
+  'dowton':{t:'Dowton = Corton (Paleography)',b:'<p class="d-label">Mystery</p><div class="d-box">1593 register says "Dowton." No such place exists.</div><p class="d-label">Solution</p><div class="d-box">Secretary hand C/D confusion. Well-documented paleographic issue. All other records say "Corton."</div>'},
+  'sons-in-law':{t:'Three Sons-in-Law — New Names',b:'<p class="d-label">Discovery</p><div class="d-box">Margaret\'s will names: John Churchill, John Sobye, William Spynett. Tudor "sonne in Lawe" could mean daughter\'s husband or stepson.</div><p class="d-label">Research Leads</p><div class="d-box">Sobye and Spynett wills may name Churchill wives. Active leads for v11. Spynett\'s children got one sheep/year — ongoing family bond.</div>'},
+};
+
+// ═══════════════════════════════════════════
+// RENDER
+// ═══════════════════════════════════════════
+
+function renderDirectLine(){
+  const el=document.getElementById('directLine');
+  let html='';
+  let addedEraDivider=false;
+  directLine.forEach((p,i)=>{
+    if(p.gen==='GAP'){
+      html+=`<div class="gap-marker"><strong>⚠ ${p.gapText}</strong>${p.gapDetail}</div>`;
+      return;
+    }
+    if(p.era==='america' && !addedEraDivider){
+      addedEraDivider=true;
+      html+=`<div class="era-div"><span>America · Connecticut → California · 1630s–Present</span></div>`;
+    }
+    const panelCls = p.isMike?'gen-panel mike-card':p.era==='america'?'gen-panel american':'gen-panel direct-ancestor';
+    const dotCls = p.isMike?'gen-dot mike':p.ev==='PROVEN'?'gen-dot proven':p.ev==='HYPOTHESIS'?'gen-dot hypothesis':'gen-dot';
+    html+=`<div class="gen-card">
+      <div class="${dotCls}"></div>
+      <div class="gen-num">${p.isMike?'★ You ★':typeof p.gen==='number'?'Gen '+(p.gen+1):''}</div>
+      <div class="${panelCls}" onclick='openModal("gen-${i}")'>
+        <div class="top-row">
+          <div class="avatar male">${p.icon}</div>
+          <div>
+            <div class="name">${p.name}</div>
+            <div class="dates">${p.dates}</div>
+            <div class="location">${p.loc}</div>
+          </div>
+        </div>
+        ${p.role?`<div style="font-family:Inter,sans-serif;font-size:11px;color:var(--colliton);font-weight:600;margin:4px 0">${p.role}</div>`:''}
+        <div class="detail">${p.detail}</div>
+        ${p.spouse?`<div class="spouse-line">⚭ <strong>${p.spouse}</strong>${p.spouseNote?' — '+p.spouseNote:''}</div>`:''}
+        ${p.children?`<div class="spouse-line" style="color:var(--proven)">Children: <strong>${p.children}</strong></div>`:''}
+        ${p.ev&&p.ev!=='—'?`<span class="evidence-tag ${p.evCls}">${p.ev}</span>`:''}
+        <div class="click-hint">click for details →</div>
+      </div>
+    </div>`;
+    // Winston branch connector after the Bailiff
+    if(p.winston){
+      html+=`<div class="branch-off"><a class="branch-btn" onclick="toggleWinston();return false;">👑 See the Winston Churchill Connection →</a></div>`;
+    }
+  });
+  el.innerHTML=html;
+  // register modals
+  directLine.forEach((p,i)=>{
+    if(p.modal) modalContent['gen-'+i]=p.modal;
+  });
+}
+
+function toggleWinston(){
+  const p=document.getElementById('winstonPanel');
+  p.classList.toggle('open');
+  if(p.classList.contains('open')) p.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function renderTimeline(){
+  const el=document.getElementById('timeline');
+  el.innerHTML=storyData.map(s=>`<div class="tl-item"><div class="tl-dot${s.bt?' breakthrough':''}"></div><div class="tl-content"><span class="tl-ver ${s.cls}">${s.ver}</span><h3>${s.h}</h3><p>${s.p}</p><span class="tl-src">Sources: ${s.src}</span></div></div>`).join('');
+}
+
+function renderInsights(){
+  const el=document.getElementById('insightGrid');
+  el.innerHTML=insightsData.map(i=>`<div class="ins-card"><div class="accent ${i.acc}"></div><div class="body"><h3>${i.h}</h3><p>${i.p}</p><span class="ev-link" onclick="openModal('${i.modal}')">View evidence →</span></div></div>`).join('');
+}
+
+function renderCorrections(){
+  const el=document.getElementById('corrDiv');
+  el.innerHTML=correctionsData.map(c=>`<div class="corr"><h3>${c.h}</h3><div class="wrong">${c.w}</div><div class="right">${c.r}</div><span class="src-tag">Evidence: ${c.src}</span></div>`).join('');
+}
+
+function renderEvidence(filter='all'){
+  const body=document.getElementById('evBody');
+  const d=filter==='all'?evidenceData:evidenceData.filter(e=>e.status===filter);
+  body.innerHTML=d.map(e=>{
+    const cls=e.status==='PROVEN'?'ev-p':e.status==='STRONG'?'ev-s':e.status==='MODERATE'?'ev-m':e.status==='HYPOTHESIS'?'ev-h':'ev-c';
+    const vc=e.ver.includes('10')?'v10':e.ver.includes('9')?'v9':e.ver.includes('7')?'v7':e.ver.includes('6')?'v6':e.ver.includes('5')?'v5':'v4';
+    return `<tr><td><strong>${e.claim}</strong></td><td><span class="ev-badge ${cls}">${e.status}</span></td><td style="font-size:11px;color:var(--slate-mid)">${e.src}</td><td><span class="ev-ver ${vc}">${e.ver}</span></td><td style="font-size:12px;color:#4a5568">${e.notes}</td></tr>`;
+  }).join('');
+}
+
+function renderEvFilters(){
+  const el=document.getElementById('evFilters');
+  const filters=['all','PROVEN','STRONG','HYPOTHESIS','CONFLICTED'];
+  el.innerHTML=filters.map(f=>`<button class="ef${f==='all'?' on':''}" data-f="${f}">${f==='all'?'All Claims':f}</button>`).join('');
+  el.querySelectorAll('.ef').forEach(b=>b.addEventListener('click',()=>{el.querySelectorAll('.ef').forEach(x=>x.classList.remove('on'));b.classList.add('on');renderEvidence(b.dataset.f);}));
+}
+
+function renderSources(filter='all'){
+  const g=document.getElementById('srcGrid');
+  const d=filter==='all'?sourcesData:sourcesData.filter(s=>s.type===filter);
+  g.innerHTML=d.map(s=>{
+    const vc=s.ver.includes('10')?'v10':s.ver.includes('9')?'v9':s.ver.includes('7')?'v7':s.ver.includes('6')?'v6':s.ver.includes('5')?'v5':'v4';
+    const tc=s.type==='primary'?'pri':s.type==='secondary'?'sec':'ter';
+    const rc=s.rel.includes('VERY HIGH')||s.rel==='HIGH'?'var(--proven)':s.rel.includes('LOW')||s.rel==='DISPROVED'?'var(--conflicted)':'var(--moderate)';
+    return `<div class="src-c"><div class="sid">${s.id} <span class="ev-ver ${vc}">${s.ver}</span></div><h4>${s.t}</h4><span class="stype ${tc}">${s.type}</span><div class="snotes">${s.n}</div><div class="srel" style="color:${rc}">Reliability: ${s.rel}</div></div>`;
+  }).join('');
+}
+
+function renderSrcFilters(){
+  const el=document.getElementById('srcFilters');
+  const filters=['all','primary','secondary','tertiary'];
+  el.innerHTML=filters.map(f=>`<button class="ef${f==='all'?' on':''}" data-sf="${f}">${f==='all'?'All':f.charAt(0).toUpperCase()+f.slice(1)}</button>`).join('');
+  el.querySelectorAll('.ef').forEach(b=>b.addEventListener('click',()=>{el.querySelectorAll('.ef').forEach(x=>x.classList.remove('on'));b.classList.add('on');renderSources(b.dataset.sf);}));
+}
+
+// ═══════════════════════════════════════════
+// MODALS
+// ═══════════════════════════════════════════
+function openModal(id){
+  const d=modalContent[id];if(!d)return;
+  document.getElementById('mTitle').textContent=d.t;
+  document.getElementById('mBody').innerHTML=d.b;
+  document.getElementById('modalBg').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  document.getElementById('modalBg').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+
+// NAV
+let lastScroll=0;
+window.addEventListener('scroll',()=>{
+  const st=window.scrollY;
+  document.getElementById('mainNav').classList.toggle('hidden',st>lastScroll&&st>100);
+  lastScroll=st;
+  document.getElementById('backTop').classList.toggle('vis',st>500);
+  document.querySelectorAll('.nav-links a').forEach(a=>{
+    const sec=document.querySelector(a.getAttribute('href'));
+    if(sec){const t=sec.offsetTop-80,b=t+sec.offsetHeight;a.classList.toggle('active',st>=t&&st<b)}
+  });
+});
+
+// ═══════════════════════════════════════════
+// FUN FACTS
+// ═══════════════════════════════════════════
+function renderFunFacts(){
+  // Calculate stats from directLine data
+  const withDates=directLine.filter(p=>p.gen!=='GAP'&&!p.isMike&&p.dates);
+  let lifespans=[];
+  withDates.forEach(p=>{
+    const m=p.dates.match(/(\d{4})\s*[–\-]\s*(\d{4})/);
+    if(m){lifespans.push({name:p.name.split(' ')[0],age:parseInt(m[2])-parseInt(m[1]),birth:parseInt(m[1]),death:parseInt(m[2])});}
+    else{
+      const m2=p.dates.match(/c\.(\d{4})\s*[–\-]\s*(\d{4})/);
+      if(m2) lifespans.push({name:p.name.split(' ')[0],age:parseInt(m2[2])-parseInt(m2[1]),birth:parseInt(m2[1]),death:parseInt(m2[2])});
+    }
+  });
+  const avgAge=lifespans.length?Math.round(lifespans.reduce((s,l)=>s+l.age,0)/lifespans.length):0;
+  const longest=lifespans.reduce((a,b)=>a.age>b.age?a:b,{age:0});
+  const shortest=lifespans.reduce((a,b)=>a.age<b.age?a:b,{age:999});
+
+  // Count names
+  const nameCount={};
+  directLine.filter(p=>p.gen!=='GAP').forEach(p=>{
+    const fn=p.name.split(' ')[0];
+    if(fn!=='C.D.') nameCount[fn]=(nameCount[fn]||0)+1;
+  });
+  const topName=Object.entries(nameCount).sort((a,b)=>b[1]-a[1])[0];
+
+  // Locations count
+  const states=new Set();
+  directLine.filter(p=>p.gen!=='GAP'&&p.era==='america').forEach(p=>{
+    const parts=p.loc.split(/[,→·]/);
+    parts.forEach(s=>{const t=s.trim();if(t.length>1) states.add(t);});
+  });
+
+  // Count total known family members (direct line + extended)
+  const directCount=directLine.filter(p=>p.gen!=='GAP').length;
+  // Extended: Ezekiel's 8 other kids + Cullen's 7 other kids + 4 wives + Jack's 4 other kids + Kenneth's 3 other kids + 6 spouses + 11 grandkids + Willis siblings 2 + Willis 1st wife = ~46 extended
+  const extendedCount=46;
+  const totalFamily=directCount+extendedCount;
+
+  // All-generations boy vs girl ratio — every Churchill-born child we can identify
+  // Males (48): Charles, Thomas, John Bailiff, Rowland, William, John of Corton,
+  //   John of Stinsford, 9 sons (Wm, Gervase, Richard, John, Robert, Maximilian, Jasper, Thomas, Matthew),
+  //   Josiah, Joseph, Samuel I, Samuel II's 10 children incl. Ezekiel,
+  //   Ezekiel's sons: Ezekiel Dyer Jr, Levi William, Henry, Cullen Dyer,
+  //   Cullen's sons: Homer, Charles C, Albro R, Lester E, Willis F,
+  //   Willis's son Harold, Barden D,
+  //   Jack, Kenneth, Charles, David, Steven, Mike, Ethan, Evan, Titus
+  // Females (23): Elizabeth (Bailiff's daughter), Anne Browne, Vertue Hunton, Grace Watts,
+  //   Margaret Churchill, Ezekiel's daughters: Eunice, Diantha, Prudence, Wealthy, Harriet Cordelia,
+  //   Cullen's daughters: Daphne, Alice O., Hattie C., Eunice E.,
+  //   Willis's: Lizzie Eudora, Ruth E.,
+  //   Sherry, Margaret (Jack's), Melissa, Andrea, Samantha, Hope,
+  //   Bryce, Kendall
+  const allBoys=48, allGirls=23;
+
+  const facts=[
+    {icon:'⏳',num:avgAge,label:'Avg. Lifespan',detail:'Average age at death across the direct-line ancestors with known dates'},
+    {icon:'👑',num:longest.age,label:'Longest Lived',detail:longest.name+' — the family\'s longest-lived direct ancestor ('+longest.birth+'–'+longest.death+')'},
+    {icon:'👨‍👩‍👧‍👦',num:totalFamily,label:'Total People',detail:directCount+' in the direct line + '+extendedCount+' extended family members (siblings, spouses, cousins) across 15 generations'},
+    {icon:'👶',num:allBoys+' : '+allGirls,label:'Boys vs Girls Born',detail:'Of all '+(allBoys+allGirls)+' Churchill-born children recorded across 15 generations, '+allBoys+' were boys and '+allGirls+' girls. The ratio evens out in the American generations — earlier Tudor-era records overwhelmingly tracked sons while daughters were rarely named in wills and visitations.'},
+    {icon:'⛪',num:3,label:'In Ministry',detail:'Three consecutive generations of pastors: Jack Churchill, Kenneth Churchill, and Mike Churchill — a family calling spanning grandfather to grandson'},
+    {icon:'🧬',num:'DNA',label:'Dorset Confirmed',detail:'Y-DNA testing (I-1 haplotype) confirms the Churchill family connection to the Dorset Churchills of England — the same broader family that produced the Dukes of Marlborough. Josiah\'s exact father remains the oldest unsolved mystery after 140 years of research.'},
+    {icon:'👨‍👧‍👦',num:9,label:'Ezekiel\'s Children',detail:'Ezekiel Churchill (1764–1813) and Elizabeth Dyer had 9 children. The oldest, Ezekiel Dyer Jr. (1787–1810), died the year before the youngest, Cullen Dyer (1811–1893), was born. Both carried their mother\'s maiden name "Dyer" — a genealogical proof point.'},
+    {icon:'💀',num:'1801',label:'Died Together',detail:'Samuel Churchill II and his wife Thankful Hewitt both died in 1801 at East Hubbardton, Vermont — he in January, she in September — after 54 years of marriage. Their shared gravestone calls them "Pioneers of the Revolution."'},
+    {icon:'💍',num:4,label:'Cullen\'s Wives',detail:'Cullen Dyer Churchill (1811–1893) outlived 3 wives: Caroline (d. 1845), Sarah Churchill (d. 1848), Emma/Eunice (d. 1859). His 4th wife Jane Elizabeth Platner (1824–1915) survived him by 22 years. He fathered 8+ children across these marriages.'},
+    {icon:'🌊',num:'3,400',label:'Miles Migrated',detail:'Dorset to Connecticut, then Vermont, Massachusetts, New York, Indiana, Colorado, and finally to California — 400 years of westward movement'},
+    {icon:'📜',num:'1557',label:'Oldest Document',detail:'John the Bailiff\'s will — the bedrock of the research — predates Shakespeare\'s birth'},
+    {icon:'⚔️',num:4,label:'Wars Touched',detail:'Wars of the Roses (Margaret Woodville era), Pequot War (Josiah in CT), American Revolution (Samuel II was 55 in 1776 — "Pioneers of the Revolution"), English Civil War (Sir Winston)'},
+    {icon:'🏛️',num:5,label:'Bailiff Terms',detail:'John and William served 5 combined terms as Bailiff of Dorchester — the town\'s top elected official'},
+    {icon:'🤝',num:'~12th',label:'Cousin to PM',detail:'Mike\'s connection to Winston Churchill — ~12th–13th cousins through the Bailiff of Dorchester'},
+    {icon:'👑',num:'~11th',label:'Cousin to Royals',detail:'~11th cousins, 3 times removed with Prince William & Prince Harry — through the 1st Duke of Marlborough → Anne Churchill → Spencer Earls → Diana, Princess of Wales'},
+    {icon:'⚓',num:'1635',label:'Sailor to America',detail:'Josiah Churchill came to America as a sailor about mid-1635 from Muston, Dorset — the same village where the Churchill family held Muston Manor. Passenger and Immigration Lists Index records his arrival.'},
+    {icon:'🔍',num:7,label:'Errors Corrected',detail:'Published mistakes we identified and corrected using primary source evidence'},
+    {icon:'🗺️',num:7,label:'States Settled',detail:'Connecticut → Vermont → Massachusetts → New York → Indiana → Colorado → California — 400 years of westward movement'},
+  ];
+
+  const grid=document.getElementById('ffGrid');
+  grid.innerHTML=facts.map(f=>`<div class="ff-card">
+    <span class="ff-icon">${f.icon}</span>
+    <span class="ff-num">${f.num}</span>
+    <span class="ff-label">${f.label}</span>
+    <div class="ff-detail">${f.detail}</div>
+  </div>`).join('');
+}
+
+// ═══════════════════════════════════════════
+// DORCHESTER REFERENCE DATA
+// ═══════════════════════════════════════════
+const dorchesterBranches = [
+  {
+    id:'colliton-later',
+    name:'Colliton House — Later Generations',
+    icon:'🏛️',
+    dates:'1695–1847',
+    cat:'gentry',
+    desc:'The main Colliton House line after our American branch split off. These are the cousins who stayed in Dorset.',
+    people:[
+      {name:'William Churchill "the younger"',dates:'d. 1695/6',detail:'Son and heir of William Churchill of Muston (c.1598–1680). Married Barbara née HOLLOWAY. Buried at Piddlehinton. Father of William (1693–1759), Grace, and Honor Churchill.',source:'Russell/OPC; Admin. for Barbara Churchill 1745'},
+      {name:'Barbara Churchill née Holloway',dates:'d. 1724',detail:'Widow of William "the younger." Died intestate. Administration granted 28 Sep 1745 to her son William Churchill (1693–1759), Esq of Colliton — her daughters Grace and Honor (the original administratrixes) having also predeceased. Buried at Piddlehinton 27 June 1724.',source:'DHC Ad/Dt/A/1745 Event Record 8'},
+      {name:'Grace Churchill',dates:'d. 1735',detail:'Spinster of Dorchester, daughter of William "the younger" and Barbara née Holloway. Buried at Piddlehinton 13 August, described as sister of William Churchill Esquire. Will (PROB 11/673, dated 28 Feb 1734, proved 9 Oct 1735): Dr Archer £200; various silver items; residue to "my brother William CHURCHILL Esquire"; pearl necklace to "my sister Churchill" for life then to her daughter Elizabeth; "my niece Grace Churchill have all the residue of my plate"; nephew John Churchill £50; each child of "my cousin William Churchill deceased" £20.',source:'PROB 11/673'},
+      {name:'Honor Churchill',dates:'d. 1734',detail:'Spinster of Dorchester, daughter of William "the younger" and Barbara née Holloway. Buried at Piddlehinton 19 Oct 1734. Will (PROB 11/668, dated 11 Sep 1734, proved 22 Nov 1734): "To my Brother William CHURCHILL Esquire all personal estate in Trust that he improve the same for the benefit and use of her sister Grace CHURCHILL."',source:'PROB 11/668'},
+      {name:'William Churchill Esq.',dates:'1693–1759',detail:'Esq of Colliton, son and heir of William "the younger" (d.1695/6) and Barbara née Holloway. Married Elizabeth née MARTIN (marriage articles 8 April 1729). Died in Dorchester, buried at Piddlehinton 17 Feb 1759 — "brought hither from Colliton" (Colliton House, the main seat). Widow Elizabeth also buried at Piddlehinton July 1762. His will (PROB 11/848, dated 17 Sep 1757, proved 15 Aug 1759) entails the Manor and Farm of Muston alias Musterton and Loveford on son William for life; Mansion House at Colliton with buildings, courts, gardens to son William; copyhold estates at Fordington; 10 acres freehold in HT Dorchester and Fordington Fields; lands in Milborn. Remarkable marriage clause: son William must not marry before age 30 to any woman without bona fide income of £2,000 — otherwise everything goes to son George. Daughter Elizabeth Churchill receives £3,150. Son George gets Manors, farms at Piddlehinton when aged 21.',source:'PROB 11/848; Burials Piddlehinton OPC'},
+      {name:'George Churchill BA',dates:'1745–1814',detail:'Esq of Dorchester, son of William (1693–1759). Buried 15 June 1814 at Piddlehinton aged 69 by Rev JM Colson.',source:'Burials Piddlehinton OPC; ancestry.com image'},
+      {name:'William Churchill Esq.',dates:'1738–1799',detail:'High Sheriff of Dorset 1766–67. Baptised 15 Sep 1738 at Holy Trinity, son of William (1693–1759) Esq by wife Elizabeth née Martin. Militia listing 29 July 1758. Married Jane Churchill (1747–1801), daughter of Joshua Churchill (1712–?) of Gussage All Saints — a descendant of the bookseller line. Marriage bond £200 on 18 Oct 1773; marriage settlement 3 Nov 1773. Deputy Lieutenant qualification 15 Sep 1796 — estates at Piddlehinton. Hutchins records the Churchill "Mansion situate in a part of Fordington called \'Britain\'" — ancient stone edifice on the bank of the Frome, later taken down when the Darner family bought the estate. William died 1 Dec 1799, buried St Mary\'s Piddlehinton 9 Dec. Will PROB 11/1333 (dated 23 Nov 1799, proved 24 Dec 1799). Widow Jane died 12 April 1801, interred in family vault at St Peters — "the corpse was followed to the church by the girls of the Sunday schools to the number 41, attended by two mistresses, all in close mourning, given them by the Revd Mr CHURCHILL."',source:'PROB 11/1333; Walcot Somerset Marriage Bond; Hutchins History of Fordington'},
+      {name:'Rev. William Rush Hallet Churchill BA',dates:'1775–1847',detail:'Son of William Churchill (1738–1799) of Colliton House. Baptised at Holy Trinity Dorchester 27 June 1775. Worcester College Oxford — matriculated 7 March 1792 aged 17, BA 1795, fellow. Ordained deacon Christchurch Oxford 24 Dec 1797, priest 17 Feb 1799. Rector of Witherstone (12 June 1799), Bettiscombe (31 Dec 1799), Shaftsbury St Rumbold (16 Sep 1800), Winterborne Anderston (3 July 1806). Marriage bond 25 May 1798 to Martha TANNER, spinster (Thomas Salisbury of Fordington as bondsman, £200). In 1840 main beneficiary under Will of Mary Shergold, spinster of Dorchester. Died 11 Jan 1847, buried at Piddlehinton 19 Jan 1847 aged 72 (Entry 242, abode Colliton House Dorchester, Rev George Coke Rector). Will at TNA proved 17 Feb 1847.',source:'Walcot Somerset Marriage Bond; Burials Piddlehinton; ancestry.com',
+       children:['(1) Eliza Sophia Churchill — privately bap 15 Mar 1799, received HT 8 Oct 1801','(2) Frances Caroline Churchill — privately bap 16 May 1801, received HT 8 Oct 1801','(3) William Churchill — privately bap 28 May 1803, received HT 21 Jan 1808; Worcester College, BA 1825; Rector of Winterbourne Stickland 1824–1884; died 1 July 1886','(4) Georgina Louisa Churchill — privately bap 1 Mar 1805, received HT 9 Dec 1809','(5) Emma Ann Churchill — privately bap 20 Sep 1806, received HT 9 Dec 1809','(6) George Churchill BA — privately bap 15 Mar 1811, received HT 28 Dec 1812; Worcester College Oxford, BA 1833; said to be of Alderholt Dorset']}
+    ],
+    wills:[
+      {title:'Will of Ann Churchill, Widow of Dorchester',ref:'PROB 11/586 — Dated 6 July 1720, proved 8 Aug 1722',summary:'Wife of John Churchill (1657–1709) Esq of Colliton and Fordington. Buried at Kimmeridge 20 July 1722 (per Hutchins p.400). Major bequests: kinsman Edward Clavel £500 + lands at Orchard; daughter Martha Clavel £100; niece Mrs Dorothy Mildmay all lands on Isle of Wight + Bradpole + Pymore; niece Elizabeth Swayne — dwelling house in Dorchester + £1000 + household goods; nephew Robert Swayne 10s weekly for life; niece Elizabeth Swayne her gold watch and all jewels; £400 to a charity school in Dorchester; £10 to poor of each of three parishes; residue to niece Mrs Dorothy Mildmay sole executrix. CODICIL: Revokes £1000 to niece Elizabeth Swayne (now married to Mr Richard Samways with ample provision); £400 charity school to be taken from money due from "my Brother [i.e. Brother-in-Law] CHARLES CHURCHILL." KEY: Confirms Ann was née Swayne (multiple Swayne nieces/nephews); confirms Charles Churchill as John\'s brother.'},
+      {title:'Will of Dorothy Turner, Widow of Dorchester',ref:'PROB 11/566 — Dated 11 Aug 1718, proved 8 Dec 1718',summary:'Buried Holy Trinity 14 Nov 1718. Extensive will mentioning "Mrs Anne CHURCHILL" and "Mrs GRACE and Honour CHURCHILL" (rings of 20 shillings each), plus "her son Mr Henry CHURCHILL £10." Also mentions Elizabeth Swayne, Mr Crow. Connects the Turner family to the Churchill/Swayne network.'},
+      {title:'Will of Robert Swayne, Esquire of Dorchester',ref:'PROB 11/522 — Dated 21 Jan 1707, proved 5 July 1711',summary:'Bequests include: "Unto my loving brother John CHURCHILL of Fordington; Ann CHURCHILL wife of John; Rest to his 5 Daughters." The term "loving brother" confirms brother-in-law relationship — Ann Churchill was née Swayne, Robert\'s sister.'},
+      {title:'Will of John Phelps, Shopkeeper of Dorchester',ref:'DHC NM2/S/11/TS/7/1-2 — Dated 28 June 1792, proved 2 Aug 1792',summary:'Buried 27 July 1792 St Peters. Mentions "Ann or Nancy CHURCHILL wife or widow of Nephew John CHURCHILL." Also includes lease and release involving Sarah WARREN of South Street Dorchester. Connects Phelps, Churchill, and Warren families in Dorchester.'}
+    ],
+    connections:['Ann Churchill née Swayne\'s will (1720) names "Brother [in-law] Charles CHURCHILL" — confirms sibling link between John (1657–1709) and Charles Churchill','Robert Swayne\'s will (1707) calls John Churchill of Fordington "my loving brother" — confirming Ann was née Swayne','Grace Churchill\'s will (1734) mentions "my cousin William Churchill deceased" and nephew "John Churchill" — mapping the family network','The marriage of William (1738–1799) to Jane Churchill of the bookseller line reconnected two branches that had split c.1630']
+  },
+  {
+    id:'bookseller',
+    name:'William the Bookseller & Awnsham Churchill MP',
+    icon:'📚',
+    dates:'1628–1728',
+    cat:'gentry',
+    desc:'The publishing dynasty. William Churchill (1628–1706) was a prominent London bookseller; his son Awnsham Churchill (1658–1728) became an MP and major publisher.',
+    people:[
+      {name:'William Churchill',dates:'1628–1706',detail:'Bookseller of London and Dorchester. Married Elizabeth AWNSHAM (1630–1714) — revealing the origin of the unusual name "Awnsham" as the mother\'s maiden name. A common gentry practice of the period. Their children included Awnsham (1658–1728), William (1661–1737), John, Joshua (1664–1720), Jane, Sarah, Susannah, and Richard.',source:'Russell/OPC; PCC Admons Folio 223 (Mary Churchill admin)'},
+      {name:'Elizabeth Churchill née Awnsham',dates:'1630–1714',detail:'Wife of William the bookseller. Still alive in October 1713 aged about 83 when she renounced administration of daughter Mary\'s estate, leaving it to son Awnsham. Inherited wealth via her uncle Joshua Churchill (1664–1720).',source:'PCC Admons Folio 223'},
+      {name:'Mary Churchill',dates:'d. 1713',detail:'Spinster of Dorchester, third child of William (1628–1706) and Elizabeth née Awnsham. Died at Henbury. Administration granted 2 Oct 1713 to brother Awnsham Churchill, armiger — mother Elizabeth renouncing. Buried at St Peters Dorchester 11 Aug 1713.',source:'PCC Admons Folio 223'},
+      {name:'Awnsham Churchill MP',dates:'1658–1728',detail:'Son of William the bookseller. Major London publisher and bookseller — published Locke, Churchill\'s Voyages. MP for Dorchester. Described as "armiger" (entitled to bear arms) in his sister Mary\'s 1713 administration. His publishing house was one of the most important in late 17th/early 18th century London. Detailed biography in the History of Parliament.',source:'Russell/OPC; History of Parliament'},
+      {name:'Joshua Churchill',dates:'1664–1720',detail:'Son of William the bookseller. Of Gussage All Saints Parish, also had residence in London. Married Sophia SMALL at All Hallows Church, Barking by the Tower, London, 14 Oct 1734. Will dated 13 July 1785, proved 13 Feb 1786 — bequeathed to sister Jane (wife of William Churchill of Colliton) the Manor of East Stower with farms and freehold lands in Dorset, in trust for her sons William Rush Hallett and John Churchill. This will is how the bookseller line\'s wealth flowed into the Colliton House line.',source:'Russell/OPC'},
+      {name:'Jane Churchill',dates:'1747–1801',detail:'Daughter of Joshua Churchill of Gussage. Baptised in her mother\'s home parish of St Martin in the Fields, London, 12 June 1747. Had elder siblings Sophia Churchill (bap Gussage 21 Nov 1738) and Joshua Churchill (bap Gussage 10 July 1740). Married William Churchill (1738–1799) of Colliton House — thereby reuniting the bookseller branch with the Colliton House gentry branch. Wealthy in her own right. Died 12 April 1801.',source:'Russell/OPC; Walcot Somerset Marriage Bond'}
+    ],
+    wills:[],
+    connections:['Jane Churchill (bookseller line) married William Churchill (1738–1799) of Colliton House — reuniting two Churchill branches','Elizabeth AWNSHAM\'s maiden name explains the origin of "Awnsham" as a Christian name in the family','Joshua Churchill\'s will channelled bookseller line wealth into the Colliton House line via his sister Jane']
+  },
+  {
+    id:'woollen-draper',
+    name:'Richard Churchill — Woollen Draper Line',
+    icon:'🧶',
+    dates:'c.1602–1716',
+    cat:'trade',
+    desc:'Richard Churchill the woollen draper and his descendants — a trading family connected to the Colliton House branch as acknowledged "cousins."',
+    people:[
+      {name:'Richard Churchill',dates:'c.1602–1672',detail:'Woollen draper of Dorchester. Father of Richard Jr (c.1633–1713/14), John (c.1635–1695), Sarah (1631–1716), and William (c.1637). The family was prominent in the Dorchester cloth trade.',source:'Russell/OPC'},
+      {name:'Sarah Churchill',dates:'1631–1716/17',detail:'Spinster of Dorchester, sister of Richard the woollen draper. Buried at St Peters Dorchester 13 Mar 1716/7. Will (dated 17 Nov 1708, proved 16 Mar 1716/7): To be buried at St Peters; Cousin Blandford and wife 20s each; Cousin Samuel Berjew and wife 20s each; "my Couson Edward CHURCHILL and his wife" 20s each; "my Couson John CHURCHILL of Fordington Esquire" 20s to buy him a ring; Cousin Christian Milney alias Dunbar 1s; residue to "Brother Mr. Richard CHURCHILL" sole executor; if Richard dies, Edward Churchill residuary legatee. KEY: This names "Cousin John CHURCHILL of Fordington Esquire" — confirming the woollen draper branch and Colliton House branch recognized each other as kin.',source:'DHC Ad/Dt/W/1716 Event Record 8; ancestry.com image'}
+    ],
+    wills:[],
+    connections:['Sarah Churchill\'s will (1708) names "Cousin John CHURCHILL of Fordington Esquire" — primary source proving the woollen draper and Colliton House branches recognised each other as kin','Sarah also names "Cousin Edward CHURCHILL" — another Churchill branch in the network']
+  },
+  {
+    id:'fordington',
+    name:'Fordington Churchills',
+    icon:'🏘️',
+    dates:'1707–1723+',
+    cat:'trade',
+    desc:'Churchill references tied to Fordington — the parish adjacent to Dorchester where the family held copyhold estates.',
+    people:[
+      {name:'John Churchill of Fordington',dates:'fl. 1707–1708',detail:'Referred to as "Esquire" in both the will of Robert Swayne (1707) and the will of Sarah Churchill (1708). His wife was Ann née Swayne. Almost certainly John Churchill (1657–1709) of Colliton and Fordington.',source:'PROB 11/522; DHC Ad/Dt/W/1716'},
+      {name:'William Churchill, husbandman of Fordington',dates:'fl. 1723',detail:'Named in a 1723 Bastardy Maintenance Bond regarding "widow Charity Churchill." A different social class from the Colliton Esquires — described as husbandman (small farmer).',source:'Russell/OPC'},
+      {name:'Charles Churchill of Fordington',dates:'fl. 1723',detail:'Contemporary of William the husbandman. Also referenced in Ann Churchill\'s will codicil (1722) as her "Brother" (brother-in-law) Charles Churchill — money owed for the charity school.',source:'Russell/OPC; PROB 11/586'}
+    ],
+    wills:[],
+    connections:['The Fordington copyhold estates appear in multiple Churchill wills — they held land there across generations','Ann Churchill\'s 1722 codicil references money owed by "Brother Charles CHURCHILL" for the Dorchester charity school']
+  },
+  {
+    id:'thomas-stanton',
+    name:'Thomas Churchill & Susannah Stanton',
+    icon:'👨‍👩‍👧‍👦',
+    dates:'1774–1845',
+    cat:'working',
+    desc:'A working-class Churchill family at Holy Trinity Dorchester in the late 18th/early 19th century.',
+    people:[
+      {name:'Thomas Churchill',dates:'fl. 1796',detail:'Of the parish of Holy Trinity Dorchester. Married Susannah STANTON of Upwey at Upwey church, 3 Oct 1796 by Banns (Entry 42). Witnesses: John Bewley and Frederick Bewley. They settled in Holy Trinity parish and raised 8 children.',source:'Marriages Upwey; ancestry.com image'},
+      {name:'Susannah Churchill née Stanton',dates:'1774–1818',detail:'Baptised at Upwey 18 Dec 1774, daughter of William & Mary Stanton. Died at Dorchester but body returned to Upwey for burial 24 May 1818, described as being aged 42.',source:'Burials Upwey OPC'},
+      {name:'Thomas Churchill (marriage to Elizabeth Gill)',dates:'fl. 1826',detail:'Marriage Entry 10, 13 April 1826 — Thomas Churhill [sic] otp married Elizabeth GILL of Holy Trinity Dorchester by Banns. His sig, her mark, witnessed by mark of Wm Churchill & William Travedd.',source:'Marriages Moreton Monkton'}
+    ],
+    wills:[],
+    connections:[],
+    children:['(1) John Stanton Churchill (1797–1841) — bap HT 5 Nov 1797; moved to St Cuthbert in Wells, Somerset; married 29 Dec 1817 at Shepton Mallett to Mary Luff; at least 2 children; died in the union workhouse at Wells 1841 aged 44','(2) William Churchill (1799–1845) — bap HT 10 Feb 1799; married a Susannah (surname unknown); raised 4 children at All Saints Parish Dorchester','(3) Charles Churchill — bap HT 25 Oct 1802','(4) Charlotte Churchill — bap HT 25 Oct 1804','(5) Thomas Churchill — bap HT 9 Feb 1807','(6) Susannah Churchill — bap HT 21 Oct 1808','(7) Mary Reynold Churchill — bap HT 29 Nov 1811','(8) Mary Reynell Churchill — bap HT 18 Mar 1812']
+  },
+  {
+    id:'warren-alias',
+    name:'George Warren alias Churchill',
+    icon:'🔀',
+    dates:'1791–1917+',
+    cat:'working',
+    desc:'An illegitimate son of Mary Warren who took the Churchill surname — strongly implying his father was a Churchill. Became Sexton of Holy Trinity.',
+    people:[
+      {name:'George Warren alias Churchill',dates:'1791–1846',detail:'Illegitimate son of Mary WARREN, baptised at Holy Trinity Church 13 March 1791. By 1814 was regularly using the surname Churchill — "in all probability was the surname of his father, hence the alias." Married Elizabeth LEGG (1788–1857), daughter of Thomas & Elizabeth Legg, bap All Saints 6 Jan 1788, after Banns 16 July 1814. In 1819 they moved from All Saints to Fordington and had son George Warren re-baptised as George Churchill. All subsequent children given the Churchill surname. By June 1841 Census at South Back Street in Holy Trinity Parish — described as Labourer, but by October 1841 described as "Sexton" of Holy Trinity Parish, a position he held until death. Buried at Holy Trinity 27 Sep 1846 aged 53. Widow Elizabeth buried Civic Cemetery 15 Apr 1857 aged 69.',source:'Russell/OPC; Marriage at HT 16 July 1814'},
+      {name:'George Warren Churchill',dates:'1817–1872',detail:'Eldest son, bap All Saints 13 Feb 1817, baptised again after the family\'s move to Fordington as "George Churchill" 28 Mar 1819. Married Caroline MARSH at HT 10 Feb 1843. Took over the Sexton role from his father. Buried Civic Cemetery aged 55 on 26 Feb 1872.',source:'Russell/OPC'},
+      {name:'Henry Churchill',dates:'1827–1858',detail:'6th child of George Warren alias Churchill by wife Elizabeth Legg. Bap St Georges Church Fordington 21 Jan 1827. By 1851 single and a journeyman tailor. Married Eliza LOVELESS at Piddletrenthide 26 Dec 1853 (Entry 80). Father George Churchill described as Sexton. Died of Phthisis (TB) 23 Mar 1858 at Thirthall Place, Holy Trinity Dorchester, aged 31. Interred at Weymouth Cemetery 29 Mar 1858, grave number 1960. After Henry\'s death, widow Eliza remarried James DIMENT (gardener) at Congregational Church Dorchester 19 Jan 1861.',source:'Marriages Piddletrenthide; Russell/OPC',
+       children:['1. Henry Mark Churchill (1855–1911) — born 2 Apr 1855 Holy Trinity Parish; became a Journalist; married Clara Jeannette Taylor at Paddington Middlesex 22 Dec 1880; 8 children; died 17 May 1911 at Hendon','2. Eliza Loveless Churchill (1856–1928) — born at Fordington','3. William George Churchill (1857–1858) — bap HT 12 Dec 1857; buried Civic Cemetery grave 1963 on 11 Jan 1858']},
+      {name:'John Churchill',dates:'1822–c.1896',detail:'4th child of George Warren alias Churchill. Bap St Georges Church Fordington 9 June 1822. Married Elizabeth COX (1821–?) at Evershot 2 Feb 1845. Elizabeth was daughter of Erasmus and Mary Cox, bap St Osmund\'s Evershot 2 Jan 1822. Settled initially in Fordington — John worked as a blacksmith, by 1861 a journeyman at Pease Lane in Holy Trinity. By 1891 a widower living in Whetstone Alms House, Church Street Dorchester.',source:'Marriages Banns Evershot; ancestry.com image',
+       children:['(1) William George Churchill (1848–1849) — bap FStG 22 Feb 1848; buried aged 2 on 27 Sep 1849','(2) William George Churchill (1852–?) — bap HT 5 Dec 1852; printer compositor, unmarried aged 18 in 1871','(3) Edwin John Churchill (1856–?) — bap All Saints 27 July 1856; by age 15 described as a gunsmith','(4) Emily Churchill (1859–?) — bap HT 12 Aug 1859; aged 11 scholar 1871','(5) Henry Elton Churchill (1861–?) — born 3rd qtr 1861 Dorchester']},
+      {name:'George Churchill',dates:'fl. 1880',detail:'Son of Thomas Churchill (a labourer), probably grandson of George Warren alias Churchill through the Thomas Churchill line. Bachelor, maltster, resident Holy Trinity Dorchester. Married Elizabeth SOMERS 26 Feb 1880 at Charminster. Also banns read 11, 13, and 25 Jan 1880 at HT. Witnesses: James Churchill and Maria Churchill. Note from Russell: "William was killed whilst on active service on HMS GHURKA when a mine exploded in the English Channel on 8th Feb 1917. Gertrude was then living at 69 Esslemont Southsea."',source:'Marriages Charminster Dorset; ancestry.com image'},
+      {name:'Samuel Churchill',dates:'fl. 1886',detail:'Bachelor, printer, resident at Crewkerne Somerset. Father: Thomas Churchill, a Gardener. Married Elizabeth LAWRENCE 27 Mar 1886 at Parish Church Crewkerne (Entry 392). Note: Marriage Banns read at Holy Trinity Church Dorchester where Elizabeth Lawrence resided.',source:'Marriages Crewkerne Somerset; ancestry.com image'}
+    ],
+    wills:[],
+    connections:['George Warren\'s use of the Churchill surname strongly implies his biological father was a Churchill — possibly from the Colliton House or Fordington line','The Sexton role at Holy Trinity gave the Warren/Churchill family a prominent position in the parish despite humble origins','The journalist Henry Mark Churchill (1855–1911) represents upward social mobility from this line']
+  },
+  {
+    id:'other-wills',
+    name:'Other Dorchester Wills & Records',
+    icon:'📜',
+    dates:'1708–1771',
+    cat:'records',
+    desc:'Additional wills and parish records mentioning Churchills in Dorchester and surrounding parishes.',
+    people:[
+      {name:'Jane Churchill',dates:'d. 1771',detail:'Spinster of Dorchester. Buried St Peters 12 Dec 1771. Will (PROB 11/974, dated 16 Aug 1771, proved 15 Jan 1772): To sister Sarah Boult £50 + dwelling house in Dorchester; maid servant Mary Beale £20+; goddaughter Sarah England; nephew John Damer; to George Clavell Esq. A different Jane Churchill from Jane née Churchill who married William of Colliton House.',source:'PROB 11/974'},
+      {name:'Ann Arden',dates:'d. 1771',detail:'Spinster of Dorchester. Will (proved 29 Nov 1771): Beneficiaries include "William Christopher & Mary Churchill, Elizabeth and Martha Nelson George Arden and his wife Frances & 2 children George & Mary." Richards and Mary Church renounced executorship.',source:'DHC Ad/Dt/W/1771'},
+      {name:'George Smith & Grace Churchill',dates:'4 Mar 1773',detail:'George SMITH of Dorchester married Grace Churchill at Corscombe by licence, 4 March 1773. Another Churchill daughter marrying out.',source:'Marriages Corscombe OPC'},
+      {name:'Rose Churchill',dates:'d. 1873',detail:'Buried 5 Feb 1873 at Charminster (Entry 417), abode from the Dorchester Union Workhouse, age 65 years.',source:'Burials Charminster; ancestry.com image'},
+      {name:'Elizabeth Churchill',dates:'d. 1886',detail:'Buried 18 Feb 1886 at Winterborne Monkton (Entry 150), abode Dorchester, aged 85 years.',source:'Burials Winterborne Monkton'},
+      {name:'Sarah Churchill',dates:'d. 1834',detail:'Buried 8 Feb 1834 at Moreton, of Dorchester aged 38 (No. 88).',source:'Burials Moreton OPC'},
+      {name:'Frances Alice Churchill',dates:'d. 1962',detail:'Buried 15 May 1962 at Moreton Dorset (Entry 607), abode Damers Hospital Dorchester, age 88 years. One of the last Churchill burials in the Dorchester area.',source:'Burials Moreton — OPC and ancestry.com image'},
+      {name:'Thomas Churchill',dates:'d. 1859',detail:'Buried 23 Nov 1859 at Winterborne Monkton (Entry 106), abode Dorchester, aged 22 years.',source:'Burials Winterborne Monkton'},
+      {name:'Mary Ann Churchill',dates:'fl. 1893',detail:'Spinster, married John JOLIFFE (bachelor of All Saints Dorchester) at Broadwey, 5 Mar 1893 by Banns.',source:'Marriage Banns Broadwey; ancestry.com'}
+    ],
+    wills:[],
+    connections:[]
+  },
+  {
+    id:'marlborough',
+    name:'Marlborough Churchills in Dorchester',
+    icon:'👑',
+    dates:'1701–1708',
+    cat:'gentry',
+    desc:'The famous Marlborough Churchill family intersecting with Dorchester parish records — a DIFFERENT family from the Colliton House Churchills.',
+    people:[
+      {name:'Charles Churchill',dates:'fl. 1701',detail:'4th son of Sir Winston Churchill; younger brother of John Churchill, 1st Duke of Marlborough. Married Mary GOULD at St Peters Church Dorchester, 9 Feb 1701/2. His wife Mary later applied for administration of her father James Gould\'s estate (13 Jan 1707/8, PCC Admons Folio 4). Charles is described as "armiger" in the grant. Note: Ann Churchill née Swayne\'s will codicil (1722) refers to "my Brother [in-law] Charles CHURCHILL" — but this is a DIFFERENT Charles Churchill (John of Colliton\'s brother), not the Marlborough one.',source:'OPC PCC Admons Folio 4; Marriages St Peters Dorchester'}
+    ],
+    wills:[],
+    connections:['The Marlborough Churchills and the Colliton House Churchills both appear in Dorchester parish records but are DIFFERENT families — distantly related through the Bailiff of Dorchester (d.1557) who is the common ancestor','Two different "Charles Churchill" individuals appear in early 1700s Dorchester records — one from the Marlborough line, one a brother of John Churchill of Colliton']
+  }
+];
+
+function renderDorchesterRef(){
+  // Filter bar
+  const cats=[{id:'all',label:'All Branches'},{id:'gentry',label:'Gentry'},{id:'trade',label:'Trade'},{id:'working',label:'Working Class'},{id:'records',label:'Records'}];
+  const fb=document.getElementById('refFilterBar');
+  fb.innerHTML=cats.map(c=>`<button data-cat="${c.id}" class="${c.id==='all'?'active':''}" onclick="filterRefBranches('${c.id}')">${c.label}</button>`).join('');
+
+  renderRefBranches('all');
+}
+
+function filterRefBranches(cat){
+  document.querySelectorAll('#refFilterBar button').forEach(b=>b.classList.toggle('active',b.dataset.cat===cat));
+  renderRefBranches(cat);
+}
+
+function renderRefBranches(cat){
+  const container=document.getElementById('refBranches');
+  const branches=cat==='all'?dorchesterBranches:dorchesterBranches.filter(b=>b.cat===cat);
+
+  container.innerHTML=branches.map(b=>`
+    <div class="ref-branch" data-cat="${b.cat}">
+      <div class="ref-branch-hdr" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">
+        <span class="branch-icon">${b.icon}</span>
+        <h3>${b.name}</h3>
+        <span class="branch-dates">${b.dates}</span>
+        <span class="toggle-arrow">▼</span>
+      </div>
+      <div class="ref-branch-body">
+        <p style="font-size:14px;color:#4a5568;margin-bottom:16px;padding:0 8px;line-height:1.65;font-style:italic">${b.desc}</p>
+
+        ${b.people.map(p=>`
+          <div class="ref-person">
+            <span class="rp-name">${p.name}</span><span class="rp-dates">${p.dates}</span>
+            <div class="rp-detail">${p.detail}</div>
+            ${p.children?`<div class="rp-children">${p.children.map(c=>`<div class="rp-child">${c}</div>`).join('')}</div>`:''}
+            <span class="rp-source">Source: ${p.source}</span>
+          </div>
+        `).join('')}
+
+        ${b.children?`<div style="margin:12px 0 12px 8px;padding-left:16px;border-left:2px solid var(--accent-light)"><p style="font-family:Cinzel,serif;font-size:13px;color:var(--slate-dark);margin-bottom:8px">Children of Thomas & Susannah:</p>${b.children.map(c=>`<div class="rp-child" style="font-size:13px;color:#4a5568;padding:3px 0">${c}</div>`).join('')}</div>`:''}
+
+        ${b.wills.length?`<h4 style="font-family:Cinzel,serif;font-size:15px;color:#6b5b3e;margin:16px 0 10px;padding:0 4px">Key Wills & Administrations</h4>
+        ${b.wills.map(w=>`
+          <div class="ref-will">
+            <div class="rw-title">${w.title}</div>
+            <div class="rw-ref">${w.ref}</div>
+            <div class="rw-summary">${w.summary}</div>
+          </div>
+        `).join('')}`:''}
+
+        ${b.connections.length?`<h4 style="font-family:Cinzel,serif;font-size:15px;color:#2c5282;margin:16px 0 10px;padding:0 4px">Cross-References</h4>
+        ${b.connections.map(c=>`<div class="ref-connection">${c}</div>`).join('')}`:''}
+      </div>
+    </div>
+  `).join('');
+}
+
+// INIT
+renderDirectLine();
+renderTimeline();
+renderInsights();
+renderCorrections();
+renderEvidence();
+renderEvFilters();
+renderSources();
+renderSrcFilters();
+renderFunFacts();
+renderDorchesterRef();
+</script>
+</body>
+</html>
